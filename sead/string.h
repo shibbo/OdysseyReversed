@@ -35,4 +35,13 @@ namespace sead
         public:
         virtual void assureTerminationImpl_();
     };
+
+    template<typename T>
+    class HeapSafeStringBase : public sead::BufferedSafeStringBase
+    {
+        public:
+        HeapSafeStringBase(sead::Heap *,sead::SafeStringBase<char> const &, s32);
+        virtual ~HeapSafeStringBase();
+        virtual operator=(sead::SafeStringBase<T> const &);
+    };
 };
