@@ -2,6 +2,7 @@
 
 #include "heap.h"
 #include "string.h"
+#include "tree.h"
 
 namespace sead
 {
@@ -42,5 +43,7 @@ namespace sead
         public:
         XmlElement();
         virtual ~XmlElement();
+
+        sead::TreeNode* mRoot; // _8
     };
 };
