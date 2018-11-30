@@ -36,4 +36,9 @@ namespace sead
     {
 
     };
+
+    class WriteStream
+    {
+
+    };
 };
