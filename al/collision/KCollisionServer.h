@@ -1,6 +1,7 @@
 #pragma once
 
 #include "types.h"
+#include "al/byaml/ByamlIter.h"
 
 namespace al
 {
@@ -12,6 +13,6 @@ namespace al
         void initKCollisionServer(void *, void const *byamlSrc);
         void setData(void *);
 
-        u64* _18; // al::ByamlIter*
+        al::ByamlIter* mColIterator; // _18
     };
 };
