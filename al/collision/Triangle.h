@@ -13,6 +13,9 @@ namespace al
         void fill(sead::Vector3<f32> const &vert1, sead::Vector3<f32> const &vert2, sead::Vector3<f32> const &vert3);
         bool isHostMoved() const;
         bool isValid() const;
+        sead::Vector3<f32> getNormal(s32 idx) const;
+        sead::Vector3<f32> getPos(s32 idx) const;
+        void calcCenterPos(sead::Vector3<f32> *destPos) const;
 
         u8 _0[0x48];
         sead::Vector3<f32> _48;
