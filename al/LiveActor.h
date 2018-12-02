@@ -4,6 +4,7 @@
 #include "keeper/ActorActionKeeper.h"
 #include "keeper/ActorItemKeeper.h"
 #include "keeper/ActorPoseKeeperBase.h"
+#include "keeper/StageSwitchKeeper.h"
 #include "ActorExecuteInfo.h"
 #include "ActorSceneInfo.h"
 #include "types.h"
@@ -38,7 +39,7 @@ namespace al
         u64* _A8; // EffectKeeper*
         u64* _B0; // AudioKeeper*
         u64* _B8; // unknown
-        u64* _C0; // StageSwitchKeeper*
+        al::StageSwitchKeeper* mStageSwitchKeeper; // _C0
         u64* _C8; // RailRider*
         u64* _D0; // ShadowKeeper*
         u64* _D8; // ActorPrePassLightKeeper*
