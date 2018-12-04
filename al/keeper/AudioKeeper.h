@@ -9,7 +9,7 @@ namespace al
 {
     class CameraDirector;
     class ModelKeeper;
-    
+
     class AudioKeeper
     {
         public:
@@ -17,7 +17,7 @@ namespace al
 
         virtual ~AudioKeeper();
 
-        void initSeKeeper(al::AudioDirector const *, char const*, sead::Vector3<f32> const *, sead::Matrix34<f32> const *, al::ModelKeeper const *, al::CameraDirector *);
+        void initSeKeeper(al::AudioDirector const *, char const *, sead::Vector3<f32> const *, sead::Matrix34<f32> const *, al::ModelKeeper const *, al::CameraDirector *);
         void initBgmKeeper(al::AudioDirector const *, char const *);
         void validate();
         void invalidate();

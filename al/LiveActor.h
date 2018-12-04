@@ -4,6 +4,7 @@
 #include "keeper/ActorActionKeeper.h"
 #include "keeper/ActorItemKeeper.h"
 #include "keeper/ActorPoseKeeperBase.h"
+#include "keeper/ActorScoreKeeper.h"
 #include "keeper/AudioKeeper.h"
 #include "keeper/StageSwitchKeeper.h"
 #include "ActorExecuteInfo.h"
@@ -30,7 +31,7 @@ namespace al
         al::ActorExecuteInfo* mExecInfo; // _58
         al::ActorActionKeeper* mActionKeeper; // _60
         al::ActorItemKeeper* mItemKeeper; // _68
-        u64* _70; // ActorScoreKeeper*
+        al::ActorScoreKeeper* mScoreKeeper; // _70
         al::Collider* mCollider; // _78
         u64* _80; // unknown
         u64* _88; // ModelKeeper*
