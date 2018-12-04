@@ -4,16 +4,31 @@
 
 namespace al
 {
+    struct AudioDirectorInitInfo;
+    class BgmDirector;
+
     class AudioDirector
     {
         public:
         AudioDirector();
 
+        void init(al::AudioDirectorInitInfo const &);
+        void init3D(al::AudioDirectorInitInfo const &);
+        void initAfterInitPlacement();
+
+        void setDependentModule(al::AudioDirector *);
+        void updatePre();
+        void updatePost();
+        void startFinalizeUnsafeModuleInParallelThread();
+        bool isFinalizedUnsafeModuleInParallelThread();
+        void finalize();
+        bool isSystemPauseNow();
+
         u64 _8;
         u64 _10;
-        u64 _18;
+        al::BgmDirector* mBGMDirector; // _18
         u64 _20;
-        u64 _28;
+        u64* _28; // al::SeDirector*
         u64 _30;
         u64 _38;
         u64 _40;
