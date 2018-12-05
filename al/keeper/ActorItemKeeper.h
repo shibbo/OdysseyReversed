@@ -18,7 +18,7 @@ namespace al
         u32 mNumEntries; // _10
         u32 _14; // another count related to the info
         char* mFactor; // _18
-        u64 _20; // al::HitSensor*
+        u64* _20; // al::HitSensor*
         u32 _28;
         u64 _2C;
     };
