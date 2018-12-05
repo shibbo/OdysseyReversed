@@ -4,6 +4,8 @@
 
 namespace al
 {
+    class ActorItemInfo;
+
     class ActorItemKeeper
     {
         public:
@@ -12,9 +14,9 @@ namespace al
         void reset();
 
         al::LiveActor* mActor; // _0
-        u64* mTable; // _8 table of items
+        al::ActorItemInfo* mTable; // _8 table of items
         u32 mNumEntries; // _10
-        u64 _14;
+        u64 _14; // another count related to the info
         u64 _1C;
         u64 _24;
         u64 _2C;
