@@ -16,9 +16,10 @@ namespace al
         al::LiveActor* mActor; // _0
         al::ActorItemInfo* mTable; // _8 table of items
         u32 mNumEntries; // _10
-        u64 _14; // another count related to the info
-        u64 _1C;
-        u64 _24;
+        u32 _14; // another count related to the info
+        char* mFactor; // _18
+        u64 _20; // al::HitSensor*
+        u32 _28;
         u64 _2C;
     };
 };
