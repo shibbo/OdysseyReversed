@@ -7,6 +7,7 @@
 #include "keeper/ActorScoreKeeper.h"
 #include "keeper/AudioKeeper.h"
 #include "keeper/EffectKeeper.h"
+#include "keeper/ShadowKeeper.h"
 #include "keeper/StageSwitchKeeper.h"
 #include "ActorExecuteInfo.h"
 #include "ActorSceneInfo.h"
@@ -44,7 +45,7 @@ namespace al
         u64* _B8; // unknown
         al::StageSwitchKeeper* mStageSwitchKeeper; // _C0
         u64* _C8; // RailRider*
-        u64* _D0; // ShadowKeeper*
+        al::ShadowKeeper* mShadowKeeper; // _D0
         u64* _D8; // ActorPrePassLightKeeper*
         u64* _E0; // ActorOcclusionKeeper*
         u64* _E8; // SubActorKeeper*
