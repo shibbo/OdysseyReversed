@@ -11,6 +11,12 @@ namespace nn
             public:
 
             u64 mInfo; // _0
-        }
+        };
+
+        template<typename T>
+        class TDevice
+        {
+            
+        };
     };
 };
