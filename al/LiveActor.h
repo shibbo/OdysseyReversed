@@ -7,6 +7,7 @@
 #include "keeper/ActorScoreKeeper.h"
 #include "keeper/AudioKeeper.h"
 #include "keeper/EffectKeeper.h"
+#include "keeper/HitSensorKeeper.h"
 #include "keeper/ShadowKeeper.h"
 #include "keeper/StageSwitchKeeper.h"
 #include "ActorExecuteInfo.h"
@@ -38,7 +39,7 @@ namespace al
         u64* _80; // unknown
         u64* _88; // ModelKeeper*
         u64* _90; // NerveKeeper*
-        u64* _98; // HitSensorKeeper*
+        al::HitSensorKeeper* mHitSensorKeeper; // _98
         u64* _A0; // ScreenPointKeeper*
         al::EffectKeeper* mEffectKeeper; // _A8
         al::AudioKeeper* mAudioKeeper; // _B0
