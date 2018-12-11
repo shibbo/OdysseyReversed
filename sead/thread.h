@@ -7,6 +7,8 @@
 
 namespace sead
 {
+    template<typename T, typename U> class IDelegate2;
+
     class Thread : public sead::IDisposer
     {
         public:
@@ -106,6 +108,14 @@ namespace sead
         virtual void waitDone();
         virtual void quitAndDestroySingleThread(bool);
         virtual void setPriority(s32);
+        virtual void calc_(s64);
+    };
+    class DelegateThread : public sead::Thread
+    {
+        public:
+        DelegateThread(sead::SafeStringBase<char> const &, sead::IDelegate2<sead::Thread *,s64> *, sead::Heap *, s32, s64, s64, s32, s32);
+        virtual ~DelegateThread();
+
         virtual void calc_(s64);
     };
 
