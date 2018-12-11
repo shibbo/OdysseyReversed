@@ -63,7 +63,6 @@ namespace sead
         u64 _E8;
         u64 _F0;
         u64 mStackStartAddr; // _F8
-        s32 mPriority; // _F8
     };
 
     class ThreadMgr
