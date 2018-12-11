@@ -117,6 +117,8 @@ namespace sead
         virtual ~DelegateThread();
 
         virtual void calc_(s64);
+
+        sead::IDelegate2<sead::Thread *, s64>* mDelegate; // _100
     };
 
     class ThreadUtil
