@@ -78,4 +78,7 @@ namespace al
         u64 _0;
         u32 _8;
     };
+
+    template<typename T>
+    T* createActorFunction(char const *actorName);
 };

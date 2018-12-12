@@ -12,5 +12,11 @@ namespace sead
         u32 atanIdx_(T);
         T expTable(T);
         T logTable(T);
+        u32 atan2Idx(T, T);
+
+        static u64* cSinCosTbl;
+        static u64* cAtanTbl;
+        static u64* cExpTbl;
+        static u64* cLogTbl;
     };
 }
