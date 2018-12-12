@@ -12,6 +12,7 @@
 #include "keeper/NerveKeeper.h"
 #include "keeper/ShadowKeeper.h"
 #include "keeper/StageSwitchKeeper.h"
+#include "sead/matrix.h"
 #include "ActorExecuteInfo.h"
 #include "ActorSceneInfo.h"
 #include "types.h"
@@ -22,6 +23,18 @@ namespace al
     {
         public:
         LiveActor(char const *objName);
+
+        virtual void initAfterPlacement();
+        virtual void appear();
+        virtual void makeActorAlive();
+        virtual void kill();
+        virtual void makeActorDead();
+        virtual void movement();
+        virtual void calcAnim();
+        virtual void draw();
+        virtual void startClipped();
+        virtual void endClipped();
+        virtual sead::Matrix34<f32>* getBaseMtx() const;
 
         u64* _8;  // IUseEffectKeeper*
         u64* _10; // IUseAudioKeeper*
