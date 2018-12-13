@@ -82,3 +82,6 @@ namespace al
     template<typename T>
     T* createActorFunction(char const *actorName);
 };
+
+template<typename T>
+T* createPlayerFunction(char const *name);
