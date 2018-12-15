@@ -81,6 +81,15 @@ namespace al
 
     template<typename T>
     T* createActorFunction(char const *actorName);
+
+    template<typename T>
+    T* createAreaObjFunction(char const *areaName);
+
+    template<typename T>
+    T* createCameraPoserFunction(char const *poserName);
+
+    template<typename T>
+    T* createEventFlowNode(char const *eventFlowName);
 };
 
 template<typename T>
