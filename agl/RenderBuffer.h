@@ -19,7 +19,7 @@ namespace agl
         RenderBuffer(sead::Vector2<f32> const &, f32, f32, f32, f32);
         virtual ~RenderBuffer();
 
-        //virtual void copyToDisplayBuffer(sead::DrawContext *,sead::DisplayBuffer const *);
+        virtual void copyToDisplayBuffer(sead::DrawContext *, sead::DisplayBuffer const *);
         virtual void clear(sead::DrawContext *, u32, sead::Color4f const &, f32, u32);
         virtual void bindImpl_(sead::DrawContext *) const;
 
