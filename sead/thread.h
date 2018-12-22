@@ -2,7 +2,7 @@
 
 #include "types.h"
 #include "sead/heap.h"
-#include "sead/node.h"
+#include "sead/list.h"
 #include "sead/string.h"
 
 namespace sead
