@@ -11,7 +11,6 @@ namespace sead
         virtual void assureTerminationImpl_();
 
         u64* mCharPtr; // _8
-        u64* _10;
     };
 
     template<typename T>
