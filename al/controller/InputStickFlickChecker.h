@@ -1,0 +1,17 @@
+#pragma once
+
+#include "sead/vector.h"
+#include "types.h"
+
+namespace al
+{
+    class InputStickFlickChecker
+    {
+        public:
+        InputStickFlickChecker();
+
+        void update(sead::Vector2<f32> const &);
+
+        u64* _0;
+    };
+};
