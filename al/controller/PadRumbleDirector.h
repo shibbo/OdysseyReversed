@@ -40,11 +40,18 @@ namespace al
         void stopRumbleDirectValue(s32);
         void updateInfoListOneTime();
         void testStartPadRumbleWithVolumeNoActor(char const *, f32, f32);
-        
+
 
         al::WaveVibrationHolder* mVibrationHolder; // _0
         al::PlayerHolder* mPlayerHolder; // _ 8
-
+        al::CameraDirector* mCameraDirector; // _10
+        u64 _18;
+        u64 _20;
+        u64 _28;
+        u32 _30;
+        u32 _34;
+        u8 _38;
         u8 mIsPaused; // _39
+        u8 _3A[0x70-0x3A];
     };
 };
