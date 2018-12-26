@@ -1,6 +1,7 @@
 #pragma once
 
 #include "heap.h"
+#include "../std.h"
 
 namespace sead
 {
@@ -13,6 +14,7 @@ namespace sead
         static bool HaltWithDetail(char const *, s32, char const *, ...);
         static bool DebugBreak();
         static void Print(char const *, ...);
+        static void PrintV(char const *, std::__va_list);
         static void PrintString(char const *, s32);
     };
 };

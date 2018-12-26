@@ -4,6 +4,9 @@
 
 namespace std
 {
+    struct nothrow_t;
+    struct __va_list;
+
     namespace __l
     {
         template<typename T, typename T2>
@@ -37,5 +40,17 @@ namespace std
             public:
             void destroy(std::__l::__tree_node<T, void *> *);
         };
+
+        template<typename T, typename T2>
+        void __sort(T2, T2, T2, T);
+
+        template<typename T, typename T2>
+        void __sort3(T2, T2, T);
+
+        template<typename T, typename T2>
+        void __sort5(T2, T2, T2, T2, T2, T);
+
+        template<typename T, typename T2>
+        void __insertion_sort_incomplete(T2, T2, T);
     }; 
 };

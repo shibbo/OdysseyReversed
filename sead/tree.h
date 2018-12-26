@@ -56,4 +56,46 @@ namespace sead
         u8 _40[0x78-0x40]; // not sure whats here
         sead::CriticalSection* mCritSection; // _78
     };
+
+    template<typename T>
+    class TreeMapNode
+    {
+        public:
+        virtual ~TreeMapNode();
+
+        virtual void erase_() = 0;
+
+        u64 _8;
+        u64 _10;
+        u32 _18;
+        u32 _1C;
+    };
+
+    template<typename T>
+    class OrderedSet : public sead::TreeMapNode
+    {
+        public:
+        class Node : public sead::TreeMapNode
+        {
+            virtual ~Node();
+
+            virtual void erase_() = 0;
+        };
+    };
+
+    template<typename T, typename T2>
+    class StrTreeMap : public sead::TreeMapNode
+    {
+        public:
+        class Node
+        {
+            public:
+            virtual ~Node();
+
+            virtual void erase_();
+
+            void insert(sead::SafeStringBase<char> const &, T2 * const &);
+            void eraseNodeForClear_(sead::TreeMapNode<sead::SafeStringBase<char>> *);
+        };
+    };
 };
