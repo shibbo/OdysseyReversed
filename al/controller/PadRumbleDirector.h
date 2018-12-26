@@ -41,7 +41,6 @@ namespace al
         void updateInfoListOneTime();
         void testStartPadRumbleWithVolumeNoActor(char const *, f32, f32);
 
-
         al::WaveVibrationHolder* mVibrationHolder; // _0
         al::PlayerHolder* mPlayerHolder; // _ 8
         al::CameraDirector* mCameraDirector; // _10
