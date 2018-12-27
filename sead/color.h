@@ -40,6 +40,22 @@ namespace sead
     {
     public:
 
+        void setLerp(sead::Color4f const &, sead::Color4f const &, f32);
+        void setGammaCollection(sead::Color4f const &, f32);
+        void lerp(sead::Color4f const &, sead::Color4f const &, f32);
+        void adjustOverflow();
+
+        void operator+=(sead::Color4f const &);
+        void operator-=(sead::Color4f const &);
+        void operator*=(sead::Color4f const &);
+        void operator/=(sead::Color4f const &);
+        void operator|=(sead::Color4f const &);
+        void operator&=(sead::Color4f const &);
+        void operator+=(f32);
+        void operator-=(f32);
+        void operator*=(f32);
+        void operator/=(f32);
+
         f32 r; // _0
         f32 g; // _4
         f32 b; // _8

@@ -1,18 +1,22 @@
 #pragma once
 
 #include "types.h"
+#include "nn/os.h"
+#include "sead/delegate.h"
 #include "sead/heap.h"
 #include "sead/list.h"
 #include "sead/string.h"
+#include "sead/tick.h"
 
 namespace sead
 {
-    template<typename T, typename U> class IDelegate2;
+    struct CoreIdMask;
 
     class Thread : public sead::IDisposer
     {
     public:
         Thread(sead::SafeStringBase<char> const &, sead::Heap *, s32, u32, s64, s32, s32);
+        Thread(sead::Heap *, nn::os::ThreadType *, u32);
         virtual ~Thread();
         
         virtual void destory();
@@ -34,7 +38,9 @@ namespace sead
         virtual u64 getStackCheckStartAddress_() const;
 
         void ninThreadFunc_(void *);
+        void setAffinity(sead::CoreIdMask const &);
         void yield();
+        void sleep(sead::TickSpan howLong);
         void checkStackOverFlow(char const *, s32) const;
         void checkStackEndCorruption(char const *, s32);
         void checkStackPointerOverFlow(char const *, s32) const;

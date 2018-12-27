@@ -7,6 +7,7 @@ namespace nn
     namespace os
     {
         typedef u64* MutexType;
+        typedef u64* ThreadType;
 
         void InitializeMutex(nn::os::MutexType *, bool, s32);
         void FinalizeMutex(nn::os::MutexType *);
