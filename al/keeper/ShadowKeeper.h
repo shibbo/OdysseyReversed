@@ -8,7 +8,7 @@ namespace al
 
     class ShadowKeeper
     {
-        public:
+    public:
         ShadowKeeper();
 
         void initAfterPlacement(al::GraphicsSystemInfo *);

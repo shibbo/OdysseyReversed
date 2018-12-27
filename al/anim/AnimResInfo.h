@@ -6,7 +6,7 @@ namespace al
 {
     class AnimResInfo
     {
-        public:
+    public:
         AnimResInfo();
 
         u32 getFrameMax() const;

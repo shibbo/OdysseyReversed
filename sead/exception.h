@@ -7,7 +7,7 @@ namespace sead
 {
     class AssertConfig
     {
-        public:
+    public:
         static void registerCallback(sead::DelegateEvent<char const *>::Slot &);
         static void unregisterCallback(sead::DelegateEvent<char const *>::Slot &);
         static void registerFinalCallback(sead::IDelegate1<char const *> *);
@@ -18,11 +18,11 @@ namespace sead
 
     class ExceptionHandler
     {
-        public:
+    public:
 
         class Information
         {
-            public:
+        public:
             Information();
 
             u64 _0;

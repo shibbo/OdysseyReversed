@@ -6,7 +6,7 @@ namespace al
 {
     class ActorSceneInfo
     {
-        public:
+    public:
         ActorSceneInfo();
 
         u64* _10; // al::ClippingDirector*

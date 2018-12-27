@@ -8,7 +8,7 @@ namespace agl
 {
     class DisplayList
     {
-        public:
+    public:
         DisplayList();
 
         virtual ~DisplayList();

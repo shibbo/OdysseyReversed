@@ -7,7 +7,7 @@ namespace al
 {
     class InputStickSpinChecker
     {
-        public:
+    public:
         InputStickSpinChecker();
 
         void update(sead::Vector2<f32> const &);

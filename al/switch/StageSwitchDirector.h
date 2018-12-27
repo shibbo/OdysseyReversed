@@ -11,7 +11,7 @@ namespace al
 
     class StageSwitchDirector
     {
-        public:
+    public:
         StageSwitchDirector(al::ExecuteDirector *);
 
         void useSwitch(al::StageSwitchAccesser *);

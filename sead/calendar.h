@@ -7,8 +7,10 @@ namespace sead
 {
     class CalendarTime
     {
+    public:
         class Year
         {
+        public:
             void setValue(u32 year);
 
             u32 mYear; // _0
@@ -16,6 +18,7 @@ namespace sead
 
         class Month
         {
+        public:
             Month(u32 month);
 
             void setValueOneOrigin(u32 month);
@@ -30,6 +33,7 @@ namespace sead
 
         class Day
         {
+        public:
             void setValue(u32 day);
 
             u32 mDay; // _0
@@ -37,6 +41,7 @@ namespace sead
 
         class Hour
         {
+        public:
             void setValue(u32 hour);
 
             u32 mHour; // _0
@@ -44,6 +49,7 @@ namespace sead
 
         class Minute
         {
+        public:
             void setValue(u32 minute);
 
             u32 mMinute; // _0
@@ -51,6 +57,7 @@ namespace sead
 
         class Second
         {
+        public:
             void setValue(u32 second);
 
             u32 mSecond; // _0
@@ -58,6 +65,7 @@ namespace sead
 
         class Date
         {
+        public:
             Date(sead::CalendarTime::Year const &, sead::CalendarTime::Month const &, sead::CalendarTime::Day const &);
         
             sead::CalendarTime::Year mYear; // _0
@@ -68,6 +76,7 @@ namespace sead
 
         class Time
         {
+        public:
             Time(sead::CalendarTime::Hour const &, sead::CalendarTime::Minute const &, sead::CalendarTime::Second const &);
         
             sead::CalendarTime::Hour mHour; // _0

@@ -13,7 +13,7 @@ namespace nn
 
         class SoundPlayer
         {
-            public:
+        public:
             SoundPlayer();
             ~SoundPlayer();
 

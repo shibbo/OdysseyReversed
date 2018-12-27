@@ -6,7 +6,7 @@ namespace sead
 {
     class Decompressor : public sead::IDisposer
     {
-        public:
+    public:
         virtual ~Decompressor();
 
         virtual void* tryDecompFromDevice(u32 const &rsrcMgrLoadArg, sead::Resource *, u32 *, u32 *, bool *) = 0;
@@ -14,11 +14,11 @@ namespace sead
 
     class SZSDecompressor : public sead::Decompressor
     {
-        public:
+    public:
 
         class DecompContext
         {
-            public:
+        public:
             DecompContext();
             DecompContext(void *src);
 

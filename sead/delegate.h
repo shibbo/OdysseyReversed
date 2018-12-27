@@ -9,7 +9,7 @@ namespace sead
     template<typename T>
     class Delegate
     {
-        public:
+    public:
         void invoke();
         void clone(sead::Heap *) const;
     };
@@ -17,11 +17,11 @@ namespace sead
     template<typename T>
     class DelegateEvent
     {
-        public:
+    public:
 
         class Slot
         {
-            public:
+        public:
             virtual ~Slot();
 
             u64 _0;
@@ -40,7 +40,7 @@ namespace sead
     template<typename T, typename T2>
     class Delegate1
     {
-        public:
+    public:
         void invoke(T2 *);
         void clone(sead::Heap *) const;
     };
@@ -48,7 +48,7 @@ namespace sead
     template<typename T, typename T2, typename T3>
     class Delegate2
     {
-        public:
+    public:
         void invoke(T2 *, T3);
         void clone(sead::Heap *) const;
     };
@@ -56,7 +56,7 @@ namespace sead
     template<typename T>
     class IDelegate1
     {
-        public:
+    public:
         u64* clone(sead::Heap *);
     };
 

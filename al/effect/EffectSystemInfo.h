@@ -6,7 +6,7 @@ namespace al
 {
     class EffectSystemInfo
     {
-        public:
+    public:
         EffectSystemInfo();
 
         u64* getEffectSystem() const;

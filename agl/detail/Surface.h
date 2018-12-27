@@ -14,7 +14,7 @@ namespace agl
 
         class Surface
         {
-            public:
+        public:
             Surface();
             void initialize(agl::TextureType, agl::TextureFormat, u32, agl::TextureAttribute, agl::MultiSampleType);
             void initializeSize(u32, u32, u32);

@@ -15,21 +15,21 @@ namespace std
         template<typename T, typename T2>
         class list
         {
-            public:
+        public:
             list(T const &);
         };
 
         template<typename T, typename T2>
         class pair
         {
-            public:
+        public:
             ~pair();
         };  
 
         template<typename T, typename T2>
         class vector
         {
-            public:
+        public:
             void reserve(u64);
             void __push_back_slow_path<T const &>(T const &);
         };
@@ -37,7 +37,7 @@ namespace std
         template<typename T, typename T2, typename T3>
         class __tree
         {
-            public:
+        public:
             void destroy(std::__l::__tree_node<T, void *> *);
         };
 

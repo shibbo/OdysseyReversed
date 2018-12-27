@@ -12,7 +12,7 @@ namespace nn
 
         class ResModel
         {
-            public:
+        public:
             u64 BindTexture(nn::g3d::TextureRef (*)(char const *, void *), void *);
             void ForceBindTexture(nn::g3d::TextureRef const &, char const *);
             void ReleaseTexture();

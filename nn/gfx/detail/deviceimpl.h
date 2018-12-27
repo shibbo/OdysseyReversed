@@ -11,7 +11,7 @@ namespace nn
             template<typename T>
             class DeviceImpl
             {
-                public:
+            public:
                 DeviceImpl();
                 ~DeviceImpl();
 

@@ -6,7 +6,7 @@ namespace sead
 {
     class HashCRC16
     {
-        public:
+    public:
         void Initialize();
         s16 calcHash(void const *data, u32);
         s16 calcStringHash(char const *str);
@@ -17,7 +17,7 @@ namespace sead
 
     class HashCRC32
     {
-        public:
+    public:
         void Initialize();
         s32 calcHash(void const *data, u32);
         s32 calcStringHash(char const *str);

@@ -7,7 +7,7 @@ namespace al
 {
     class KCollisionServer
     {
-        public:
+    public:
         KCollisionServer();
 
         void initKCollisionServer(void *, void const *byamlSrc);

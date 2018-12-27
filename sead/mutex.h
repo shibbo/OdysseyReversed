@@ -7,7 +7,7 @@ namespace sead
 {
     class Mutex : public sead::IDisposer
     {
-        public:
+    public:
         Mutex();
         Mutex(sead::Heap *);
         Mutex(sead::Heap *, sead::IDisposer::HeapNullOption);

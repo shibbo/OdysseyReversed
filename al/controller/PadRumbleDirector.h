@@ -12,7 +12,7 @@ namespace al
 
     class PadRumbleDirector
     {
-        public:
+    public:
         PadRumbleDirector(al::PlayerHolder const *, al::CameraDirector const *);
 
         void setWaveVibrationHolder(al::WaveVibrationHolder *);

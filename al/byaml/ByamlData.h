@@ -8,7 +8,7 @@ namespace al
 
     class ByamlData
     {
-        public:
+    public:
         ByamlData();
 
         void setData(al::ByamlHashPair const *hashPair, bool swapEndianess);

@@ -7,7 +7,7 @@ namespace sead
 {
     class Path
     {
-        public:
+    public:
         static bool getDriveName(sead::BufferedSafeStringBase<char> *, sead::SafeStringBase<char> const &);
         static void getPathExceptDrive(sead::BufferedSafeStringBase<char> *, sead::SafeStringBase<char> const &);
         static bool getExt(sead::BufferedSafeStringBase<char> *, sead::SafeStringBase<char> const &);

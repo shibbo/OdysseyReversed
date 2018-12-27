@@ -11,7 +11,7 @@ namespace sead
 
     class Thread : public sead::IDisposer
     {
-        public:
+    public:
         Thread(sead::SafeStringBase<char> const &, sead::Heap *, s32, u32, s64, s32, s32);
         virtual ~Thread();
         
@@ -69,10 +69,10 @@ namespace sead
 
     class ThreadMgr
     {
-        public:
+    public:
         class SingletonDisposer_
         {
-            public:
+        public:
             virtual ~SingletonDisposer_();
 
             static s64 sStaticDisposer;
@@ -99,7 +99,7 @@ namespace sead
 
     class MainThread : public sead::Thread
     {
-        public:
+    public:
         virtual ~MainThread();
 
         virtual void destroy();
@@ -112,7 +112,7 @@ namespace sead
     };
     class DelegateThread : public sead::Thread
     {
-        public:
+    public:
         DelegateThread(sead::SafeStringBase<char> const &, sead::IDelegate2<sead::Thread *,s64> *, sead::Heap *, s32, s64, s64, s32, s32);
         virtual ~DelegateThread();
 
@@ -123,7 +123,7 @@ namespace sead
 
     class ThreadUtil
     {
-        public:
+    public:
         void ConvertPrioritySeadToPlatform(s32);
         void ConvertPriorityPlatformToSead(s32);
         u64* GetCurrentStackPointer();

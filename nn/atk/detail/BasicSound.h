@@ -21,7 +21,7 @@ namespace nn
 
             class BasicSound
             {
-                public:
+            public:
                 BasicSound();
                 virtual ~BasicSound();
 

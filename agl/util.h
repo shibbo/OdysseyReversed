@@ -15,7 +15,7 @@ namespace agl
     };
     enum TextureFormat
     {
-        UNKNOWN,
+        INVALID,
         R32_G32_B32_A32,
         R32_G32_B32,
         R16_G16_B16_A16,

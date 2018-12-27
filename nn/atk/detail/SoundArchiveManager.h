@@ -16,7 +16,7 @@ namespace nn
 
             class SoundArchiveManager
             {
-                public:
+            public:
                 SoundArchiveManager();
                 
                 virtual ~SoundArchiveManager();

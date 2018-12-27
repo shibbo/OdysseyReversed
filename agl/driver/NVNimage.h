@@ -8,7 +8,7 @@ namespace agl
     {
         class NVNimage_
         {
-            public:
+        public:
             NVNimage_();
             NVNimage_(agl::driver::NVNimage_ const &);
             ~NVNimage_();

@@ -10,7 +10,7 @@ namespace al
 
     class HitSensor
     {
-        public:
+    public:
         HitSensor(al::LiveActor *, char const *, u32, f32, u16, sead::Vector3<f32> const *, sead::Matrix34<f32> const *, sead::Vector3<f32> const &);
 
         void trySensortSort();

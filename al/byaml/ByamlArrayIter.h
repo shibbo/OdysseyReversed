@@ -8,7 +8,7 @@ namespace al
 
     class ByamlArrayIter
     {
-        public:
+    public:
         ByamlArrayIter();
         ByamlArrayIter(u8 const *arraySrc, bool swapEndianess);
 

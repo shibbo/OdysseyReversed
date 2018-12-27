@@ -5,7 +5,7 @@ namespace sead
     template<typename T>
     class Vector2
     {
-        public:
+    public:
 
         T mX;
         T mY;
@@ -17,7 +17,7 @@ namespace sead
     template<typename T>
     class Vector3
     {
-        public:
+    public:
         
         T mX;
         T mY;
@@ -27,7 +27,7 @@ namespace sead
     template<typename T>
     class Vector4
     {
-        public:
+    public:
         
         T mX;
         T mY;

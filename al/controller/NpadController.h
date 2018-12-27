@@ -6,7 +6,7 @@ namespace al
 {
     class NpadController : public sead::Controller
     {
-        public:
+    public:
         NpadController(sead::ControllerMgr *);
         virtual ~NpadController();
 

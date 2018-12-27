@@ -12,7 +12,7 @@ namespace nn
 
             class SequenceSoundRuntime
             {
-                public:
+            public:
                 SequenceSoundRuntime();
                 ~SequenceSoundRuntime();
 

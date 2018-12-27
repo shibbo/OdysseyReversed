@@ -10,7 +10,7 @@ namespace agl
     {
         class NVNsampler_
         {
-            public:
+        public:
             NVNsampler_();
             NVNsampler_(agl::driver::NVNsampler_ const &);
             ~NVNsampler_();

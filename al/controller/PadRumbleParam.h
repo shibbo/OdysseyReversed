@@ -6,7 +6,7 @@ namespace al
 {
     class PadRumbleParam
     {
-        public:
+    public:
         void setVolumeByBalance();
 
         u64 _0; // unused?

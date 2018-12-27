@@ -10,7 +10,7 @@ namespace nn
         {
             class AdvancedWaveSoundRuntime
             {
-                public:
+            public:
                 AdvancedWaveSoundRuntime();
                 ~AdvancedWaveSoundRuntime();
 

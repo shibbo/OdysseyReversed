@@ -6,7 +6,7 @@ namespace al
 {
     class EffectHitReactionInfo
     {
-        public:
+    public:
         EffectHitReactionInfo();
 
         u64 _0;

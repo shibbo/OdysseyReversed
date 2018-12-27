@@ -9,7 +9,7 @@ namespace al
 {
     class ActorPoseKeeperBase
     {
-        public:
+    public:
         ActorPoseKeeperBase();
 
         virtual sead::Vector3<f32>* getRotate() const;

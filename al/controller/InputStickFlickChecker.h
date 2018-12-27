@@ -7,7 +7,7 @@ namespace al
 {
     class InputStickFlickChecker
     {
-        public:
+    public:
         InputStickFlickChecker();
 
         void update(sead::Vector2<f32> const &);

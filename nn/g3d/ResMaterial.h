@@ -9,9 +9,10 @@ namespace nn
     namespace g3d
     {
         typedef void* TextureRef;
+        
         class ResMaterial
         {
-            public:
+        public:
             u64 BindTexture(nn::g3d::TextureRef (*)(char const *, void *), void *);
             void ForceBindTexture(nn::g3d::TextureRef const &, char const *);
             void ReleaseTexture();

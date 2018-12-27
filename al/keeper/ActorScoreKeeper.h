@@ -8,7 +8,7 @@ namespace al
 
     class ActorScoreKeeper
     {
-        public:
+    public:
         ActorScoreKeeper();
 
         void init(al::ByamlIter const &);

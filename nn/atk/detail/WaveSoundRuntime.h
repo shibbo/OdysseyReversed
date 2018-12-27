@@ -10,7 +10,7 @@ namespace nn
         {
             class WaveSoundRuntime
             {
-                public:
+            public:
                 WaveSoundRuntime();
                 ~WaveSoundRuntime();
 

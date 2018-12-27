@@ -7,7 +7,7 @@ namespace al
 {
     class CollisionParts
     {
-        public:
+    public:
         CollisionParts(void *, void const *);
     };
 }

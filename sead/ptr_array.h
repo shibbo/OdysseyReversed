@@ -9,14 +9,14 @@ namespace sead
     template<typename T>
     class ConstPtrArray
     {
-        public:
+    public:
         u64 mNumPtrs; // _0
         u64* mPtrs; // _8
     };
 
     class PtrArrayImpl
     {
-        public:
+    public:
         void setBuffer(s32 size, void *buf);
         void allocBuffer(s32 size, sead::Heap *heapSrc, s32);
         bool tryAllocBuffer(s32 size, sead::Heap *heapSrc, s32);

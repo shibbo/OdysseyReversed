@@ -7,7 +7,7 @@ namespace al
 {
     class GamePadSystem
     {
-        public:
+    public:
         GamePadSystem();
 
         void changeSinglePlayMode();

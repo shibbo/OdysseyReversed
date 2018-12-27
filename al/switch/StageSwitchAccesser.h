@@ -16,7 +16,7 @@ namespace al
 
     class StageSwitchAccesser
     {
-        public:
+    public:
         StageSwitchAccesser();
 
         void init(al::StageSwitchDirector *, char const *, al::PlacementId const &);

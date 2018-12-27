@@ -7,9 +7,10 @@
 namespace alsd
 {
     class AudioSoundDataMgrMulti;
+    
     class AudioPlayerMulti : public nn::atk::SoundArchivePlayer
     {
-        public:
+    public:
         AudioPlayerMulti();
         virtual ~AudioPlayerMulti();
 

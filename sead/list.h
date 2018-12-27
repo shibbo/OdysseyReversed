@@ -7,7 +7,7 @@ namespace sead
 {
     class ListNode
     {
-        public:
+    public:
         void insertBack_(sead::ListNode *);
         void insertFront_(sead::ListNode *);
         void erase_();
@@ -18,7 +18,7 @@ namespace sead
 
     class ListImpl
     {
-        public:
+    public:
         sead::ListNode* popBack();
         sead::ListNode* popFront();
         sead::ListNode* nth(s32 where) const;

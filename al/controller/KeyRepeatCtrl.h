@@ -6,7 +6,7 @@ namespace al
 {
     class KeyRepeatCtrl
     {
-        public:
+    public:
         KeyRepeatCtrl();
 
         void init(s32, s32);

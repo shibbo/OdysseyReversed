@@ -7,7 +7,7 @@ namespace al
 {
     class Triangle
     {
-        public:
+    public:
         Triangle();
 
         void fill(sead::Vector3<f32> const &vert1, sead::Vector3<f32> const &vert2, sead::Vector3<f32> const &vert3);

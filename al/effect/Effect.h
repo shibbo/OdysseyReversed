@@ -11,7 +11,7 @@ namespace al
 
     class Effect
     {
-        public:
+    public:
         Effect(al::EffectSystemInfo const *, al::EffectInfo const *, sead::Vector3<f32> const *, sead::Vector3<f32> const *, sead::Matrix34<f32> const *, u64);
     
         void setPosPtr(sead::Vector3<f32> const *);

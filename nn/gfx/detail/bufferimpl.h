@@ -12,7 +12,7 @@ namespace nn
             template<typename T>
             class BufferImpl
             {
-                public:
+            public:
                 BufferImpl();
                 ~BufferImpl();
 
@@ -22,7 +22,7 @@ namespace nn
             template<typename T>
             class CommandBufferImpl
             {
-                public:
+            public:
                 CommandBufferImpl();
                 ~CommandBufferImpl();
 

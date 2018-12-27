@@ -8,7 +8,7 @@ namespace nn
     {
         class BufferInfo
         {
-            public:
+        public:
             void SetDefault();
 
             u64 mInfo; // _0
@@ -16,7 +16,7 @@ namespace nn
 
         class BufferTextureViewInfo
         {
-            public:
+        public:
             void SetDefault();
 
             u64 _0;

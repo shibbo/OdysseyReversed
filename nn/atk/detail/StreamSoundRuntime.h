@@ -10,7 +10,7 @@ namespace nn
         {
             class StreamSoundRuntime
             {
-                public:
+            public:
                 StreamSoundRuntime();
                 ~StreamSoundRuntime();
 

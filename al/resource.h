@@ -7,7 +7,7 @@ namespace al
 {
     class Resource
     {
-        public:
+    public:
         Resource(sead::SafeStringBase<char> const &, sead::ArchiveRes *);
         
         bool isExistFile(sead::SafeStringBase<char> const &) const;
@@ -32,7 +32,7 @@ namespace al
 
     class ActorResource
     {
-        public:
+    public:
         ActorResource(sead::SafeStringBase<char> const &, al::Resource *, al::Resource *);
         virtual ~ActorResource();
 

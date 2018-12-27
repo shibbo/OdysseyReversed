@@ -7,8 +7,10 @@
 namespace sead
 {
     class Heap;
+
     class RuntimeInfo 
     { 
+    public:
         class Interface 
         {
 
@@ -17,11 +19,11 @@ namespace sead
 
     class Arena
     {
-        public:
+    public:
         Arena();
         ~Arena();
 
-        void initialize(u64);
+        void initialize(u64 size);
         void destroy();
 
         u64 _0;
@@ -34,7 +36,7 @@ namespace sead
 
     class IDisposer
     {
-        public:
+    public:
 
         enum HeapNullOption
         {
@@ -56,7 +58,7 @@ namespace sead
 
     class Heap : public sead::IDisposer
     {
-        public:
+    public:
 
         enum HeapDirection
         {
@@ -128,7 +130,7 @@ namespace sead
 
     class ExpHeap : sead::Heap
     {
-        public:
+    public:
         enum FindFreeBlockMode
         {
 
@@ -202,7 +204,7 @@ namespace sead
     
     class FrameHeap : public sead::Heap
     {
-        public:
+    public:
         FrameHeap(sead::SafeStringBase<char> const &, sead::Heap *, void *src, u64 srcSize, sead::Heap::HeapDirection, bool);
 
         virtual ~FrameHeap();
@@ -231,7 +233,7 @@ namespace sead
 
     class HeapMgr
     {
-        public:
+    public:
         HeapMgr();
 
         virtual ~HeapMgr();

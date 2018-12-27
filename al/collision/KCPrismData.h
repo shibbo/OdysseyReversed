@@ -6,7 +6,7 @@ namespace al
 {
     class KCPrismData
     {
-        public:
+    public:
         f32 mLength; // _0
         u16 mPosIndex; // _4
         u16 mDirIndex; // _6

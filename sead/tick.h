@@ -6,7 +6,7 @@ namespace sead
 {
     class TickSpan
     {
-        public:
+    public:
         s64 toNanoSeconds() const;
         void setNanoSeconds(s64 seconds);
 

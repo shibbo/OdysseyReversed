@@ -5,7 +5,7 @@ namespace sead
     template<typename T>
     class SafeStringBase
     {
-        public:
+    public:
         virtual ~SafeStringBase();
         virtual operator=(sead::SafeStringBase<T> const &);
         virtual void assureTerminationImpl_();
@@ -16,7 +16,7 @@ namespace sead
     template<typename T>
     class BufferedSafeStringBase : sead::SafeStringBase
     {
-        public:
+    public:
         virtual ~BufferedSafeStringBase();
         virtual operator=(sead::BufferedSafeStringBase<T> const &);
         virtual void assureTerminationImpl_();
@@ -31,14 +31,14 @@ namespace sead
     template<typename T>
     class FixedSafeString : sead::BufferedSafeStringBase
     {
-        public:
+    public:
         virtual void assureTerminationImpl_();
     };
 
     template<typename T>
     class HeapSafeStringBase : public sead::BufferedSafeStringBase
     {
-        public:
+    public:
         HeapSafeStringBase(sead::Heap *,sead::SafeStringBase<char> const &, s32);
         virtual ~HeapSafeStringBase();
         virtual operator=(sead::SafeStringBase<T> const &);

@@ -9,7 +9,7 @@ namespace al
 
     class BgmDirector
     {
-        public:
+    public:
         BgmDirector();
 
         void init(al::AudioSystemInfo const *, al::AudioDirector const *, al::BgmDirectorInitInfo const&, char const *, s32);

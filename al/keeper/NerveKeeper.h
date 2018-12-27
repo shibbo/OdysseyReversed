@@ -9,7 +9,7 @@ namespace al
 
     class NerveKeeper
     {
-        public:
+    public:
         NerveKeeper(al::IUseNerve *, al::Nerve const *, s32);
 
         void update();

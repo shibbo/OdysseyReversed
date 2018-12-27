@@ -7,11 +7,11 @@ namespace al
 {
     class JoyPadAccelPoseAnalyzer
     {
-        public:
+    public:
 
         class HistoryInfo
         {
-            public:
+        public:
             HistoryInfo(s32);
 
             void calcHistory(sead::Vector3<f32> const &, sead::Vector3<f32> const &, f32);
@@ -44,7 +44,7 @@ namespace al
 
         class PoseAxisDir
         {
-            public:
+        public:
             PoseAxisDir(s32);
 
             void calcHistory(sead::Vector3<f32> const &,sead::Vector3<f32> const &);

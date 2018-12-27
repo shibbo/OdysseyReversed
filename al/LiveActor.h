@@ -21,7 +21,7 @@ namespace al
 {
     class LiveActor
     {
-        public:
+    public:
         LiveActor(char const *objName);
 
         virtual void initAfterPlacement();
@@ -72,7 +72,7 @@ namespace al
 
     class LiveActorFlag
     {
-        public:
+    public:
         LiveActorFlag();
 
         u64 _0;

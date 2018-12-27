@@ -6,7 +6,7 @@ namespace al
 {
     class AudioSystemInfo
     {
-        public:
+    public:
         AudioSystemInfo();
 
         u64 _0;

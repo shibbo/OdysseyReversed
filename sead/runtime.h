@@ -4,12 +4,13 @@ namespace sead
 {
     class RuntimeTypeInfo
     {
+    public:
         class Interface;
 
         template<typename T>
         class Derive
         {
-            public:
+        public:
             bool isDerived(sead::RuntimeTypeInfo::Interface const *) const;
         };
     };

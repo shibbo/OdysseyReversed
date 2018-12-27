@@ -7,7 +7,7 @@ namespace al
 {
     class ByamlIter
     {
-        public:
+    public:
         ByamlIter();
         ByamlIter(u8 const *srcByaml);
         ByamlIter(u8 const *srcByamlHeader, u8 const *srcByamlData);

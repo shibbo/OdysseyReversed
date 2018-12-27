@@ -20,13 +20,13 @@ namespace sead
 
     class TaskEvent
     {
-        public:
+    public:
         virtual u64* getRuntimeTypeInfo() const;
     };
 
     class TaskClassID
     {
-        public:
+    public:
         u64* create(sead::TaskConstructArg const &);
 
         u32 mTaskType; // _0
@@ -39,11 +39,11 @@ namespace sead
 
     class TaskBase : public sead::IDisposer
     {
-        public:
+    public:
 
         class CreateArg
         {
-            public:
+        public:
             CreateArg();
             CreateArg(sead::TaskClassID const &);
 
@@ -54,7 +54,7 @@ namespace sead
 
         class MgrTaskArg
         {
-            public:
+        public:
             MgrTaskArg(sead::TaskClassID const &);
 
             u8 _0[0x108];
@@ -62,7 +62,7 @@ namespace sead
 
         class SystemMgrTaskArg
         {
-            public:
+        public:
             SystemMgrTaskArg(sead::TaskClassID const &);
 
             u8 _0[0xB8];
@@ -70,7 +70,7 @@ namespace sead
 
         class TakeoverArg
         {
-            public:
+        public:
             TakeoverArg(sead::TaskBase *, sead::TaskClassID const &, sead::FaderTaskBase *);
             TakeoverArg(sead::TaskClassID const &, sead::FaderTaskBase *);
 
@@ -79,7 +79,7 @@ namespace sead
 
         class PushArg
         {
-            public:
+        public:
             PushArg(sead::TaskBase *, sead::TaskClassID const &, sead::FaderTaskBase *);
             PushArg(sead::TaskClassID const &, sead::FaderTaskBase *);
 
@@ -154,7 +154,7 @@ namespace sead
 
     class Task : public sead::TaskBase
     {
-        public:
+    public:
         Task(sead::TaskConstructArg const &);
         Task(sead::TaskConstructArg const &, char const *);
         virtual ~Task();
@@ -190,7 +190,7 @@ namespace sead
 
     class CalculateTask : public sead::TaskBase
     {
-        public:
+    public:
         CalculateTask(sead::TaskConstructArg const &);
         CalculateTask(sead::TaskConstructArg const &, char const *);
         virtual ~CalculateTask();
@@ -219,7 +219,7 @@ namespace sead
 
     class FaderTaskBase : public sead::TaskBase
     {
-        public:
+    public:
         FaderTaskBase(sead::TaskConstructArg const &);
         FaderTaskBase(sead::TaskConstructArg const &, char const *);
 
@@ -248,7 +248,7 @@ namespace sead
 
 class RootTask : public sead::Task
 {
-    public:
+public:
     RootTask(sead::TaskConstructArg const &);
 
     u64 _200;

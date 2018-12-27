@@ -9,7 +9,7 @@ namespace al
 
     class ByamlHashIter
     {
-        public:
+    public:
         ByamlHashIter();
         ByamlHashIter(u8 const *srcByaml, bool swapEndianess);
 

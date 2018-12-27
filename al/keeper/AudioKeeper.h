@@ -12,7 +12,7 @@ namespace al
 
     class AudioKeeper
     {
-        public:
+    public:
         AudioKeeper(al::AudioDirector const *);
 
         virtual ~AudioKeeper();

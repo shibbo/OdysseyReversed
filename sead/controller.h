@@ -15,7 +15,7 @@ namespace sead
     
     class ControllerDefine
     {
-        public:
+    public:
 
         // todo -- do me
         enum AddonId;
@@ -25,7 +25,7 @@ namespace sead
 
     class ControllerBase
     {
-        public:
+    public:
         ControllerBase(s32, s32, s32, s32);
 
         void setPointerWithBound_(bool, bool, sead::Vector2<f32> const &);
@@ -64,7 +64,7 @@ namespace sead
 
     class Controller : public sead::ControllerBase
     {
-        public:
+    public:
         Controller(sead::ControllerMgr *);
         virtual ~Controller();
 
@@ -89,11 +89,11 @@ namespace sead
 
     class ControllerMgr : public sead::CalculateTask
     {
-        public:
+    public:
         
         class SingletonDisposer_
         {
-            public:
+        public:
             ~SingletonDisposer_();
         };
 
@@ -128,7 +128,7 @@ namespace sead
 
     class ControllerAddon
     {
-        public:
+    public:
         virtual ~ControllerAddon();
     };
 };

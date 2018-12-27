@@ -9,7 +9,7 @@ namespace al
 
     class AudioDirector
     {
-        public:
+    public:
         AudioDirector();
 
         void init(al::AudioDirectorInitInfo const &);

@@ -7,7 +7,7 @@ namespace al
 {
     class ExecuteRequestInfo
     {
-        public:
+    public:
         ExecuteRequestInfo();
 
         u64 mRequestInfo; // _0
@@ -15,7 +15,7 @@ namespace al
 
     class ExecuteRequestTable
     {
-        public:
+    public:
         ExecuteRequestTable(u32 numEntries);
 
         u32 mNumEntries; // _0
@@ -25,7 +25,7 @@ namespace al
 
     class ExecuteRequestKeeper
     {
-        public:
+    public:
         ExecuteRequestKeeper(u32 numEntries);
 
         void executeRequestActorMovementAllOn();
@@ -42,7 +42,7 @@ namespace al
 
     class ExecuteDirector
     {
-        public:
+    public:
         ExecuteDirector(s32);
         virtual ~ExecuteDirector();
 

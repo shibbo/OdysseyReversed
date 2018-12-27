@@ -6,6 +6,7 @@ namespace al
 {
     class StageSwitchInfo
     {
+    public:
         u64 _0;
         u8 _8;
         u8 _9; // padding?

@@ -8,7 +8,7 @@ namespace sead
 {
     class TreeNode
     {
-        public:
+    public:
         TreeNode();
 
         void clearLinks();
@@ -32,7 +32,7 @@ namespace sead
 
     class MethodTreeNode : public sead::IDisposer
     {
-        public:
+    public:
 
         enum Condition
         {
@@ -60,7 +60,7 @@ namespace sead
     template<typename T>
     class TreeMapNode
     {
-        public:
+    public:
         virtual ~TreeMapNode();
 
         virtual void erase_() = 0;
@@ -74,7 +74,7 @@ namespace sead
     template<typename T>
     class OrderedSet : public sead::TreeMapNode
     {
-        public:
+    public:
         class Node : public sead::TreeMapNode
         {
             virtual ~Node();
@@ -86,10 +86,10 @@ namespace sead
     template<typename T, typename T2>
     class StrTreeMap : public sead::TreeMapNode
     {
-        public:
+    public:
         class Node
         {
-            public:
+        public:
             virtual ~Node();
 
             virtual void erase_();

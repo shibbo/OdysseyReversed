@@ -8,7 +8,7 @@ namespace alsd
 {
     class AudioSoundDataMgrMulti : public nn::atk::SoundDataManager
     {
-        public:
+    public:
         AudioSoundDataMgrMulti();
         
         virtual ~AudioSoundDataMgrMulti();

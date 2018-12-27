@@ -6,7 +6,7 @@ namespace al
 {
     class ByamlStringTableIter
     {
-        public:
+    public:
         ByamlStringTableIter();
         ByamlStringTableIter(u8 const *strTableSrc, bool swapEndianess);
 

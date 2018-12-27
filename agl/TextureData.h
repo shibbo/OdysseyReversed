@@ -8,10 +8,10 @@ namespace agl
 {
     class TextureData
     {
-        public:
+    public:
         class CompressToWork
         {
-            public:
+        public:
             CompressToWork(agl::TextureData const &);
 
             u64 _0;

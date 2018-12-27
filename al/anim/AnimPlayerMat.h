@@ -10,7 +10,7 @@ namespace al
 
     class AnimPlayerMat : public al::AnimPlayerSimple
     {
-        public:
+    public:
         static AnimPlayerMat* tryCreate(AnimPlayerInitInfo const *, s32);
         void init(al::AnimPlayerInitInfo const *);
         void setAnimToModel(al::AnimResInfo const *);

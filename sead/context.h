@@ -6,7 +6,7 @@ namespace sead
 {
     class DrawContext
     {
-        public:
+    public:
         DrawContext();
         virtual ~DrawContext();
 

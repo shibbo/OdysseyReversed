@@ -6,7 +6,7 @@ namespace al
 
     class ActorScoreInfo
     {
-        public:
+    public:
         ActorScoreInfo();
         
         void init(al::ByamlIter const &);

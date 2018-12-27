@@ -10,7 +10,7 @@ namespace al
 
     class AnimPlayerSimple : public al::AnimPlayerBase
     {
-        public:
+    public:
         AnimPlayerSimple();
 
         virtual bool calcNeedUpdateAnimNext();

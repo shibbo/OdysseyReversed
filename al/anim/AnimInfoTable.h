@@ -7,7 +7,7 @@ namespace al
 {
     class AnimInfoTable
     {
-        public:
+    public:
         AnimInfoTable(s32);
 
         void add(char const *animName, void *, f32 frameMax, bool doesLoop);

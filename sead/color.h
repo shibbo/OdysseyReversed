@@ -6,7 +6,7 @@ namespace sead
 {
     class Color4u8
     {
-        public:
+    public:
         void setf(f32, f32, f32, f32);
         void setLerp(sead::Color4u8 const &,sead::Color4u8 const &, f32);
         void setGammaCollection(sead::Color4u8 const &, f32);
@@ -38,7 +38,7 @@ namespace sead
 
     class Color4f
     {
-        public:
+    public:
 
         f32 r; // _0
         f32 g; // _4

@@ -8,7 +8,7 @@ namespace nn
     {
         class DeviceInfo
         {
-            public:
+        public:
 
             u64 mInfo; // _0
         };

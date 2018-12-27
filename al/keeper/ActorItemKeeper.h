@@ -8,7 +8,7 @@ namespace al
 
     class ActorItemKeeper
     {
-        public:
+    public:
         ActorItemKeeper(al::LiveActor const *, s32);
 
         void reset();

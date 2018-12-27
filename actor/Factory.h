@@ -14,7 +14,7 @@ namespace al
     template<typename T>
     class Factory
     {
-        public:
+    public:
         virtual char* convertName(char const *) const;
 
         char* mName; // _8
@@ -25,7 +25,7 @@ namespace al
 
     class AreaObjFactory : public al::Factory<al::AreaObj * (*)(char const *)>
     {
-        public:
+    public:
         AreaObjFactory();
        
         u64* mGraphicsAreaTable; // _20
@@ -34,55 +34,55 @@ namespace al
 
     class CameraPoserFactory : public al::Factory<al::CameraPoser * (*)(char const *)>
     {
-        public:
+    public:
         CameraPoserFactory(char const *);
     };
 
     class EventFlowNodeFactory : public al::Factory<al::EventFlowNode * (*)(char const *)>
     {
-        public:
+    public:
         EventFlowNodeFactory(char const *);
     };
 }
 
 class ActorFactory : public al::Factory<al::LiveActor * (*)(char const *)>
 {
-    public:
+public:
     ActorFactory(char const *);
 };
 
 class ProjectActorFactory : public ActorFactory
 {
-    public:
+public:
     ProjectActorFactory();
 };
 
 class ProjectAppearSwitchFactory : public ActorFactory
 {
-    public:
+public:
     ProjectAppearSwitchFactory();
 };
 
 class PlayerFactory : public al::Factory<PlayerActorBase * (*)(char const *)>
 {
-    public:
+public:
     PlayerFactory();
 };
 
 class ProjectCameraPoserFactory : public al::CameraPoserFactory
 {
-    public:
+public:
     ProjectCameraPoserFactory();
 };
 
 class ProjectAreaFactory : public al::AreaObjFactory
 {
-    public:
+public:
     ProjectAreaFactory();
 };
 
 class ProjectEventFlowNodeFactory : public al::EventFlowNodeFactory
 {
-    public:
+public:
     ProjectEventFlowNodeFactory();
 };

@@ -11,7 +11,7 @@ namespace al
 
     class EffectKeeper
     {
-        public:
+    public:
         EffectKeeper(al::EffectSystemInfo *, char const *, sead::Vector3<f32> const *, sead::Vector3<f32> const *, sead::Matrix34<f32> const *);
     
         void update();

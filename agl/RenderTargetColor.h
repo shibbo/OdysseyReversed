@@ -6,7 +6,7 @@ namespace agl
 {
     class RenderTargetColor : agl::TextureData
     {
-        public:
+    public:
         RenderTargetColor();
         RenderTargetColor(agl::TextureData const &, u32, u32);
 

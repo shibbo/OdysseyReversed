@@ -9,7 +9,7 @@ namespace al
 
     class EffectUserInfo
     {
-        public:
+    public:
         EffectUserInfo();
 
         al::EffectInfo* tryGetEffectInfo(char const *) const;

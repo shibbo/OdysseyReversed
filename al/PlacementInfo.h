@@ -7,7 +7,7 @@ namespace al
 {
     class PlacementInfo : public al::ByamlIter
     {
-        public:
+    public:
         PlacementInfo();
 
         void set(al::ByamlIter const &, al::ByamlIter const &);

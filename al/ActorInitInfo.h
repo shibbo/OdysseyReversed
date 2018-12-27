@@ -7,7 +7,7 @@ namespace al
 {
     class ActorInitInfo
     {
-        public:
+    public:
         ActorInitInfo();
 
         u64 _0;

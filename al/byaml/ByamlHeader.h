@@ -6,7 +6,7 @@ namespace al
 {
     class ByamlHeader
     {
-        public:
+    public:
         u16 getTag() const;
         bool isinvertOrder() const;
         u16 getVersion() const;

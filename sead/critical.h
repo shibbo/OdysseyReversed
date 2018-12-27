@@ -7,7 +7,7 @@ namespace sead
 {
     class CriticalSection : sead::IDisposer
     {
-        public:
+    public:
         CriticalSection();
         CriticalSection(sead::Heap *);
         CriticalSection(sead::Heap *, sead::IDisposer::HeapNullOption);

@@ -1,27 +1,28 @@
 #pragma once
 
 #include "heap.h"
+#include "runtime.h"
 #include "stream.h"
 
 namespace sead
 {
     class Resource
     {
-        public:
+    public:
         Resource();
         virtual ~Resource();
 
-        // virtual bool checkDerivedRuntimeTypeInfo(sead::RuntimeTypeInfo::Interface const*);
-        // virtual sead::RuntimeTypeInfo::Interface* getRuntimeTypeInfo();
+        virtual bool checkDerivedRuntimeTypeInfo(sead::RuntimeTypeInfo::Interface const *);
+        virtual sead::RuntimeTypeInfo::Interface* getRuntimeTypeInfo();
     };
 
     class DirectResource : public sead::Resource
     {
-        public:
+    public:
         DirectResource();
 
-        // virtual bool checkDerivedRuntimeTypeInfo(sead::RuntimeTypeInfo::Interface const*);
-        // virtual sead::RuntimeTypeInfo::Interface* getRuntimeTypeInfo();
+        virtual bool checkDerivedRuntimeTypeInfo(sead::RuntimeTypeInfo::Interface const *);
+        virtual sead::RuntimeTypeInfo::Interface* getRuntimeTypeInfo();
 
         virtual u32 getLoadDataAlignment() const;
         virtual void doCreate_(u8 *, u32, sead::Heap *);
@@ -33,7 +34,7 @@ namespace sead
 
     class IndirectResource : public sead::Resource
     {
-        public:
+    public:
         IndirectResource();
         virtual ~IndirectResource();
 
@@ -44,11 +45,11 @@ namespace sead
 
     class ArchiveRes : public sead::DirectResource
     {
-        public:
+    public:
         virtual ~ArchiveRes();
 
-        // virtual bool checkDerivedRuntimeTypeInfo(sead::RuntimeTypeInfo::Interface const*);
-        // virtual sead::RuntimeTypeInfo::Interface* getRuntimeTypeInfo();
+        virtual bool checkDerivedRuntimeTypeInfo(sead::RuntimeTypeInfo::Interface const *);
+        virtual sead::RuntimeTypeInfo::Interface* getRuntimeTypeInfo();
 
         virtual u32 getLoadDataAlignment() const;
         virtual void doCreate_(u8 *, u32, sead::Heap *);

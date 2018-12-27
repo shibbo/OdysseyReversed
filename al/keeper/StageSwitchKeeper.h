@@ -6,7 +6,7 @@ namespace al
 {
     class StageSwitchKeeper
     {
-        public:
+    public:
         StageSwitchKeeper();
 
         u64 _0;

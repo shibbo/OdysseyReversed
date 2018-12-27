@@ -9,7 +9,7 @@ namespace al
 {
     class ModelKeeper
     {
-        public:
+    public:
         ModelKeeper();
 
         virtual ~ModelKeeper();

@@ -6,7 +6,7 @@ namespace agl
 {
     class RenderTargetDepth : public agl::TextureData
     {
-        public:
+    public:
         RenderTargetDepth();
         RenderTargetDepth(agl::TextureData const &, u32, u32);
 

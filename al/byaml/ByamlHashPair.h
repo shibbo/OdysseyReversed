@@ -6,7 +6,7 @@ namespace al
 {
     class ByamlHashPair
     {
-        public:
+    public:
         u32 getKey(bool swapEndianess) const;
         u8 getType() const;
         u32 getValue(bool swapEndianess) const;

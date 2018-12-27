@@ -7,7 +7,7 @@ namespace sead
 {
     class system
     {
-        public:
+    public:
         static void NewImpl(sead::Heap *, u64, s32, bool);
         static void DeleteImpl(void *src);
         static bool Halt();

@@ -6,7 +6,7 @@ namespace al
 {
     class ActorItemInfo
     {
-        public:
+    public:
         ActorItemInfo(char const *, char const *, char const *, s32);
 
         bool isEqualTiming(char const *) const;

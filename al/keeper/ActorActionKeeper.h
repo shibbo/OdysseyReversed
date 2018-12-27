@@ -6,7 +6,7 @@ namespace al
 {
     class ActorActionKeeper
     {
-        public:
+    public:
         ActorActionKeeper(al::LiveActor *, char const *, u64*, u64*, u64*, u64*, u64*, u64*, u64*, u64*);
 
         static al::ActorActionKeeper* tryCreate(al::LiveActor *, u64 *, char const *srcFile, char const *);

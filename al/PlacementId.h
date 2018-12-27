@@ -7,7 +7,7 @@ namespace al
 {
     class PlacementId
     {
-        public:
+    public:
         PlacementId();
         PlacementId(char const *, char const *, char const *);
 

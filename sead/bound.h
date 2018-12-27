@@ -7,7 +7,7 @@ namespace sead
     template<typename T>
     class BoundBox2
     {
-        public:
+    public:
         T _0;
         T _4;
         T _8;
@@ -17,7 +17,7 @@ namespace sead
     template<typename T>
     class BoundBox3
     {
-        public:
+    public:
         T _0;
         T _4;
         T _8;

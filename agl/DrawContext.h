@@ -10,7 +10,7 @@ namespace agl
 {
     class DrawContext : public sead::DrawContext
     {
-        public:
+    public:
         DrawContext();
         virtual ~DrawContext();
 

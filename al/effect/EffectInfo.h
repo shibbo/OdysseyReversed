@@ -7,7 +7,7 @@ namespace al
 {
     class EffectInfo
     {
-        public:
+    public:
         EffectInfo();
 
         u64 _0;

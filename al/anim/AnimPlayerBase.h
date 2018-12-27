@@ -8,7 +8,7 @@ namespace al
 
     class AnimPlayerBase
     {
-        public:
+    public:
         AnimPlayerBase();
 
         virtual void updateLast();

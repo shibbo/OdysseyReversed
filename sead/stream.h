@@ -6,7 +6,7 @@ namespace sead
 {
     class Endian
     {
-        public:
+    public:
         
         enum Types
         {
@@ -17,7 +17,7 @@ namespace sead
 
     class Stream
     {
-        public:
+    public:
 
         Stream();
         virtual ~Stream();

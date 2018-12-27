@@ -12,7 +12,7 @@ namespace nn
     {
         class SoundArchivePlayer
         {
-            public:
+        public:
             SoundArchivePlayer();
 
             virtual ~SoundArchivePlayer();

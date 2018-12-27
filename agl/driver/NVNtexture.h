@@ -11,7 +11,7 @@ namespace agl
     {
         class NVNtexture_
         {
-            public:
+        public:
             NVNtexture_();
             NVNtexture_(agl::driver::NVNtexture_ const &);
             ~NVNtexture_();

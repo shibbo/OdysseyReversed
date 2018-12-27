@@ -8,7 +8,7 @@ namespace al
 {
     class CollisionDirector
     {
-        public:
+    public:
         CollisionDirector(al::ExecuteDirector *);
 
         virtual void execute();
@@ -19,7 +19,7 @@ namespace al
 
     class Collider
     {
-        public:
+    public:
         Collider(al::CollisionDirector *, sead::Matrix34<f32> const*, sead::Vector3<f32> const*, sead::Vector3<f32> const*, f32, f32, u32);
 
         virtual al::CollisionDirector getDirector() const;

@@ -6,7 +6,7 @@ namespace al
 {
     class ByamlContainerHeader
     {
-        public:
+    public:
         u32 getType() const;
         u32 getCount(bool swapEndianess) const;
 

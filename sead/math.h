@@ -5,7 +5,7 @@ namespace sead
     template<typename T>
     class MathCalcCommon
     {
-        public:
+    public:
         T gcd(T, T);
         T lcm(T, T);
         // the following are reserved for a FLOAT template only

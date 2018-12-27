@@ -1,12 +1,13 @@
 #pragma once
 
+#include "heap.h"
 #include "types.h"
 
 namespace sead
 {
     class Random
     {
-        public:
+    public:
         void init();
         void init(u32);
         void init(u32, u32, u32, u32);
@@ -18,5 +19,26 @@ namespace sead
         u32 mSeed2; // _4
         u32 mSeed3; // _8
         u32 mSeed4; // _C
+    };
+
+    class GlobalRandom
+    {
+    public:
+        class SingletonDisposer_
+        {
+            public:
+            virtual ~SingletonDisposer_();
+
+            sead::IDisposer* mDisposer; // _0
+
+            static sead::IDisposer* sStaticDisposer;
+        };
+
+        sead::GlobalRandom* createInstance(sead::Heap *);
+        void deleteInstance();
+
+        sead::Random* mRandom; // _0
+
+        static sead::GlobalRandom* sInstance;
     };
 };

@@ -12,7 +12,7 @@ namespace nn
 
         class ResFile
         {
-            public:
+        public:
             bool IsValid(void const *modelSrc);
             void Relocate();
             void Unrelocate();

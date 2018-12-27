@@ -13,7 +13,7 @@ namespace agl
 {
     class RenderBuffer : public sead::FrameBuffer
     {
-        public:
+    public:
         RenderBuffer();
         RenderBuffer(sead::Vector2<f32> const &, sead::BoundBox2<f32> const &);
         RenderBuffer(sead::Vector2<f32> const &, f32, f32, f32, f32);

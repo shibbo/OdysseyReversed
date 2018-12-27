@@ -6,7 +6,7 @@ namespace al
 {
     class KCPrismHeader
     {
-        public:
+    public:
         u32 mVertsOffset; // _0
         u32 mNormalsOffset; // _4
         u32 mTrisOffset; // _8

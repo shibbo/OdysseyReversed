@@ -8,7 +8,7 @@ namespace nn
     {
         class SoundDataManager
         {
-            public:
+        public:
             SoundDataManager();
             virtual ~SoundDataManager();
 

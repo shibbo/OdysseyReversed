@@ -9,7 +9,7 @@ namespace al
     // we can just assume that it was the only one considering the lack of functions
     class PadGyroAddon : public sead::ControllerAddon
     {
-        public:
+    public:
         PadGyroAddon(sead::Controller *, s32);
         virtual ~PadGyroAddon();
 

@@ -6,7 +6,7 @@ namespace al
 {
     class ActorExecuteInfo
     {
-        public:
+    public:
         ActorExecuteInfo(al::ExecuteRequestKeeper *);
 
         al::ExecuteRequestKeeper* mReqKeeper; // _0

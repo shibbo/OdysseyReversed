@@ -8,7 +8,7 @@ namespace sead
 {
     class XmlDocument
     {
-        public:
+    public:
         XmlDocument();
         virtual ~XmlDocument();
 
@@ -40,7 +40,7 @@ namespace sead
 
     class XmlElement
     {
-        public:
+    public:
         XmlElement();
         virtual ~XmlElement();
 
