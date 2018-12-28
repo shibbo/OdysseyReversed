@@ -5,6 +5,7 @@
 namespace sead
 {
     class Heap;
+    class AnyDelegate1Const;
 
     template<typename T>
     class Delegate
