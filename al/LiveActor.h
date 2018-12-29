@@ -19,6 +19,15 @@
 
 namespace al
 {
+	class LiveActorFlag
+    {
+    public:
+        LiveActorFlag();
+
+        u64 _0;
+        u32 _8;
+    };
+	
     class LiveActor
     {
     public:
@@ -38,7 +47,7 @@ namespace al
 
         u64* _8;  // IUseEffectKeeper*
         u64* _10; // IUseAudioKeeper*
-        u64* _18;
+        u64* _18; // IUseName*
         u64* _20; // IUseSceneObjHolder*
         u64* _28; // IUseAreaObj*
         u64* _30; // IUseCamera*
@@ -67,16 +76,7 @@ namespace al
         u64* _E8; // SubActorKeeper*
         u64* _F0; // unknown
         ActorSceneInfo* mActorSceneInfo; // _F8
-        LiveActorFlag mActorFlags; // _100
-    };
-
-    class LiveActorFlag
-    {
-    public:
-        LiveActorFlag();
-
-        u64 _0;
-        u32 _8;
+        al::LiveActorFlag mActorFlags; // _100
     };
 
     template<typename T>

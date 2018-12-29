@@ -1,10 +1,11 @@
 #pragma once
 
 #include "types.h"
-#include "al/LiveActor.h"
 
 namespace al
 {
+	class LiveActor;
+	
     class ExecuteRequestInfo
     {
     public:

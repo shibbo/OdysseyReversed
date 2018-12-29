@@ -2,23 +2,25 @@
 
 namespace sead
 {
+	class Heap;
+	
     template<typename T>
     class SafeStringBase
     {
     public:
         virtual ~SafeStringBase();
-        virtual operator=(sead::SafeStringBase<T> const &);
+        virtual sead::SafeStringBase<T> operator=(sead::SafeStringBase<T> const &);
         virtual void assureTerminationImpl_();
 
         u64* mCharPtr; // _8
     };
 
     template<typename T>
-    class BufferedSafeStringBase : sead::SafeStringBase
+    class BufferedSafeStringBase : public sead::SafeStringBase<T>
     {
     public:
         virtual ~BufferedSafeStringBase();
-        virtual operator=(sead::BufferedSafeStringBase<T> const &);
+        virtual sead::BufferedSafeStringBase<T> operator=(sead::BufferedSafeStringBase<T> const &);
         virtual void assureTerminationImpl_();
 
         u32 formatImpl_(T *, s32, T const *, s32);
@@ -29,18 +31,18 @@ namespace sead
     };
 
     template<typename T>
-    class FixedSafeString : sead::BufferedSafeStringBase
+    class FixedSafeString : public sead::BufferedSafeStringBase<T>
     {
     public:
         virtual void assureTerminationImpl_();
     };
 
     template<typename T>
-    class HeapSafeStringBase : public sead::BufferedSafeStringBase
+    class HeapSafeStringBase : public sead::BufferedSafeStringBase<T>
     {
     public:
         HeapSafeStringBase(sead::Heap *,sead::SafeStringBase<char> const &, s32);
         virtual ~HeapSafeStringBase();
-        virtual operator=(sead::SafeStringBase<T> const &);
+        virtual sead::SafeStringBase<T> operator=(sead::SafeStringBase<T> const &);
     };
 };

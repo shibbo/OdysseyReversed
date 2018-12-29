@@ -1,11 +1,11 @@
 #pragma once
 
-#include "critical.h"
 #include "types.h"
 #include "string.h"
 
 namespace sead
 {
+	class CriticalSection;
     class Heap;
 
     class RuntimeInfo 
@@ -100,7 +100,6 @@ namespace sead
         void appendDisposer_(sead::IDisposer *);
         void removeDisposer_(sead::IDisposer *);
         sead::Heap* findContainHeap_(void const *);
-        void pushBackChild_(sead::Heap *);
         void checkAccessThread_();
         //void dumpTreeYAML(sead::WriteStream &, s32);
 
@@ -128,7 +127,7 @@ namespace sead
         u16 _DE;
     };
 
-    class ExpHeap : sead::Heap
+    class ExpHeap : public sead::Heap
     {
     public:
         enum FindFreeBlockMode
@@ -180,7 +179,6 @@ namespace sead
         virtual void setFindFreeBlockMode(sead::ExpHeap::FindFreeBlockMode);
 
         u64 freeAndGetAllocatableSize(void *, s32);
-        bool isInclude(void const *) const;
         u64 adjustBack_();
         u64 adjustFront_();
         u64* findLastMemBlockIfFree_(); // most likely sead::MemBlock*

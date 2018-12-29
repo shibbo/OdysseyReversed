@@ -1,11 +1,11 @@
 #pragma once
 
 #include "heap.h"
-#include "os.h"
+#include "../nn/os.h"
 
 namespace sead
 {
-    class CriticalSection : sead::IDisposer
+    class CriticalSection : public sead::IDisposer
     {
     public:
         CriticalSection();
