@@ -2,7 +2,7 @@
 
 namespace sead
 {
-	class Heap;
+    class Heap;
 	
     template<typename T>
     class SafeStringBase

@@ -5,7 +5,7 @@
 
 namespace sead
 {
-	class CriticalSection;
+    class CriticalSection;
     class Heap;
 
     class RuntimeInfo 
