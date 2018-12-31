@@ -3,6 +3,7 @@
 #include "list.h"
 #include "runtime.h"
 #include "string.h"
+#include "task.h"
 #include "tick.h"
 #include "types.h"
 
@@ -14,8 +15,6 @@ namespace sead
     class Heap;
     class ProcessMeter;
     class SingleScreenMethodTreeMgr;
-    class TaskBase;
-    class TaskMgr;
 
     class Framework
     {
@@ -73,7 +72,7 @@ namespace sead
         void initialize(sead::Framework::InitializeArg const &);
 
         u32 _8;
-        u2 _C;
+        u32 _C;
         void* _10;
         u64 _18;
         sead::ListNode mNode; // _20
@@ -131,7 +130,7 @@ namespace sead
 
         virtual bool checkDerivedRuntimeTypeInfo(sead::RuntimeTypeInfo::Interface const *) const;
         virtual sead::RuntimeTypeInfo::Interface* getRuntimeTypeInfo() const;
-        virtual ~GameFrameWorkNX();
+        virtual ~GameFrameworkNX();
 
         virtual u64* getMethodFrameBuffer(s32);
         virtual u64* getMethodLogicalFrameBuffer(s32);

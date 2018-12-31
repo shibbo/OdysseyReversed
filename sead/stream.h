@@ -4,10 +4,12 @@
 
 namespace sead
 {
+    class StreamFormat;
+    class StreamSrc;
+
     class Endian
     {
     public:
-        
         enum Types
         {
             BIG = 0,
@@ -18,27 +20,31 @@ namespace sead
     class Stream
     {
     public:
+        enum Modes
+        {
+            BINARY = 0,
+            TEXT = 1
+        };
 
         Stream();
+        Stream(sead::StreamSrc *, sead::Stream::Modes);
+        Stream(sead::StreamSrc *, sead::StreamFormat *);
         virtual ~Stream();
 
+        void setMode(sead::Stream::Modes);
+        void setUserFormat(sead::StreamFormat *);
+        void setBinaryEndian(sead::Endian::Types);
         void skip(u32 howMany);
         void skip(u32, u32);
         void rewind();
         bool isEOF();
 
-        u64 _8;
-        u64* _10; // source, maybe
+        sead::StreamFormat* mStreamFormat; // _8
+        sead::StreamSrc* mSrc; // _10
         sead::Endian::Types mEndianess; // _18
     };
 
-    class ReadStream
-    {
+    class ReadStream { };
 
-    };
-
-    class WriteStream
-    {
-
-    };
+    class WriteStream { };
 };

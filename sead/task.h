@@ -1,6 +1,10 @@
 #pragma once
 
+#include "critical.h"
+#include "delegate.h"
 #include "heap.h"
+#include "string.h"
+#include "thread.h"
 #include "tree.h"
 #include "types.h"
 
@@ -8,6 +12,7 @@ namespace sead
 {
     class FaderTaskBase;
     class MethodTreeMgr;
+    struct HeapArray;
     class MethodTreeNode;
     class TaskMgr;
     
@@ -40,6 +45,10 @@ namespace sead
     class TaskBase : public sead::IDisposer
     {
     public:
+        enum State
+        {
+
+        };
 
         class CreateArg
         {
@@ -144,7 +153,7 @@ namespace sead
         u64 _78;
         u64 _80;
         u8 _88[0xB0-0x88];
-        u64* _B0; // sead::TaskMgr*
+        sead::TaskMgr* mTaskMgr; // _B0
         u32 _B8;
         u32 _BC;
         u32 _C0;
@@ -243,6 +252,67 @@ namespace sead
         sead::IDisposer _2A8;
         sead::TreeNode _2C8;
         u8 _2E8[0x360-0x2E8];
+    };
+
+    class TaskMgr
+    {
+    public:
+        class InitializeArg
+        {
+        public:
+            InitializeArg(sead::TaskBase::CreateArg const &);
+
+            u32 _0; // init'd to 0x20
+            u32 _4; // init'd to 0x1000
+            s32 _8; // init'd to -1
+            u32 _C;
+            sead::TaskBase::CreateArg* mCreateArg; // _10
+            u64 _18;
+            u64 _20;
+        };
+
+        TaskMgr(sead::TaskMgr::InitializeArg const &);
+
+        void doInit_();
+        void beginCreateRootTask_();
+        static sead::TaskMgr* initialize(sead::TaskMgr::InitializeArg const &);
+        void initHostIO();
+        void finalize();
+        void destroyTaskSync(sead::TaskBase *);
+        bool requestCreateTask(sead::TaskBase::CreateArg const &);
+        void createHeap_(sead::HeapArray *, sead::TaskBase::CreateArg const &);
+        sead::TaskBase* createTaskSync(sead::TaskBase::CreateArg const &);
+        sead::TaskClassID* doCreateTask_(sead::TaskBase::CreateArg const &, sead::HeapArray *);
+        bool changeTaskState_(sead::TaskBase *, sead::TaskBase::State);
+        u32 doRequestCreateTask_(sead::TaskBase::CreateArg const &, sead::DelegateEvent<sead::TaskBase *>::Slot *);
+        bool requestTakeover(sead::TaskBase::TakeoverArg const &);
+        bool requestTransition(sead::TaskBase *, sead::TaskBase *, sead::FaderTaskBase *);
+        bool requestPush(sead::TaskBase::PushArg const &);
+        sead::TaskBase* pushSync(sead::TaskBase::PushArg const &);
+        bool requestPop(sead::TaskBase *, sead::FaderTaskBase *);
+        bool popSync(sead::TaskBase *);
+        void doDestroyTask_(sead::TaskBase *);
+        bool requestPop(sead::TaskBase *, sead::TaskBase *, sead::FaderTaskBase *);
+        void prepare_(sead::Thread *, s64);
+        u64* requestDestroyTask(sead::TaskBase *, sead::FaderTaskBase *);
+        bool destroyable_(sead::TaskBase *);
+        void calcCreation_();
+        void calcDestruction_();
+        void destroyAllAndCreateRoot();
+        sead::TaskBase* findTask(sead::TaskClassID const &);
+        void beforeCalc();
+        void afterCalc();
+
+        sead::CriticalSection mCritSection; // _8
+        u64 _30;
+        u64 _38;
+        sead::SafeStringBase<char> _40;
+        u64 _50;
+        u64* _58;
+        u8 _60[0x88-0x60];
+        sead::FaderTaskBase* _88;
+        u8 _90[0x1B8-0x90];
+        sead::FaderTaskBase* _1B8;
     };
 };
 
