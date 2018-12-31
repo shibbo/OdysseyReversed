@@ -12,9 +12,7 @@ namespace al
 
         void set(al::ByamlIter const &, al::ByamlIter const &);
 
-        u8* _0;
-        u8* _8;
-        u8* _10;
-        u8* _18;
+        al::ByamlIter mStageIterator; // _0
+        al::ByamlIter mZoneIterator; // _10
     };
 };
