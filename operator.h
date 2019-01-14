@@ -4,20 +4,20 @@
 #include "types.h"
 #include "sead/heap.h"
 
-void* operator new(u64 size);
-void* operator new[](u64 size);
-void* operator new(u64 size, std::nothrow_t const &);
-void* operator new[](u64 size, std::nothrow_t const &);
-void* operator new(u64 size, s32);
-void* operator new[](u64 size, s32);
-void* operator new(u64 size, s32, std::nothrow_t const &);
-void* operator new[](u64 size, s32, std::nothrow_t const &);
-void* operator new(u64 size, sead::Heap *, s32);
-void* operator new[](u64 size, sead::Heap *, s32);
-void* operator new(u64 size, sead::Heap *, std::nothrow_t const &);
-void* operator new[](u64 size, sead::Heap *, std::nothrow_t const &);
-void* operator new(u64 size, sead::Heap *, s32, std::nothrow_t const &);
-void* operator new[](u64 size, sead::Heap *, s32, std::nothrow_t const &);
+void* operator new(size_t size);
+void* operator new[](size_t size);
+void* operator new(size_t size, std::nothrow_t const &);
+void* operator new[](size_t size, std::nothrow_t const &);
+void* operator new(size_t size, s32);
+void* operator new[](size_t size, s32);
+void* operator new(size_t size, s32, std::nothrow_t const &);
+void* operator new[](size_t size, s32, std::nothrow_t const &);
+void* operator new(size_t size, sead::Heap *, s32);
+void* operator new[](size_t size, sead::Heap *, s32);
+void* operator new(size_t size, sead::Heap *, std::nothrow_t const &);
+void* operator new[](size_t size, sead::Heap *, std::nothrow_t const &);
+void* operator new(size_t size, sead::Heap *, s32, std::nothrow_t const &);
+void* operator new[](size_t size, sead::Heap *, s32, std::nothrow_t const &);
 void operator delete(void *);
 void operator delete[](void *);
 void operator delete(void *, std::nothrow_t const &);
