@@ -8,6 +8,12 @@ namespace sead
 {
     class DisplayBuffer;
 
+    template<typename T>
+    class Buffer
+    {
+
+    };
+
     class FrameBuffer
     {
     public:
