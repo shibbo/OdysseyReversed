@@ -1,21 +1,14 @@
 #pragma once
 
+#include "list.h"
 #include "types.h"
+#include "runtime.h"
 #include "string.h"
 
 namespace sead
 {
     class CriticalSection;
     class Heap;
-
-    class RuntimeInfo 
-    { 
-    public:
-        class Interface 
-        {
-
-        }; 
-    };
 
     class Arena
     {
@@ -109,13 +102,14 @@ namespace sead
         u64 mStartAddr; // _38
         u64 mSize; // _40
         sead::Heap* mHeap; // _48
-        u64* _50;
-        u64* _58;
-        u32 _60;
-        u32 _64;
-        u64* _78;
+        sead::ListNode mRootNode; // _50
+        u32 mChildHeapCount; // _60
+        sead::ListNode* mChildHeaps; // _64
+        u32 _6C;
+        u64 _70;
+        sead::ListNode* mDisposers; // _78
         u64* _80;
-        u32 _88;
+        u32 mNumDisposers; // _88
         u32 _8C;
         u32 mNodeInsertionDirection; // _90
         u32 _94;
@@ -250,5 +244,20 @@ namespace sead
 
         sead::Heap* mHeap; // _8
         u64 _16;
+
+        static u32 sHeapCheckTag;
+        static sead::CriticalSection* sHeapTreeLockCS;
+        static sead::HeapMgr* sInstance;
+        static sead::Arena* sArena;
+    };
+
+    class FindContainHeapCache
+    {
+    public:
+        FindContainHeapCache();
+
+        bool tryRemoveHeap(sead::Heap *);
+
+        sead::Heap* _0;
     };
 };
