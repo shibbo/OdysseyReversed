@@ -8,6 +8,7 @@ namespace nn
     {
         typedef u64* MutexType;
         typedef u64* ThreadType;
+        typedef u64 Tick;
 
         void InitializeMutex(nn::os::MutexType *, bool, s32);
         void FinalizeMutex(nn::os::MutexType *);
@@ -17,5 +18,8 @@ namespace nn
         bool IsMutexLockedByCurrentThread(nn::os::MutexType const *);
 
         void GenerateRandomBytes(void *, u64);
+        nn::os::Tick GetSystemTick();
+        u64 GetThreadAvailableCoreMask();
+        void SetMemoryHeapSize(u64 size);
     };
 };
