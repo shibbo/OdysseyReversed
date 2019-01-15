@@ -2,11 +2,11 @@
 
 #include "types.h"
 #include "nn/os.h"
-#include "sead/delegate.h"
-#include "sead/heap.h"
-#include "sead/list.h"
-#include "sead/string.h"
-#include "sead/tick.h"
+#include "delegate.h"
+#include "disposer.h"
+#include "list.h"
+#include "string.h"
+#include "tick.h"
 
 namespace sead
 {

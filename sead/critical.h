@@ -1,7 +1,7 @@
 #pragma once
 
-#include "heap.h"
-#include "../nn/os.h"
+#include "disposer.h"
+#include "nn/os.h"
 
 namespace sead
 {

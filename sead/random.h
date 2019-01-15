@@ -1,6 +1,6 @@
 #pragma once
 
-#include "heap.h"
+#include "disposer.h"
 #include "types.h"
 
 namespace sead

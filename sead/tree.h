@@ -1,7 +1,7 @@
 #pragma once
 
 #include "critical.h"
-#include "heap.h"
+#include "disposer.h"
 #include "types.h"
 
 namespace sead

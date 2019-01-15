@@ -1,5 +1,6 @@
 #pragma once
 
+#include "disposer.h"
 #include "list.h"
 #include "types.h"
 #include "runtime.h"
@@ -25,28 +26,6 @@ namespace sead
         u8 _11; // padding?
         u8 _12; // ^^
         u8 _13; // ^^
-    };
-
-    class IDisposer
-    {
-    public:
-
-        enum HeapNullOption
-        {
-            UNKNOWN_0 = 0,
-            UNKNOWN_1 = 1,
-            UNKNOWN_2 = 2,
-            UNKNOWN_3 = 3
-        };
-
-        IDisposer();
-        IDisposer(sead::Heap *heap, sead::IDisposer::HeapNullOption nullOption);
-
-        virtual ~IDisposer();
-
-        sead::Heap* mHeapPtr; // _8
-        u64 _10;
-        u64 _18;
     };
 
     class Heap : public sead::IDisposer

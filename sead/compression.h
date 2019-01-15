@@ -1,5 +1,6 @@
 #pragma once
 
+#include "disposer.h"
 #include "resource.h"
 
 namespace sead

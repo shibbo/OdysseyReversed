@@ -2,7 +2,7 @@
 
 #include "critical.h"
 #include "delegate.h"
-#include "heap.h"
+#include "disposer.h"
 #include "string.h"
 #include "thread.h"
 #include "tree.h"
