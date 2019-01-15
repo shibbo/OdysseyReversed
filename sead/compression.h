@@ -1,6 +1,8 @@
 #pragma once
 
+#include "core.h"
 #include "disposer.h"
+#include "event.h"
 #include "resource.h"
 
 namespace sead
@@ -58,5 +60,13 @@ namespace sead
         u64 _70;
         u64 _78;
         u64 _80;
+    };
+
+    class ParallelSZSDecompressor : public sead::IDisposer
+    {
+    public:
+        ParallelSZSDecompressor(u32, s32, sead::Heap *, u8 *, sead::CoreIdMask const &);
+
+        u8 _20[0x220-0x20];
     };
 };

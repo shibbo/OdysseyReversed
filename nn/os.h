@@ -9,6 +9,7 @@ namespace nn
         typedef u64* MutexType;
         typedef u64* ThreadType;
         typedef u64 Tick;
+        typedef u64 LightEventType;
 
         struct UserExceptionInfo;
 
