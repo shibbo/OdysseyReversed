@@ -76,7 +76,7 @@ namespace al
         u64* _E8; // SubActorKeeper*
         u64* _F0; // unknown
         ActorSceneInfo* mActorSceneInfo; // _F8
-        al::LiveActorFlag mActorFlags; // _100
+        al::LiveActorFlag* mActorFlags; // _100
     };
 
     template<typename T>
