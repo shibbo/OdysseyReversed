@@ -12,6 +12,7 @@
 #include "keeper/NerveKeeper.h"
 #include "keeper/ShadowKeeper.h"
 #include "keeper/StageSwitchKeeper.h"
+#include "keeper/SubActorKeeper.h"
 #include "sead/matrix.h"
 #include "ActorExecuteInfo.h"
 #include "ActorSceneInfo.h"
@@ -24,8 +25,18 @@ namespace al
     public:
         LiveActorFlag();
 
-        u64 _0;
-        u32 _8;
+        bool isAlive; // _0
+        u8 _1;
+        u8 _2;
+        u8 _3;
+        bool isOffCalcAnim; // _4
+        u8 _5;
+        bool isNoCollide; // _6
+        u8 _7;
+        bool isValidMaterialCode; // _8
+        bool isValidPuddleMaterial; // _9
+        bool isAreaTarget; // _A
+        bool isUpdateEffectAudioCollisionSensor; // _B
     };
 	
     class LiveActor
@@ -73,10 +84,35 @@ namespace al
         al::ShadowKeeper* mShadowKeeper; // _D0
         u64* _D8; // ActorPrePassLightKeeper*
         u64* _E0; // ActorOcclusionKeeper*
-        u64* _E8; // SubActorKeeper*
+        al::SubActorKeeper* mSubActorKeeper; // _E8
         u64* _F0; // unknown
-        ActorSceneInfo* mActorSceneInfo; // _F8
+        al::ActorSceneInfo* mActorSceneInfo; // _F8
         al::LiveActorFlag* mActorFlags; // _100
+    };
+
+    class LiveActorGroup
+    {
+    public:
+        LiveActorGroup(char const *groupName, s32 numActors);
+
+        virtual void registerActor(al::LiveActor *actor);
+
+        void removeActor(al::LiveActor const *actor);
+        void removeActorAll();
+        bool isExistActor(al::LiveActor const *actor) const;
+        bool isFull() const;
+        u32 calcAliveActorNum() const;
+        al::LiveActor* getDeadActor() const;
+        al::LiveActor* tryFindDeadActor() const;
+        void appearAll();
+        void killAll();
+        void makeActorAliveAll();
+        void makeActorDeadAll();
+
+        char* mGroupName; // _8
+        s32 mActorCount; // _10
+        u32 mMaxSize; // _14
+        al::LiveActor* mActors; // _18
     };
 
     template<typename T>

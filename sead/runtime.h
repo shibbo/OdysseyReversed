@@ -11,7 +11,7 @@ namespace sead
         class Derive
         {
         public:
-            bool isDerived(sead::RuntimeTypeInfo::Interface const *) const;
+            virtual bool isDerived(sead::RuntimeTypeInfo::Interface const *) const;
         };
     };
 };
