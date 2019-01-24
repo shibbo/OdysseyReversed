@@ -18,7 +18,7 @@ namespace nn
 
             void RegisterIfRequired();
             void Unregister();
-            void UnregisterAll();
+            static void UnregisterAll();
             void LoadAll();
             void Load();
             void UnloadAll();

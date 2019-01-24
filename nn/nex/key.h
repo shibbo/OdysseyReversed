@@ -20,7 +20,7 @@ namespace nn
 
             u64* GetContentPtr();
             u64 GetLength() const;
-            nn::nex::Key operator=(nn::nex::Key const &);
+            nn::nex::Key& operator=(nn::nex::Key const &);
             bool operator==(nn::nex::Key const &);
             bool operator!=(nn::nex::Key const &);
             void PrepareContentPtr(u64);
