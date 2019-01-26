@@ -8,15 +8,19 @@ namespace nn
     {
         class Sha256Context;
 
+        void DecryptAes128Cbc(void *, u64, void const *, u64, void const *, u64, void const *, u64);
+        void EncryptAes128Cbc(void *, u64, void const *, u64, void const *, u64, void const *, u64);
+        void DecryptAes128Ccm(void *, u64, void *, u64, void const *, u64, void const *, u64, void const *, u64, void const *, u64, u64);
+
         namespace detail
         {
             class Md5Impl
             {
             public:
                 void Initialize();
-                void Update(void const *, u64);
+                void Update(void const *, u64 dataSize);
                 void ProcessBlock();
-                void GetHash(void *, u64);
+                void GetHash(void *, u64 hashSize);
                 void ProcessLastBlock();
 
                 u32 _0;

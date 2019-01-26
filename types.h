@@ -12,3 +12,6 @@ typedef long                u64;
 typedef long long           u128;
 typedef float               f32;
 typedef double              f64;
+
+// stores a result on a lot of OS-related functions
+typedef u32 Result;
