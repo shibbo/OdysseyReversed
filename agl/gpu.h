@@ -28,7 +28,7 @@ namespace agl
         void initializeGfxMemoryPool(nn::gfx::TMemoryPool<nn::gfx::ApiVariation<nn::gfx::ApiType<s8>, nn::gfx::ApiVersion<s8>>> *) const;
         void addList(agl::GPUMemBlockBase*);
         void setMemoryPool(void *, u64, agl::detail::MemoryPool *);
-        void setMemoryPoolHeap(void *, unsigned long, agl::detail::MemoryPoolHeap *);
+        void setMemoryPoolHeap(void *, u64, agl::detail::MemoryPoolHeap *);
         u64 getByteOffset() const;
         u64 getMemoryPoolType() const;
 
@@ -42,5 +42,25 @@ namespace agl
         u8 _2B;
         u32 _2C;
         u64 _30;
+    };
+
+    class GPUMemAddrBase
+    {
+    public:
+        GPUMemAddrBase(agl::GPUMemBlockBase const &, u64);
+
+        u32 verify_() const;
+        void deleteGPUMemBlock() const;
+        void invalidate();
+        u32 getAlignmentAddress() const;
+        void setByteOffsetByPtr(void *);
+        void roundUp(s32);
+        void flushCPUCache(u64);
+        void invalidateCPUCache(u64);
+
+        agl::detail::MemoryPool* mMemoryPool; // _0
+        u32 mAlignmentAddr; // _8
+        u32 _C; // most likely padding bytes
+        agl::GPUMemBlockBase* mMemoryBlock; // _10
     };
 };
