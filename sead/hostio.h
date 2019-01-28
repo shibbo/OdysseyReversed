@@ -2,9 +2,10 @@
 
 namespace sead
 {
-    class hostio
+    namespace hostio
     {
-    public:
         class Context;
+        class FileInfo;
+        struct PropertyEvent;
     };
 };

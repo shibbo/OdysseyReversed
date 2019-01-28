@@ -8,6 +8,8 @@ namespace nn
 {
     namespace g3d
     {
+        class ResMaterial;
+        
         typedef void* TextureRef;
 
         class ResModel
@@ -20,6 +22,7 @@ namespace nn
             void Cleanup(nn::gfx::TDevice<nn::gfx::ApiVariation<nn::gfx::ApiType<s32>, nn::gfx::ApiVersion<s32>>> *);
             void Reset();
             void Reset(u32);
+            nn::g3d::ResMaterial* FindMaterial(char const *materialName) const;
 
             u8 _0[0x70];
         };

@@ -3,6 +3,7 @@
 #include "types.h"
 #include "nn/gfx/api.h"
 #include "nn/gfx/device.h"
+#include "nn/gfx/memory.h"
 
 namespace nn
 {
@@ -20,6 +21,8 @@ namespace nn
             u64 BindTexture(nn::g3d::TextureRef (*)(char const *, void *), void *);
             void ReleaseTexture();
             void Setup(nn::gfx::TDevice<nn::gfx::ApiVariation<nn::gfx::ApiType<s32>, nn::gfx::ApiVersion<s32>>> *);
+            void Setup(nn::gfx::TDevice<nn::gfx::ApiVariation<nn::gfx::ApiType<s32>,nn::gfx::ApiVersion<s32>>> *, nn::gfx::TMemoryPool<nn::gfx::ApiVariation<nn::gfx::ApiType<s32>, nn::gfx::ApiVersion<s32>>> *, s64, u64);
+            void Cleanup(nn::gfx::TDevice<nn::gfx::ApiVariation<nn::gfx::ApiType<s32>, nn::gfx::ApiVersion<s32>>> *);
             void Reset();
 
             u8 _0[0xC4];
