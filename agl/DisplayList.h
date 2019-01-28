@@ -34,6 +34,14 @@ namespace agl
         u64 _18;
         u32 mUsedSize; // _20
         u32 _24;
-        u64 mSize; // _28
+        u32 mSize; // _28
+        u32 _2C;
+        u64 _30;
+        u64 _38;
+        u8 _40[0x248-0x40]; // todo; what is here?
+        u32 _248; // init'd to 0x200
+        u32 _24C;
+        u64 _250;
+        char* mDisplayName; // _258
     };
 };
