@@ -9,7 +9,7 @@ namespace agl
 {
     namespace detail
     {
-        class FileIOMgr
+        class FileIOMgr : public sead::hostio::Node
         {
         public:
 

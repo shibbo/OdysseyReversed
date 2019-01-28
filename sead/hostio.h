@@ -7,5 +7,11 @@ namespace sead
         class Context;
         class FileInfo;
         struct PropertyEvent;
+
+        class Node
+        {
+        public:
+            virtual s32 getNodeClassType() const;
+        };
     };
 };

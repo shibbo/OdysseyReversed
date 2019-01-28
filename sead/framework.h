@@ -1,5 +1,6 @@
 #pragma once
 
+#include "hostio.h"
 #include "list.h"
 #include "runtime.h"
 #include "string.h"
@@ -16,7 +17,7 @@ namespace sead
     class ProcessMeter;
     class SingleScreenMethodTreeMgr;
 
-    class Framework
+    class Framework : public sead::hostio::Node
     {
     public:
         class CreateSystemTaskArg

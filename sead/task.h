@@ -3,6 +3,7 @@
 #include "critical.h"
 #include "delegate.h"
 #include "disposer.h"
+#include "hostio.h"
 #include "string.h"
 #include "thread.h"
 #include "tree.h"
@@ -254,7 +255,7 @@ namespace sead
         u8 _2E8[0x360-0x2E8];
     };
 
-    class TaskMgr
+    class TaskMgr : public sead::hostio::Node
     {
     public:
         class InitializeArg

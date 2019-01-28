@@ -4,6 +4,8 @@
 #include "nn/os.h"
 #include "delegate.h"
 #include "disposer.h"
+#include "heap.h"
+#include "hostio.h"
 #include "list.h"
 #include "string.h"
 #include "tick.h"
@@ -59,7 +61,7 @@ namespace sead
         u64 _A0;
         u64 _A8;
         u64 _B0;
-        sead::FindContainHeapCache mHeapCache; // _B8
+        sead::FindContainHeapCache* mHeapCache; // _B8
         u32 mBlockType; // _C0 sead::MessageQueue::BlockType
         u32 _C4;
         u64 _C8;

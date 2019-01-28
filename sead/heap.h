@@ -1,6 +1,7 @@
 #pragma once
 
 #include "disposer.h"
+#include "hostio.h"
 #include "list.h"
 #include "types.h"
 #include "runtime.h"
@@ -202,7 +203,7 @@ namespace sead
         // virtual void dumpYAML(sead::WriteStream &, int);
     };
 
-    class HeapMgr
+    class HeapMgr : public sead::hostio::Node
     {
     public:
         HeapMgr();
