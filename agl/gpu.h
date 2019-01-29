@@ -63,4 +63,18 @@ namespace agl
         u32 _C; // most likely padding bytes
         agl::GPUMemBlockBase* mMemoryBlock; // _10
     };
+
+    template<typename T>
+    class GPUMemBlock : public agl::GPUMemBlockBase
+    {
+    public:
+        virtual ~GPUMemBlock();
+    };
+
+    template<typename T>
+    class GPUMemBlockT : public agl::GPUMemBlockBase
+    {
+    public:
+        virtual ~GPUMemBlockT();
+    };
 };
