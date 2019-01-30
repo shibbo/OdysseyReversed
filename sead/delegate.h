@@ -5,7 +5,6 @@
 namespace sead
 {
     class Heap;
-    class AnyDelegate1Const;
 
     template<typename T>
     class Delegate
@@ -67,4 +66,7 @@ namespace sead
         public:
         u64* clone(sead::Heap *);
     };
+
+    template<typename T>
+    class AnyDelegate1Const { };
 };

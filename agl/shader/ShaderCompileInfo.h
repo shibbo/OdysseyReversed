@@ -2,7 +2,7 @@
 
 #include "sead/heap.h"
 #include "sead/hostio.h"
-#include "sead/ptr_array.h"
+#include "sead/array.h"
 #include "Shader.h"
 #include "types.h"
 

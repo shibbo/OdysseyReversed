@@ -3,7 +3,7 @@
 #include "bound.h"
 #include "heap.h"
 #include "list.h"
-#include "ptr_array.h"
+#include "array.h"
 #include "task.h"
 #include "types.h"
 #include "vector.h"

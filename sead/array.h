@@ -37,4 +37,11 @@ namespace sead
         s32 mBufferSize; // _4
         void* mBuffer; // _8
     };
+
+    template<typename T>
+    class ObjArray
+    {
+    public:
+        bool compareT(T const *, T const *);
+    };
 };
