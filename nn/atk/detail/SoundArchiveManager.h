@@ -1,3 +1,8 @@
+/**
+ * @file SoundArchiveManager.h
+ * @brief Sound archive manager implementation.
+ */
+
 #pragma once
 
 #include "types.h"

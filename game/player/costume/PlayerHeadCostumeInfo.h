@@ -1,3 +1,8 @@
+/**
+ * @file PlayerHeadCostumeInfo.h
+ * @brief Information on a costume head on Mario.
+ */
+
 #pragma once
 
 #include "types.h"

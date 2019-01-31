@@ -1,3 +1,8 @@
+/**
+ * @file InputStickFlickChecker.h
+ * @brief Check for input stick "flicks" (sudden jerks).
+ */
+
 #pragma once
 
 #include "sead/vector.h"

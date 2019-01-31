@@ -1,3 +1,8 @@
+/**
+ * @file tree.h
+ * @brief Tree / Tree Node implementation.
+ */
+
 #pragma once
 
 #include "critical.h"

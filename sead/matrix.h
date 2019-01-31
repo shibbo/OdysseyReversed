@@ -1,3 +1,8 @@
+/**
+ * @file matrix.h
+ * @brief Matrix implementation.
+ */
+
 #pragma once
 
 #include "types.h"

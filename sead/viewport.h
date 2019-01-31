@@ -1,3 +1,8 @@
+/**
+ * @file viewport.h
+ * @brief Basic Viewport class.
+ */
+
 #pragma once
 
 #include "types.h"

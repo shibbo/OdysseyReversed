@@ -1,3 +1,8 @@
+/**
+ * @file MemoryPool.h
+ * @brief Defines classes for memory pools for storage.
+ */
+
 #pragma once
 
 #include "types.h"

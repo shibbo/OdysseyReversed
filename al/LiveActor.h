@@ -1,3 +1,8 @@
+/**
+ * @file LiveActor.h
+ * @brief Base class for all used actors in the game.
+ */
+
 #pragma once
 
 #include "collision/Collider.h"

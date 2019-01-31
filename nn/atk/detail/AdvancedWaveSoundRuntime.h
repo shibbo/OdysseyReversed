@@ -1,3 +1,8 @@
+/**
+ * @file AdvancedWaveSoundRuntime.h
+ * @brief Runtime wave sound api.
+ */
+
 #pragma once
 
 #include "types.h"

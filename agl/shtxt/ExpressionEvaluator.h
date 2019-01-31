@@ -1,3 +1,8 @@
+/**
+ * @file ExpressionEvaluator.h
+ * @brief Defines an evaluator for shader expressions.
+ */
+
 #pragma once
 
 #include "sead/array.h"

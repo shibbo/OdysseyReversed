@@ -1,3 +1,8 @@
+/**
+ * @file fs.h
+ * @brief Filesystem implementation.
+ */
+
 #pragma once
 
 #include "account.h"

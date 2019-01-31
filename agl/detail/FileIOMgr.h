@@ -1,3 +1,8 @@
+/**
+ * @file FileIOMgr.h
+ * @brief Defines classes that handle shader management I/O.
+ */
+
 #pragma once
 
 #include "sead/heap.h"

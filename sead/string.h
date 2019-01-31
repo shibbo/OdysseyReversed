@@ -1,3 +1,8 @@
+/**
+ * @file string.h
+ * @brief Protected String classes.
+ */
+
 #pragma once
 
 namespace sead

@@ -1,3 +1,8 @@
+/**
+ * @file core.h
+ * @brief Core thread information.
+ */
+
 #pragma once
 
 #include "types.h"

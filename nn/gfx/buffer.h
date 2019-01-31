@@ -1,3 +1,8 @@
+/**
+ * @file buffer.h
+ * @brief GFX Buffers.
+ */
+
 #pragma once
 
 #include "types.h"

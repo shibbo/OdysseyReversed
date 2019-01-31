@@ -1,3 +1,8 @@
+/**
+ * @file Triangle.h
+ * @brief Serves as a simple triangle.
+ */
+
 #pragma once
 
 #include "types.h"

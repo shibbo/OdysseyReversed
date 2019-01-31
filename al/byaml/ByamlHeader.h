@@ -1,3 +1,8 @@
+/**
+ * @file ByamlHeader.h
+ * @brief Storage container for a BYAML header.
+ */
+
 #pragma once
 
 #include "types.h"

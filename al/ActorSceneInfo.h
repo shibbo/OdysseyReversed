@@ -1,3 +1,8 @@
+/**
+ * @file ActorSceneInfo.h
+ * @brief Storage container for an actors' scene information.
+ */
+
 #pragma once
 
 #include "types.h"

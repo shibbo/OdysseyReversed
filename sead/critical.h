@@ -1,3 +1,8 @@
+/**
+ * @file critical.h
+ * @brief Critical sections.
+ */
+
 #pragma once
 
 #include "disposer.h"

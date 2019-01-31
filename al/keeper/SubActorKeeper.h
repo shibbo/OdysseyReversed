@@ -1,3 +1,8 @@
+/**
+ * @file SubActorKeeper.h
+ * @brief Keeper for sub-actors stored within an actor.
+ */
+
 #pragma once
 
 #include "types.h"

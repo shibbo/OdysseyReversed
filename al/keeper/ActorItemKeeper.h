@@ -1,3 +1,8 @@
+/**
+ * @file ActorItemKeeper.h
+ * @brief Keeper for an actor's spawned item.
+ */
+
 #pragma once
 
 #include "al/LiveActor.h"

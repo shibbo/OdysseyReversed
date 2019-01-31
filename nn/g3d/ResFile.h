@@ -1,3 +1,8 @@
+/**
+ * @file ResFile.h
+ * @brief Resource file for models.
+ */
+
 #pragma once
 
 #include "types.h"

@@ -1,3 +1,8 @@
+/**
+ * @file StageResourceList.h
+ * @brief Storage container for a stages' resources.
+ */
+
 #pragma once
 
 #include "StageInfo.h"

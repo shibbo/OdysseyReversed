@@ -1,3 +1,8 @@
+/**
+ * @file BgmDirector.h
+ * @brief BGM director for managing all BGMs.
+ */
+
 #pragma once
 
 #include "types.h"

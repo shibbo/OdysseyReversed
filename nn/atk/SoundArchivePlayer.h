@@ -1,3 +1,8 @@
+/**
+ * @file SoundArchivePlayer.h
+ * @brief Basic sound player from a sound archive.
+ */
+
 #pragma once
 
 #include "detail/AdvancedWaveSoundRuntime.h"

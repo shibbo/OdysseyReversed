@@ -1,3 +1,8 @@
+/**
+ * @file ShaderProgram.h
+ * @brief Defines a general shader program to compile raw shaders with macros.
+ */
+
 #pragma once
 
 #include "agl/DisplayList.h"

@@ -1,3 +1,8 @@
+/**
+ * @file buffer.h
+ * @brief Basic buffers.
+ */
+
 #pragma once
 
 #include "context.h"

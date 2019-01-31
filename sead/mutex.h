@@ -1,3 +1,8 @@
+/**
+ * @file mutex.h
+ * @brief Mutex implementation using OS mutex types.
+ */
+
 #pragma once
 
 #include "disposer.h"

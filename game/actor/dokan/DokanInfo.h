@@ -1,3 +1,8 @@
+/**
+ * @file DokanInfo.h
+ * @brief Information for a Pipe is stored in this class.
+ */
+
 #pragma once
 
 #include "types.h"

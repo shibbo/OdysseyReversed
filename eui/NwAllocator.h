@@ -1,3 +1,8 @@
+/**
+ * @file NwAllocator.h
+ * @brief Allocator for NintendoWare, for layout files.
+ */
+
 #pragma once
 
 #include "sead/heap.h"

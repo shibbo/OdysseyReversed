@@ -1,3 +1,8 @@
+/**
+ * @file EffectInfo.h
+ * @brief Effect information storage container.
+ */
+
 #pragma once
 
 #include "types.h"

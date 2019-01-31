@@ -1,3 +1,8 @@
+/**
+ * @file StageSwitchAccessor.h
+ * @brief Access for a stage switch, which activates / deactives the event.
+ */
+
 #pragma once
 
 #include "types.h"

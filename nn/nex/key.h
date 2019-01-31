@@ -1,3 +1,8 @@
+/**
+ * @file key.h
+ * @brief NEX Key Implementation.
+ */
+
 #pragma once
 
 #include "RootObject.h"

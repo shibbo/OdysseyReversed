@@ -1,3 +1,8 @@
+/**
+ * @file NerveExecutor.h
+ * @brief Executor for a specific nerve in an actor.
+ */
+
 #pragma once
 
 #include "../keeper/NerveKeeper.h"

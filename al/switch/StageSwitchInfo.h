@@ -1,3 +1,8 @@
+/**
+ * @file StageSwitchInfo.h
+ * @brief Storage container for stage switches.
+ */
+
 #pragma once
 
 #include "types.h"

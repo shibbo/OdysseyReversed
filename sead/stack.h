@@ -1,3 +1,8 @@
+/**
+ * @file stack.h
+ * @brief Stack Trace API.
+ */
+
 #pragma once
 
 #include "buffer.h"

@@ -1,3 +1,8 @@
+/**
+ * @file SoundPlayer.h
+ * @brief Sound player.
+ */
+
 #pragma once
 
 #include "types.h"

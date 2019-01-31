@@ -1,3 +1,8 @@
+/**
+ * @file AnimPlayerBase.h
+ * @brief Basic animation player, using animation tables to sort and play them.
+ */
+
 #pragma once
 
 #include "types.h"

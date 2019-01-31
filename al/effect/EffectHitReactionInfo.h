@@ -1,3 +1,8 @@
+/**
+ * @file EffectHitReactionInfo.h
+ * @brief Reaction information for a spawned effect.
+ */
+
 #pragma once
 
 #include "types.h"

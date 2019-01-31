@@ -1,3 +1,8 @@
+/**
+ * @file Collider.h
+ * @brief Wrapper for colliders.
+ */
+
 #pragma once
 
 #include "sead/vector.h"

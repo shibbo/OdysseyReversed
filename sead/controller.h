@@ -1,3 +1,8 @@
+/**
+ * @file controller.h
+ * @brief Basic controller / gamepad implementation.
+ */
+
 #pragma once
 
 #include "bound.h"

@@ -1,3 +1,8 @@
+/**
+ * @file NerveKeeper.h
+ * @brief Keeper for an actors' "nerves", or collider points.
+ */
+
 #pragma once
 
 #include "types.h"

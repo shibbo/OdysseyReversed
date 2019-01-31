@@ -1,3 +1,8 @@
+/**
+ * @file ActorScoreInfo.h
+ * @brief Storage container for an actors' intialization.
+ */
+
 #pragma once
 
 namespace al

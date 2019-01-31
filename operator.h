@@ -1,3 +1,8 @@
+/**
+ * @file operator.h
+ * @brief Common operators, and new implementations with Heaps.
+ */
+
 #pragma once
 
 #include "std.h"

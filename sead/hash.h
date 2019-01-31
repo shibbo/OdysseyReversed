@@ -1,3 +1,8 @@
+/**
+ * @file hash.h
+ * @brief Basic CRC implementation.
+ */
+
 #pragma once
 
 #include "types.h"

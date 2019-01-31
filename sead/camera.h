@@ -1,3 +1,8 @@
+/**
+ * @file camera.h
+ * @brief Basic camera implementation.
+ */
+
 #pragma once
 
 #include "matrix.h"

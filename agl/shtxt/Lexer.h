@@ -1,3 +1,8 @@
+/**
+ * @file Lexer.h
+ * @brief Defines a lexer for parsing shader clauses.
+ */
+
 #pragma once
 
 #include "sead/heap.h"

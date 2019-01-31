@@ -1,3 +1,8 @@
+/**
+ * @file ShaderProgramArchive.h
+ * @brief Defines a class wrapper for SHARCB (Shader Binary) archives.
+ */
+
 #pragma once
 
 #include "sead/disposer.h"

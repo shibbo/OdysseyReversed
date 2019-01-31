@@ -1,3 +1,8 @@
+/**
+ * @file Heap.h
+ * @brief VFX heap implementation.
+ */
+
 #pragma once
 
 #include "types.h"

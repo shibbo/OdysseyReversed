@@ -1,3 +1,8 @@
+/**
+ * @file AnimPlayerMat.h
+ * @brief Material animation.
+ */
+
 #pragma once
 
 #include "types.h"

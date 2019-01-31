@@ -1,3 +1,8 @@
+/**
+ * @file SequenceSoundRuntime.h
+ * @brief Sequenced Sound Runtime Info
+ */
+
 #pragma once
 
 #include "types.h"

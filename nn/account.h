@@ -1,3 +1,8 @@
+/**
+ * @file account.h
+ * @brief Account service implementation.
+ */
+
 #pragma once
 
 #include "os.h"

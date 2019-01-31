@@ -1,3 +1,8 @@
+/**
+ * @file Scene.h
+ * @brief Has classes that set up scenes / animations.
+ */
+
 #pragma once
 
 #include "ActorInitInfo.h"

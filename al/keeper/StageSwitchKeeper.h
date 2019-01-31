@@ -1,3 +1,8 @@
+/**
+ * @file StageSwitchKeeper.h
+ * @brief Keeper for stage switches.
+ */
+
 #pragma once
 
 #include "types.h"

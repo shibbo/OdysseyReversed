@@ -1,3 +1,8 @@
+/**
+ * @file deviceimpl.h
+ * @brief Device implementation for GFX.
+ */
+
 #pragma once
 
 #include "nn/gfx/device.h"

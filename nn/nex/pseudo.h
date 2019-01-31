@@ -1,3 +1,8 @@
+/**
+ * @file psuedo.h
+ * @brief Psuedo variable implementation for NEX.
+ */
+
 #pragma once
 
 #include "RootObject.h"

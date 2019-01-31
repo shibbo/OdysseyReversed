@@ -1,3 +1,8 @@
+/**
+ * @file JoyPadAccelPoseAnalyzer.h
+ * @brief Check to see if joycons were moved in certain swings (gyro).
+ */
+
 #pragma once
 
 #include "types.h"

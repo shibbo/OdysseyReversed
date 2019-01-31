@@ -1,3 +1,8 @@
+/**
+ * @file ddl.h
+ * @brief DDL Declaration Implementation.
+ */
+
 #pragma once
 
 #include "RootObject.h"

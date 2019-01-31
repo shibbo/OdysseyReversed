@@ -1,3 +1,8 @@
+/**
+ * @file stream.h
+ * @brief Binary/Text I/O Streaming
+ */
+
 #pragma once
 
 #include "types.h"

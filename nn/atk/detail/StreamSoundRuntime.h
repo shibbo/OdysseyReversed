@@ -1,3 +1,8 @@
+/**
+ * @file StreamSoundRuntime.h
+ * @brief Stream sound runtime information.
+ */
+
 #pragma once
 
 #include "types.h"

@@ -1,3 +1,8 @@
+/**
+ * @file array.h
+ * @brief Functions that define arrays.
+ */
+
 #pragma once
 
 #include "heap.h"

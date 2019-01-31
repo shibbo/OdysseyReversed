@@ -1,3 +1,8 @@
+/**
+ * @file NVNsampler.h
+ * @brief Defines a sampler for NVN images.
+ */
+
 #pragma once
 
 #include "types.h"

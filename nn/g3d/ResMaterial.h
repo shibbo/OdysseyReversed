@@ -1,3 +1,8 @@
+/**
+ * @file ResMaterial.h
+ * @brief Resource material for models.
+ */
+
 #pragma once
 
 #include "types.h"

@@ -1,3 +1,8 @@
+/**
+ * @file RenderBuffer.h
+ * @brief Defines classes that implement a render buffer.
+ */
+
 #pragma once
 
 #include "types.h"

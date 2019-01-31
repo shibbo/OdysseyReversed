@@ -1,3 +1,8 @@
+/**
+ * @file MemoryPoolHeap.h
+ * @brief Defines classes that manage heaps for memory pools.
+ */
+
 #pragma once
 
 #include "types.h"
@@ -9,7 +14,7 @@ namespace agl
     namespace detail
     {
         class GPUMemBlockMgrHeapEx;
-        enum MemoryPoolType;
+        typedef u64 MemoryPoolType;
 
         class MemoryPoolHeap
         {

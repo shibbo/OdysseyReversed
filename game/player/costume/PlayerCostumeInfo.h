@@ -1,3 +1,8 @@
+/**
+ * @file PlayerCostumeInfo.h
+ * @brief Costume information is stored here.
+ */
+
 #pragma once
 
 #include "PlayerBodyCostumeInfo.h"

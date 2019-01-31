@@ -1,3 +1,8 @@
+/**
+ * @file StageSwitchDirector.h
+ * @brief Manager for a stage switches.
+ */
+
 #pragma once
 
 #include "types.h"

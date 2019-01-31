@@ -1,3 +1,8 @@
+/**
+ * @file TexCoordArray.h
+ * @brief Texture coordinate array implementation.
+ */
+
 #pragma once
 
 #include "types.h"

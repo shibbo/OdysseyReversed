@@ -1,6 +1,11 @@
+/**
+ * @file AudioSoundDataMgrMulti.h
+ * @brief A manager for multi-channel audio sound data.
+ */
+
 #pragma once
 
-#include "nn/atk/SoundDataMgr.h"
+#include "nn/atk/SoundDataManager.h"
 #include "sead/heap.h"
 #include "sead/string.h"
 

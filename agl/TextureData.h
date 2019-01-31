@@ -1,3 +1,8 @@
+/**
+ * @file TextureData.h
+ * @brief Defines a class that implements a texture compressor, and a texture data storage container.
+ */
+
 #pragma once
 
 #include "detail/Surface.h"

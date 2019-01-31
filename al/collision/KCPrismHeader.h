@@ -1,3 +1,8 @@
+/**
+ * @file KCPrismHeader.h
+ * @brief Represents the header for the triangle section in a KCL.
+ */
+
 #pragma once
 
 #include "types.h"

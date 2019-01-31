@@ -1,3 +1,8 @@
+/**
+ * @file crypto.h
+ * @brief Crypto service implementation.
+ */
+
 #pragma once
 
 #include "types.h"

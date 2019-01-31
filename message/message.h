@@ -1,3 +1,8 @@
+/**
+ * @file message.h
+ * @brief Message library for parsing MSBT and MSBP.
+ */
+
 #pragma once
 
 #include "types.h"

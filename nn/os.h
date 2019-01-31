@@ -1,3 +1,8 @@
+/**
+ * @file os.h
+ * @brief Operating System implementations.
+ */
+
 #pragma once
 
 #include "types.h"

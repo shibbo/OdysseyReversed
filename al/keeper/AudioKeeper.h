@@ -1,3 +1,8 @@
+/**
+ * @file AudioKeeper.h
+ * @brief Keeper for audio.
+ */
+
 #pragma once
 
 #include "types.h"

@@ -1,3 +1,8 @@
+/**
+ * @file Material.h
+ * @brief UI Material implementation.
+ */
+
 #pragma once
 
 #include "types.h"

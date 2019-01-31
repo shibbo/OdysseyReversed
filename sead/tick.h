@@ -1,3 +1,8 @@
+/**
+ * @file tick.h
+ * @brief System tick wrapper functions.
+ */
+
 #pragma once
 
 #include "types.h"

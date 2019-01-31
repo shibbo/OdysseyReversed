@@ -1,3 +1,8 @@
+/**
+ * @file framework.h
+ * @brief Framework implementation.
+ */
+
 #pragma once
 
 #include "hostio.h"

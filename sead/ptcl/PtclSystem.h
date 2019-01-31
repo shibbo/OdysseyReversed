@@ -1,3 +1,8 @@
+/**
+ * @file PtclSystem.h
+ * @brief Particle system.
+ */
+
 #pragma once
 
 #include "Config.h"

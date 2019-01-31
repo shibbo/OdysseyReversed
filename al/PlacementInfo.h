@@ -1,3 +1,8 @@
+/**
+ * @file PlacementInfo.h
+ * @brief Storage container for a stage and zone iterator for a stage.
+ */
+
 #pragma once
 
 #include "types.h"

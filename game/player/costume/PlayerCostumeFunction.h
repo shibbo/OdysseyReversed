@@ -1,3 +1,8 @@
+/**
+ * @file PlayerCostumeFunction.h
+ * @brief Class relating to creating Mario's costume parts.
+ */
+
 #pragma once
 
 #include "../al/resource.h"

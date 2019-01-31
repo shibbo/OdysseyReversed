@@ -1,3 +1,8 @@
+/**
+ * @file Config.h
+ * @brief VFX configuration.
+ */
+
 #pragma once
 
 namespace nn

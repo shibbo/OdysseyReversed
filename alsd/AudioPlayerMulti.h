@@ -1,3 +1,8 @@
+/**
+ * @file AudioPlayerMulti.h
+ * @brief A regular audio player that supports multi-channel.
+ */
+
 #pragma once
 
 #include "types.h"

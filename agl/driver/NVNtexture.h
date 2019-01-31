@@ -1,3 +1,8 @@
+/**
+ * @file device.h
+ * @brief Defines a class to represent a NVN texture.
+ */
+
 #pragma once
 
 #include "types.h"

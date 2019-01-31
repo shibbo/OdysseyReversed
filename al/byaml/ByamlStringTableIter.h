@@ -1,3 +1,8 @@
+/**
+ * @file ByamlStringTableIter.h
+ * @brief Iterator for the string table.
+ */
+
 #pragma once
 
 #include "types.h"

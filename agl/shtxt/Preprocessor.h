@@ -1,3 +1,8 @@
+/**
+ * @file Preprocessor.h
+ * @brief Defines a preprocessor for a collection of clauses and macros in a shader program.
+ */
+
 #pragma once
 
 #include "sead/heap.h"

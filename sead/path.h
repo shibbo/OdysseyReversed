@@ -1,3 +1,8 @@
+/**
+ * @file path.h
+ * @brief Drive Path class.
+ */
+
 #pragma once
 
 #include "string.h"

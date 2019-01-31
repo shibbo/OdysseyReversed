@@ -1,3 +1,8 @@
+/**
+ * @file lock.h
+ * @brief DrawLock Context Implementation.
+ */
+
 #pragma once
 
 #include "critical.h"

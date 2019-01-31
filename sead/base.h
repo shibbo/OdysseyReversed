@@ -1,3 +1,8 @@
+/**
+ * @file base.h
+ * @brief Base64 encoding / decoding.
+ */
+
 #pragma once
 
 #include "types.h"

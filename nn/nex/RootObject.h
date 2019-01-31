@@ -1,3 +1,8 @@
+/**
+ * @file RootObject.h
+ * @brief RootObject for NEX.
+ */
+
 #pragma once
 
 #include "types.h"

@@ -1,3 +1,8 @@
+/**
+ * @file ShadowKeeper.h
+ * @brief Keeper for an actors' shadow, for cube maps and lighting.
+ */
+
 #pragma once
 
 #include "types.h"

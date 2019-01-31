@@ -1,3 +1,8 @@
+/**
+ * @file EffectKeeper.h
+ * @brief Keeper for effects on actors.
+ */
+
 #pragma once
 
 #include "types.h"

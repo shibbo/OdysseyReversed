@@ -1,6 +1,11 @@
+/**
+ * @file hash.h
+ * @brief NEX Hash Implementation.
+ */
+
 #pragma once
 
-#include "nn/crypto/detail/crypto.h"
+#include "nn/crypto.h"
 #include "RootObject.h"
 #include "types.h"
 

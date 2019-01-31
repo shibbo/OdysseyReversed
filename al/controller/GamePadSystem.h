@@ -1,3 +1,8 @@
+/**
+ * @file GamePadSystem.h
+ * @brief Wrapper for the gamepad.
+ */
+
 #pragma once
 
 #include "types.h"

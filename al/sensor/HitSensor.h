@@ -1,3 +1,8 @@
+/**
+ * @file HitSensor.h
+ * @brief Sensor for collisions.
+ */
+
 #pragma once
 
 #include "types.h"

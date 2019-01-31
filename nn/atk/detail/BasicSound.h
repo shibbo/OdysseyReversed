@@ -1,3 +1,8 @@
+/**
+ * @file BasicSound.h
+ * @brief A basic sound.
+ */
+
 #pragma once
 
 #include "types.h"

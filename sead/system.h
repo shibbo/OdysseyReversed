@@ -1,3 +1,8 @@
+/**
+ * @file system.h
+ * @brief Core System Functionality
+ */
+
 #pragma once
 
 #include "heap.h"

@@ -1,3 +1,8 @@
+/**
+ * @file Config.h
+ * @brief Particle configuration.
+ */
+
 #pragma once
 
 #include "nn/vfx/Config.h"

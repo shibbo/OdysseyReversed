@@ -1,3 +1,8 @@
+/**
+ * @file enum.h
+ * @brief Enumeration utilities.
+ */
+
 #pragma once
 
 #include "types.h"

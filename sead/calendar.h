@@ -1,3 +1,8 @@
+/**
+ * @file calendar.h
+ * @brief Classes for dates and times.
+ */
+
 #pragma once
 
 #include "string.h"

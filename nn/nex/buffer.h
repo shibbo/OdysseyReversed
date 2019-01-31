@@ -1,3 +1,8 @@
+/**
+ * @file buffer.h
+ * @brief NEX buffer implementation.
+ */
+
 #pragma once
 
 #include "string.h"

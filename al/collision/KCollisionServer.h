@@ -1,3 +1,8 @@
+/**
+ * @file KCollisionServer.h
+ * @brief Serves as a "server" (storage container) for collision attributes from a BYAML.
+ */
+
 #pragma once
 
 #include "types.h"

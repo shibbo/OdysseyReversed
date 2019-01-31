@@ -1,3 +1,8 @@
+/**
+ * @file ByamlWriter.h
+ * @brief Writer stream for BYAML files.
+ */
+
 #pragma once
 
 #include "sead/heap.h"

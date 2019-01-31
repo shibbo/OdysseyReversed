@@ -1,3 +1,8 @@
+/**
+ * @file bufferimpl.h
+ * @brief Buffer implementation for GFX.
+ */
+
 #pragma once
 
 #include "nn/gfx/api.h"

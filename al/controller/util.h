@@ -1,3 +1,8 @@
+/**
+ * @file util.h
+ * @brief Functions used for getting button input and recording.
+ */
+
 #pragma once
 
 #include "types.h"

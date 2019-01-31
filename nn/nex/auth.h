@@ -1,3 +1,8 @@
+/**
+ * @file auth.h
+ * @brief Authorization for DDL.
+ */
+
 #pragma once
 
 #include "ddl.h"

@@ -1,3 +1,8 @@
+/**
+ * @file ModelKeeper.h
+ * @brief Keeper for all model data.
+ */
+
 #pragma once
 
 #include "types.h"

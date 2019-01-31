@@ -1,3 +1,8 @@
+/**
+ * @file context.h
+ * @brief Basic draw context implementation.
+ */
+
 #pragma once
 
 #include "types.h"

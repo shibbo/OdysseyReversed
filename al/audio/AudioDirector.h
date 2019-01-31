@@ -1,3 +1,8 @@
+/**
+ * @file AudioDirector.h
+ * @brief Audio director that manages all of the BGMs and SEs.
+ */
+
 #pragma once
 
 #include "types.h"

@@ -1,3 +1,8 @@
+/**
+ * @file task.h
+ * @brief Application Task API.
+ */
+
 #pragma once
 
 #include "critical.h"

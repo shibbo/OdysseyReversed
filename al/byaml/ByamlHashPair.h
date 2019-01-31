@@ -1,3 +1,8 @@
+/**
+ * @file ByamlHashPair.h
+ * @brief Storage for a value referenced by a key (hash).
+ */
+
 #pragma once
 
 #include "types.h"

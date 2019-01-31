@@ -1,3 +1,8 @@
+/**
+ * @file Surface.h
+ * @brief Defines classes to setup NVN textures on a surface.
+ */
+
 #pragma once
 
 #include "types.h"

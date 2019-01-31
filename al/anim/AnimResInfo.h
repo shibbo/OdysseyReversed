@@ -1,3 +1,8 @@
+/**
+ * @file AnimResInfo.h
+ * @brief Stores information about an animation (max frames, looping, and name)
+ */
+
 #pragma once
 
 #include "types.h"

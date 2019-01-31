@@ -1,3 +1,8 @@
+/**
+ * @file NpadController.h
+ * @brief Barebones class for a Switch gamepad.
+ */
+
 #pragma once
 
 #include "sead/controller.h"

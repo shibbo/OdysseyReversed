@@ -1,3 +1,8 @@
+/**
+ * @file GameConfigData.h
+ * @brief Configuration file for basic controls, such as camera and gyro.
+ */
+
 #pragma once
 
 #include "al/byaml/ByamlIter.h"

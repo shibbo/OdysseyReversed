@@ -1,3 +1,8 @@
+/**
+ * @file delegate.h
+ * @brief Delegate classes.
+ */
+
 #pragma once
 
 #include "list.h"

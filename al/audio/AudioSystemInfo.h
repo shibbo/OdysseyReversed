@@ -1,3 +1,8 @@
+/**
+ * @file AudioSystemInfo.h
+ * @brief Databases of information for all audio / sound effects.
+ */
+
 #pragma once
 
 #include "types.h"

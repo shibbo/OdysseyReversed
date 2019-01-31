@@ -1,3 +1,8 @@
+/**
+ * @file EffectUserInfo.h
+ * @brief User information storage container.
+ */
+
 #pragma once
 
 #include "types.h"

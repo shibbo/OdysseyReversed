@@ -1,3 +1,8 @@
+/**
+ * @file compression.h
+ * @brief Classes for (de-)compressing Yaz0. 
+ */
+
 #pragma once
 
 #include "core.h"

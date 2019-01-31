@@ -1,3 +1,8 @@
+/**
+ * @file api.h
+ * @brief GFX API version and typing.
+ */
+
 #pragma once
 
 namespace nn

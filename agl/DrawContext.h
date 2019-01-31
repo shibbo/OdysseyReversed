@@ -1,3 +1,8 @@
+/**
+ * @file DrawContext.h
+ * @brief Defines a draw context for textures in a GPU buffer.
+ */
+
 #pragma once
 
 #include "types.h"

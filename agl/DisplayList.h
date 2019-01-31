@@ -1,3 +1,8 @@
+/**
+ * @file DisplayList.h
+ * @brief Defines a display list for the GPU.
+ */
+
 #pragma once
 
 #include "types.h"

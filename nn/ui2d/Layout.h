@@ -1,3 +1,8 @@
+/**
+ * @file Layout.h
+ * @brief UI Layout implementation.
+ */
+
 #pragma once
 
 #include "types.h"

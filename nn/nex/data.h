@@ -1,3 +1,8 @@
+/**
+ * @file data.h
+ * @brief NEX Data.
+ */
+
 #pragma once
 
 #include "RootObject.h"

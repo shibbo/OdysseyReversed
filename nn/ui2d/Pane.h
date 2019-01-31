@@ -1,3 +1,8 @@
+/**
+ * @file Pane.h
+ * @brief Base UI panel.
+ */
+
 #pragma once
 
 #include "types.h"

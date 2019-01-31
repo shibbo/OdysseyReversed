@@ -1,3 +1,8 @@
+/**
+ * @file dynamic.h
+ * @brief NEX Dyamnic Runtime.
+ */
+
 #pragma once
 
 #include "RootObject.h"

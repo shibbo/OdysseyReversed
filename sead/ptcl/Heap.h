@@ -1,3 +1,8 @@
+/**
+ * @file Heap.h
+ * @brief Particle heaps.
+ */
+
 #pragma once
 
 #include "types.h"

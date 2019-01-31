@@ -1,3 +1,8 @@
+/**
+ * @file string.h
+ * @brief NEX String Implementation.
+ */
+
 #pragma once
 
 #include "RootObject.h"

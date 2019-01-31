@@ -1,3 +1,8 @@
+/**
+ * @file types.h
+ * @brief Defines common types.
+ */
+
 #pragma once
 
 typedef signed char         s8;

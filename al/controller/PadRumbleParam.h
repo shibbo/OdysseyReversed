@@ -1,3 +1,8 @@
+/**
+ * @file PadRumbleParam.h
+ * @brief Parameter structure for rumbles.
+ */
+
 #pragma once
 
 #include "types.h"

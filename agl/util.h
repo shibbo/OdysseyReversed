@@ -1,3 +1,8 @@
+/**
+ * @file util.h
+ * @brief Defines enumerators for texture types and formats.
+ */
+
 #pragma once
 
 namespace agl

@@ -1,3 +1,8 @@
+/**
+ * @file Clause.h
+ * @brief Defines a clause for shader processing.
+ */
+
 #pragma once
 
 #include "sead/string.h"

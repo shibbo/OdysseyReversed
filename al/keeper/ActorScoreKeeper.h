@@ -1,3 +1,8 @@
+/**
+ * @file ActorScoreKeeper.h
+ * @brief Storage class for a score, defined from a BYAML.
+ */
+
 #pragma once
 
 #include "types.h"

@@ -1,3 +1,8 @@
+/**
+ * @file time.h
+ * @brief NEX Time Library.
+ */
+
 #pragma once
 
 #include "types.h"

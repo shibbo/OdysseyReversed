@@ -1,3 +1,8 @@
+/**
+ * @file checksum.h
+ * @brief NEX Checksum Implementation.
+ */
+
 #pragma once
 
 #include "buffer.h"

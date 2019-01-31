@@ -1,3 +1,8 @@
+/**
+ * @file ActorPoseKeeperBase.h
+ * @brief Keeper for actor positions, rotation, gravity, velocity, and more.
+ */
+
 #pragma once
 
 #include "types.h"

@@ -1,3 +1,8 @@
+/**
+ * @file math.h
+ * @brief Simple math operations.
+ */
+
 #pragma once
 
 namespace sead

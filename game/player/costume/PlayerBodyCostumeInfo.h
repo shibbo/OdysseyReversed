@@ -1,3 +1,8 @@
+/**
+ * @file PlayerBodyCostumeInfo.h
+ * @brief Information on Mario's body costume.
+ */
+
 #pragma once
 
 #include "types.h"

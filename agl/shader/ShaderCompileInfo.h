@@ -1,3 +1,8 @@
+/**
+ * @file ShaderCompileInfo.h
+ * @brief Defines file devices and extensions.
+ */
+
 #pragma once
 
 #include "sead/heap.h"

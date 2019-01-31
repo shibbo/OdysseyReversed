@@ -1,3 +1,8 @@
+/**
+ * @file HitSensorKeeper.h
+ * @brief Keeper for actor collision parts, which are defined as sensors.
+ */
+
 #pragma once
 
 #include "types.h"

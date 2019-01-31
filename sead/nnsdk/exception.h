@@ -1,3 +1,8 @@
+/**
+ * @file exception.h
+ * @brief Functions on printing out the exception handler.
+ */
+
 #pragma once
 
 #include "nn/os.h"

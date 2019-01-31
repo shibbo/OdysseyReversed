@@ -1,3 +1,8 @@
+/**
+ * @file cache.h
+ * @brief NEX Cache Mangement.
+ */
+
 #pragma once
 
 #include "string.h"

@@ -1,3 +1,8 @@
+/**
+ * @file handle.h
+ * @brief File and Directory handling for devices.
+ */
+
 #pragma once
 
 #include "types.h"

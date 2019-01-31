@@ -1,3 +1,8 @@
+/**
+ * @file heap.h
+ * @brief Standard heaps.
+ */
+
 #pragma once
 
 #include "disposer.h"

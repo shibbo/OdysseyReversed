@@ -1,3 +1,8 @@
+/**
+ * @file Factory.h
+ * @brief All factories needed for actor creation.
+ */
+
 #pragma once
 
 #include "types.h"

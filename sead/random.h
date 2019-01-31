@@ -1,3 +1,8 @@
+/**
+ * @file random.h
+ * @brief Random API.
+ */
+
 #pragma once
 
 #include "disposer.h"

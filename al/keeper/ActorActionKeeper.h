@@ -1,3 +1,8 @@
+/**
+ * @file ActorActionKeeper.h
+ * @brief Keeper for an actor's executed actions.
+ */
+
 #pragma once
 
 #include "al/LiveActor.h"
@@ -15,7 +20,6 @@ namespace al
         void updatePrev();
         void updatePost();
         void init();
-
 
         al::LiveActor* mActor; // _0
         char* mName; // _8

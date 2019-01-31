@@ -1,3 +1,8 @@
+/**
+ * @file resource.h
+ * @brief Resource management classes.
+ */
+
 #pragma once
 
 #include "heap.h"

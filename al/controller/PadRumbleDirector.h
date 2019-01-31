@@ -1,3 +1,8 @@
+/**
+ * @file PadRumbleDirector.h
+ * @brief Manager for pad rumble.
+ */
+
 #pragma once
 
 #include "types.h"

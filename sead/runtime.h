@@ -1,3 +1,8 @@
+/**
+ * @file runtime.h
+ * @brief Static Runtime Info for classes.
+ */
+
 #pragma once
 
 namespace sead

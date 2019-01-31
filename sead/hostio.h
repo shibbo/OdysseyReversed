@@ -1,3 +1,8 @@
+/**
+ * @file hostio.h
+ * @brief Host I/O Node Implementation.
+ */
+
 #pragma once
 
 namespace sead

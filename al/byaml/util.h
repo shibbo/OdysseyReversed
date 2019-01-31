@@ -1,3 +1,8 @@
+/**
+ * @file util.h
+ * @brief A bunch of functions used for reading / writing / verifying a BYAML file.
+ */
+
 #pragma once
 
 #include "al/byaml/ByamlIter.h"

@@ -1,3 +1,8 @@
+/**
+ * @file KeyRepeatCtrl.h
+ * @brief Check for key repeat presses.
+ */
+
 #pragma once
 
 #include "types.h"

@@ -1,3 +1,8 @@
+/**
+ * @file KCPrismData.h
+ * @brief Stores information of a triangle contained in a collision file.
+ */
+
 #pragma once
 
 #include "types.h"

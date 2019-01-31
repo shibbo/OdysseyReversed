@@ -1,3 +1,8 @@
+/**
+ * @file Application.h
+ * @brief The main running class in the game.
+ */
+
 #pragma once
 
 #include "sead/disposer.h"

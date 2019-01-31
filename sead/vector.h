@@ -1,3 +1,8 @@
+/**
+ * @file vector.h
+ * @brief Vector implementation.
+ */
+
 #pragma once
 
 namespace sead

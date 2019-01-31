@@ -1,3 +1,8 @@
+/**
+ * @file PadGyroAddon.h
+ * @brief Addon for gyro compatability.
+ */
+
 #pragma once
 
 #include "sead/controller.h"

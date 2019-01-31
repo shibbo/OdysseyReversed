@@ -1,3 +1,8 @@
+/**
+ * @file PlacementId.h
+ * @brief Storage container for an actors' placement identification.
+ */
+
 #pragma once
 
 #include "PlacementInfo.h"

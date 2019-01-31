@@ -1,3 +1,8 @@
+/**
+ * @file DefineLinker.h
+ * @brief Defines a linker for shader source compilation.
+ */
+
 #pragma once
 
 #include "sead/heap.h"

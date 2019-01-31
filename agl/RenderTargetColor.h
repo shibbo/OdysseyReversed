@@ -1,3 +1,8 @@
+/**
+ * @file RenderTargetColor.h
+ * @brief Defines classes implement a rendering target color.
+ */
+
 #pragma once
 
 #include "TextureData.h"

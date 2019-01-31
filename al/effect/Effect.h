@@ -1,3 +1,8 @@
+/**
+ * @file Effect.h
+ * @brief Basic effects.
+ */
+
 #pragma once
 
 #include "types.h"

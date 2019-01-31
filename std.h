@@ -1,3 +1,8 @@
+/**
+ * @file std.h
+ * @brief Classes that are a part of the standard library (std)
+ */
+
 #pragma once
 
 #include "types.h"

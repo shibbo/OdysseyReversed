@@ -1,3 +1,8 @@
+/**
+ * @file Shader.h
+ * @brief Defines a basic shader.
+ */
+
 #pragma once
 
 #include "types.h"

@@ -1,3 +1,8 @@
+/**
+ * @file exception.h
+ * @brief Basic exception handling.
+ */
+
 #pragma once
 
 #include "delegate.h"

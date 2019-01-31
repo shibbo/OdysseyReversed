@@ -1,3 +1,8 @@
+/**
+ * @file System.h
+ * @brief VFX system implementation.
+ */
+
 #pragma once
 
 #include "Config.h"

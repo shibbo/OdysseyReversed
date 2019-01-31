@@ -1,3 +1,8 @@
+/**
+ * @file Parameter.h
+ * @brief Parameter template for a attribute in an actor.
+ */
+
 #pragma once
 
 namespace al

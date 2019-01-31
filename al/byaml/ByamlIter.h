@@ -1,3 +1,8 @@
+/**
+ * @file ByamlIter.h
+ * @brief Iterator for an entire BYAML.
+ */
+
 #pragma once
 
 #include "types.h"

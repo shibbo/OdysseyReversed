@@ -1,3 +1,8 @@
+/**
+ * @file event.h
+ * @brief Basic thread / core events.
+ */
+
 #pragma once
 
 #include "disposer.h"

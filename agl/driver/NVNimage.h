@@ -1,3 +1,8 @@
+/**
+ * @file NVNimage.h
+ * @brief Defines a class for representing a NVN image.
+ */
+
 #pragma once
 
 #include "types.h"

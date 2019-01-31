@@ -1,3 +1,8 @@
+/**
+ * @file message.h
+ * @brief Message Query Implementations.
+ */
+
 #pragma once
 
 #include "heap.h"

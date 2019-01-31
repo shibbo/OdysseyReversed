@@ -1,3 +1,8 @@
+/**
+ * @file thread.h
+ * @brief Thread functionality.
+ */
+
 #pragma once
 
 #include "types.h"

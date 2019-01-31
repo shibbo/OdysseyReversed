@@ -1,3 +1,8 @@
+/**
+ * @file quat.h
+ * @brief Very basic Quat template class.
+ */
+
 #pragma once
 
 namespace sead

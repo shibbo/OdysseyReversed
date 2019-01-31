@@ -1,3 +1,8 @@
+/**
+ * @file image.h
+ * @brief JPEG decoding library.
+ */
+
 #pragma once
 
 #include "types.h"

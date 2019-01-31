@@ -1,3 +1,8 @@
+/**
+ * @file CollisionParts.h
+ * @brief Wrapper for collider parts.
+ */
+
 #pragma once
 
 #include "types.h"

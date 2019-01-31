@@ -1,3 +1,8 @@
+/**
+ * @file ActorExecuteInfo.h
+ * @brief Storage container for an actors' execution.
+ */
+
 #pragma once
 
 #include "al/execute.h"

@@ -1,3 +1,8 @@
+/**
+ * @file SyntaxTree.h
+ * @brief Defines a syntax tree for shader compilation.
+ */
+
 #pragma once
 
 #include "sead/delegate.h"

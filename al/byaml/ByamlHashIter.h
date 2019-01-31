@@ -1,3 +1,8 @@
+/**
+ * @file ByamlHashIter.h
+ * @brief Iterator for hash (dictionary) types in a BYAML.
+ */
+
 #pragma once
 
 #include "types.h"

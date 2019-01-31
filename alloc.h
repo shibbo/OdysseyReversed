@@ -1,3 +1,8 @@
+/**
+ * @file alloc.h
+ * @brief Allocation functions.
+ */
+
 #pragma once
 
 #include "types.h"

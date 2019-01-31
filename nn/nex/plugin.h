@@ -1,3 +1,8 @@
+/**
+ * @file plugin.h
+ * @brief Plugin interface for NEX.
+ */
+
 #pragma once
 
 #include "RootObject.h"

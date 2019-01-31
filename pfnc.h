@@ -1,3 +1,8 @@
+/**
+ * @file pfnc.h
+ * @brief Functions that communicate with the NVN function pool.
+ */
+
 #pragma once
 
 // there's a lot of these

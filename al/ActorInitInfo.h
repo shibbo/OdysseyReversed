@@ -1,3 +1,8 @@
+/**
+ * @file ActorInitInfo.h
+ * @brief Storage container for an actors' intialization.
+ */
+
 #pragma once
 
 #include "types.h"

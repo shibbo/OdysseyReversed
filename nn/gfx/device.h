@@ -1,3 +1,8 @@
+/**
+ * @file device.h
+ * @brief Device implementation for GFX.
+ */
+
 #pragma once
 
 #include "types.h"

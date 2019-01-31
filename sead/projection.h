@@ -1,3 +1,8 @@
+/**
+ * @file projection.h
+ * @brief Graphics projection.
+ */
+
 #pragma once
 
 #include "camera.h"

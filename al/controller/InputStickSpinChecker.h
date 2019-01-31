@@ -1,3 +1,8 @@
+/**
+ * @file InputStickSpinChecker.h
+ * @brief Check for input stick "spins".
+ */
+
 #pragma once
 
 #include "types.h"

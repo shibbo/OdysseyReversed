@@ -1,3 +1,8 @@
+/**
+ * @file friends.h
+ * @brief Friend implementation.
+ */
+
 #pragma once
 
 #include "account.h"

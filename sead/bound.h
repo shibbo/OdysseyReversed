@@ -1,3 +1,8 @@
+/**
+ * @file bound.h
+ * @brief Classes for sizeable bounding boxes.
+ */
+
 #pragma once
 
 #include "types.h"

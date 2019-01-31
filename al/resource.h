@@ -1,3 +1,8 @@
+/**
+ * @file resource.h
+ * @brief Resource management for actors.
+ */
+
 #pragma once
 
 #include "sead/resource.h"

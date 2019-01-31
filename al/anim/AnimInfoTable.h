@@ -1,3 +1,8 @@
+/**
+ * @file AnimInfoTable.h
+ * @brief Storing animation data (such as frames) in a table.
+ */
+
 #pragma once
 
 #include "types.h"

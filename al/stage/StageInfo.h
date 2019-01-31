@@ -1,3 +1,8 @@
+/**
+ * @file StageInfo.h
+ * @brief Container for a stage, which stores zone and placement information.
+ */
+
 #pragma once
 
 #include "byaml/ByamlIter.h"

@@ -1,3 +1,8 @@
+/**
+ * @file print.h
+ * @brief Print formatting class.
+ */
+
 #pragma once
 
 #include "types.h"

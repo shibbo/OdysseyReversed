@@ -1,3 +1,8 @@
+/**
+ * @file color.h
+ * @brief Color types.
+ */
+
 #pragma once
 
 #include "types.h"

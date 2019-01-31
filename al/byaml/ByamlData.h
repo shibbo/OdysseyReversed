@@ -1,3 +1,8 @@
+/**
+ * @file ByamlData.h
+ * @brief Storage container for raw BYAML data.
+ */
+
 #pragma once
 
 #include "types.h"

@@ -1,3 +1,8 @@
+/**
+ * @file ActorItemInfo.h
+ * @brief Storage container for an actors' item information.
+ */
+
 #pragma once
 
 #include "types.h"

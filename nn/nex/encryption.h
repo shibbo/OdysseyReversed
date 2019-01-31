@@ -1,3 +1,8 @@
+/**
+ * @file encryption.h
+ * @brief NEX Encryption Algorithm.
+ */
+
 #pragma once
 
 #include "buffer.h"

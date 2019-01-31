@@ -1,3 +1,8 @@
+/**
+ * @file ShaderHolder.h
+ * @brief Defines classes for shader storage.
+ */
+
 #pragma once
 
 #include "sead/heap.h"

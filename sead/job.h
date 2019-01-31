@@ -1,3 +1,8 @@
+/**
+ * @file job.h
+ * @brief Basic Job Querying.
+ */
+
 #pragma once
 
 #include "core.h"

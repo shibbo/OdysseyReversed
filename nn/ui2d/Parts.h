@@ -1,3 +1,8 @@
+/**
+ * @file Parts.h
+ * @brief Layout parts.
+ */
+
 #pragma once
 
 #include "Pane.h"

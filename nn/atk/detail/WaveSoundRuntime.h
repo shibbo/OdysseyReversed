@@ -1,3 +1,8 @@
+/**
+ * @file WaveSoundRuntime.h
+ * @brief Wave sound runtime info.
+ */
+
 #pragma once
 
 #include "types.h"

@@ -1,3 +1,8 @@
+/**
+ * @file AnimPlayerSimple.h
+ * @brief Animation player.
+ */
+
 #pragma once
 
 #include "types.h"

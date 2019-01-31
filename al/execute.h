@@ -1,3 +1,8 @@
+/**
+ * @file execute.h
+ * @brief Makes tables for execution states.
+ */
+
 #pragma once
 
 #include "types.h"

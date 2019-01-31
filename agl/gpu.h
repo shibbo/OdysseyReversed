@@ -1,3 +1,8 @@
+/**
+ * @file gpu.h
+ * @brief Defines classes that use the GPU, such as memory blocks, and address blocks.
+ */
+
 #pragma once
 
 #include "types.h"
@@ -76,5 +81,13 @@ namespace agl
     {
     public:
         virtual ~GPUMemBlockT();
+    };
+
+    template<typename T>
+    class GPUMemAddr
+    {
+    public:
+        u64* mPtr; // _0
+        u64 _8;
     };
 };

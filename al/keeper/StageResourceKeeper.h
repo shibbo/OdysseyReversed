@@ -1,3 +1,8 @@
+/**
+ * @file StageResourceKeeper.h
+ * @brief Keeper for a stages' resources, like maps, design, and sound.
+ */
+
 #pragma once
 
 #include "stage/StageResourceList.h"

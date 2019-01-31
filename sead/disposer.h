@@ -1,3 +1,8 @@
+/**
+ * @file disposer.h
+ * @brief Basic disposer class.
+ */
+
 #pragma once
 
 #include "types.h"

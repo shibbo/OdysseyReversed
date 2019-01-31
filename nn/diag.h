@@ -1,3 +1,8 @@
+/**
+ * @file diag.h
+ * @brief Module, logging, and symbol operations.
+ */
+
 #pragma once
 
 #include "types.h"

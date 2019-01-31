@@ -1,3 +1,8 @@
+/**
+ * @file RenderTargetDepth.h
+ * @brief Defines a class to represent a render target depth.
+ */
+
 #pragma once
 
 #include "TextureData.h"

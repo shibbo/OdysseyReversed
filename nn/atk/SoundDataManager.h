@@ -1,3 +1,8 @@
+/**
+ * @file SoundDataManager.h
+ * @brief Sound data management implementation.
+ */
+
 #pragma once
 
 #include "types.h"

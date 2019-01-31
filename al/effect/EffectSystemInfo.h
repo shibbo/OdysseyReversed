@@ -1,3 +1,8 @@
+/**
+ * @file EffectSystemInfo.h
+ * @brief Global system information storage for effects.
+ */
+
 #pragma once
 
 #include "types.h"

@@ -1,3 +1,8 @@
+/**
+ * @file Float2.h
+ * @brief Some odd float implementation that I don't understand yet...
+ */
+
 #pragma once
 
 #include "types.h"
