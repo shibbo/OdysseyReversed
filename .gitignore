@@ -1,5 +1,4 @@
 *.o
 debug/
-include/
 release/
 lib/
