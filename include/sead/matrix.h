@@ -18,6 +18,6 @@ namespace sead
     template<typename T>
     class Matrix44
     {
-        T _0[0x10]
+        T _0[0x10];
     };
 };
