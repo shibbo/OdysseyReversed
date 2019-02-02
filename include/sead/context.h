@@ -5,6 +5,9 @@
 
 #pragma once
 
+#include "critical.h"
+#include "heap.h"
+#include "hostio.h"
 #include "types.h"
 
 namespace sead
@@ -25,5 +28,20 @@ namespace sead
         u64 _D8;
         u64 _E0;
         u64 _E8;
+    };
+
+    class DrawLockContext : public sead::hostio::Node
+    {
+    public:
+        DrawLockContext();
+
+        void initialize(sead::Heap *);
+        void lock();
+        void unlock();
+        void genMessage(sead::hostio::Context *);
+
+        u32 _8;
+        u32 _C;
+        sead::CriticalSection mContextSection; // _10
     };
 };

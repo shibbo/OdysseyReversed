@@ -18,16 +18,16 @@ namespace nn
 
             virtual ~RootObject();
 
-            void* operator new(size_t);
+            void* operator new(std::u64);
             void operator delete(void *);
-            void* operator new(size_t, char const *, u32);
-            void* operator new[](size_t);
-            void* operator new[](size_t,  char const *, u32);
+            void* operator new(std::u64, char const *, u32);
+            void* operator new[](std::u64);
+            void* operator new[](std::u64,  char const *, u32);
             void operator delete[](void *);
             void operator delete(void *,char const *, u32);
             void operator delete[](void *,char const *, u32);
-            void* operator new(size_t, nn::nex::RootObject::TargetPool);
-            void* operator new(size_t, nn::nex::RootObject::TargetPool, char const *, u32);
+            void* operator new(std::u64, nn::nex::RootObject::TargetPool);
+            void* operator new(std::u64, nn::nex::RootObject::TargetPool, char const *, u32);
         };
     };
 };

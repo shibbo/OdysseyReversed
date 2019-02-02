@@ -1,3 +1,8 @@
+/**
+ * @file arena.cpp
+ * @brief Arena implementation for heaps.
+ */
+
 #include "sead/arena.h"
 
 namespace sead

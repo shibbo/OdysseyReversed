@@ -5,7 +5,7 @@
 
 #pragma once
 
-#include "std.h"
+#include <std.h>
 #include "types.h"
 #include "sead/heap.h"
 

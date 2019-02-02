@@ -1,3 +1,8 @@
+/**
+ * @file disposer.cpp
+ * @brief Object disposer implementation.
+ */
+
 #include "sead/heap.h"
 
 namespace sead

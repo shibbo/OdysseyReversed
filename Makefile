@@ -92,19 +92,7 @@ export INCLUDE	:=	$(foreach dir,$(INCLUDES),-I$(CURDIR)/$(dir)) \
 .PHONY: clean all
 
 #---------------------------------------------------------------------------------
-all: lib/libnx.a lib/libnxd.a
-
-dist-bin: all
-	@tar --exclude=*~ -cjf libnx-$(VERSION).tar.bz2 include lib default_icon.jpg switch_rules switch.ld switch.specs -C external/bsd include 
-
-dist-src:
-	@tar --exclude=*~ -cjf libnx-src-$(VERSION).tar.bz2 include source data external Makefile default_icon.jpg switch_rules switch.ld switch.specs
-
-dist: dist-src dist-bin
-
-install: dist-bin
-	mkdir -p $(DESTDIR)$(DEVKITPRO)/libnx
-	bzip2 -cd libnx-$(VERSION).tar.bz2 | tar -xf - -C $(DESTDIR)$(DEVKITPRO)/libnx
+all: lib/odyssey.a
 
 #dox:
 #	@doxygen Doxyfile
@@ -119,24 +107,17 @@ release:
 debug:
 	@[ -d $@ ] || mkdir -p $@
 
-lib/libnx.a : lib release $(SOURCES) $(INCLUDES)
+lib/odyssey.a : lib release $(SOURCES) $(INCLUDES)
 	@$(MAKE) BUILD=release OUTPUT=$(CURDIR)/$@ \
 	BUILD_CFLAGS="-DNDEBUG=1 -O2" \
 	DEPSDIR=$(CURDIR)/release \
 	--no-print-directory -C release \
 	-f $(CURDIR)/Makefile
 
-lib/libnxd.a : lib debug $(SOURCES) $(INCLUDES)
-	@$(MAKE) BUILD=debug OUTPUT=$(CURDIR)/$@ \
-	BUILD_CFLAGS="-DDEBUG=1 -Og" \
-	DEPSDIR=$(CURDIR)/debug \
-	--no-print-directory -C debug \
-	-f $(CURDIR)/Makefile
-
 #---------------------------------------------------------------------------------
 clean:
 	@echo clean ...
-	@rm -fr release debug lib docs internal_docs
+	@rm -fr release debug lib
 
 #---------------------------------------------------------------------------------
 else

@@ -1,3 +1,8 @@
+/**
+ * @file arena.h
+ * @brief Arena implementation for heaps.
+ */
+
 #pragma once
 
 #include "nn/os.h"

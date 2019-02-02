@@ -44,8 +44,9 @@ namespace sead
         u8 _8;
         u8 _9;
         u16 _A;
-        sead::Matrix44<f32> mProjectionMtx; // _C
-        u8 _4C[0x90-0x4C];
+        sead::Matrix44<f32>_C;
+        sead::Matrix44<f32> _4C;
+        u32 _8C;
         u32 _90;
         u32 _94;
     };

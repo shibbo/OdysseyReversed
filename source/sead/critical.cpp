@@ -1,3 +1,8 @@
+/**
+ * @file critical.cpp
+ * @brief Critical sections.
+ */
+
 #include "sead/critical.h"
 
 namespace sead

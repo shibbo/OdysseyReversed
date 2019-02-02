@@ -1,3 +1,8 @@
+/**
+ * @file camera.cpp
+ * @brief Basic camera implementation.
+ */
+
 #include "sead/camera.h"
 
 namespace sead
