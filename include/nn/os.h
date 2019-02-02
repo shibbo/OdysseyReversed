@@ -25,6 +25,8 @@ namespace nn
         Result AllocateAddressRegion(u64 *, u64);
         Result AllocateMemory(u64 *, u64);
         Result AllocateMemoryPages(u64, u64);
+        void AllocateMemoryBlock(u64 *, u64);
+        void FreeMemoryBlock(u64, u64);
 
         // MUTEX
         struct MutexType
