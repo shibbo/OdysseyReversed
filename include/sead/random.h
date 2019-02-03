@@ -5,7 +5,7 @@
 
 #pragma once
 
-#include "disposer.h"
+#include "heap.h"
 #include "types.h"
 
 namespace sead

@@ -36,7 +36,8 @@ namespace std
         {
         public:
             void reserve(u64);
-            void __push_back_slow_path<T const &>(T const &);
+
+            void __push_back_slow_path(T const &);
         };
 
         template<typename T, typename T2, typename T3>

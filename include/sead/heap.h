@@ -104,8 +104,7 @@ namespace sead
         u32 _8C;
         u32 mNodeInsertionDirection; // _90
         u32 _94;
-        sead::CriticalSection* mCriticalSection; // _98
-        u8 _A0[0xD8-0xA0];
+        u8 _98[0xD8-0x98]; // critical section
         u16 _D8;
         u16 _DA;
         u16 _DC; 
