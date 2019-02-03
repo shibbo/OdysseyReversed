@@ -8,7 +8,6 @@
 #include "types.h"
 #include "nn/os.h"
 #include "delegate.h"
-#include "disposer.h"
 #include "heap.h"
 #include "hostio.h"
 #include "list.h"

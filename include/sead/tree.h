@@ -6,7 +6,7 @@
 #pragma once
 
 #include "critical.h"
-#include "disposer.h"
+#include "heap.h"
 #include "types.h"
 
 namespace sead

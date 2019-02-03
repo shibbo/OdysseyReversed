@@ -7,7 +7,7 @@
 
 #include "critical.h"
 #include "delegate.h"
-#include "disposer.h"
+#include "heap.h"
 #include "hostio.h"
 #include "string.h"
 #include "thread.h"
