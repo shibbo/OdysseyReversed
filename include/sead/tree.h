@@ -62,6 +62,8 @@ namespace sead
         sead::CriticalSection* mCritSection; // _78
     };
 
+    /*
+    something is bugged very badly here. no idea what
     template<typename T>
     class TreeMapNode
     {
@@ -80,7 +82,7 @@ namespace sead
     class OrderedSet : public sead::TreeMapNode
     {
     public:
-        class Node : public sead::TreeMapNode
+        class Node
         {
             virtual ~Node();
 
@@ -103,4 +105,5 @@ namespace sead
             void eraseNodeForClear_(sead::TreeMapNode<sead::SafeStringBase<char>> *);
         };
     };
+    */
 };

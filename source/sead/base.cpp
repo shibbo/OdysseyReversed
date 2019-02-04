@@ -1,3 +1,8 @@
+/**
+ * @file base.h
+ * @brief Base64 encoding / decoding.
+ */
+
 #include "sead/base.h"
 
 namespace sead

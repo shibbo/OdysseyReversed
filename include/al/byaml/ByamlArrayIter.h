@@ -5,12 +5,11 @@
 
 #pragma once
 
+#include "ByamlData.h"
 #include "types.h"
 
 namespace al
 {
-    class ByamlData;
-
     class ByamlArrayIter
     {
     public:
@@ -18,11 +17,12 @@ namespace al
         ByamlArrayIter(u8 const *arraySrc, bool swapEndianess);
 
         u32 getSize() const;
-        u64 getTypeTable() const;
-        u64 getDataTable() const;
+        u8* getTypeTable() const;
+        u8* getDataTable() const;
         bool getDataByIndex(al::ByamlData *dest, s32 idx) const;
+        u8* getOffsetData(u32 idx) const;
 
         u8* mArraySrc; // _0
-        u32 mSwapEndianess; // _8
+        u8 mSwapEndianess; // _8
     };
 };

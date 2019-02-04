@@ -5,13 +5,11 @@
 
 #pragma once
 
+#include "ByamlData.h"
 #include "types.h"
 
 namespace al
 {
-    class ByamlData;
-    class ByamlHashPair;
-
     class ByamlHashIter
     {
     public:
@@ -26,7 +24,7 @@ namespace al
         al::ByamlHashPair* getPairByIndex(s32 index) const;
         u64 getOffsetData(s32 baseOffset) const;
 
-        u8* mSrcByaml; // _0
-        u32 mEndianess; // _8
+        u8* mSrc; // _0
+        u8 mSwapEndianess; // _8
     };
 };

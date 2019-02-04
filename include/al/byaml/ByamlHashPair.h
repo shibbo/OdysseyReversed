@@ -16,8 +16,9 @@ namespace al
         u8 getType() const;
         u32 getValue(bool swapEndianess) const;
 
-        u16 _0;
-        u8 mKey; // _3
+        u16 mTopHalfNameID; // _0
+        u8 mBottomNameID; // _2
+        u8 mType; // _3
         u32 mVal; // _4
     };
 }

@@ -53,7 +53,6 @@ namespace sead
         void setStackOverflowExceptionEnable(bool);
         void initStackCheck_();
         void initStackCheckWithCurrentStackPointer_();
-        u32 calcStackUsedSizePeak() const;
 
         sead::ListNode mNode; // _28
         u32 mNumListNodes; // _38

@@ -24,7 +24,7 @@ VERSION	:=	$(LIBNX_MAJOR).$(LIBNX_MINOR).$(LIBNX_PATCH)
 #---------------------------------------------------------------------------------
 TARGET		:=	decomp
 BUILD		:=	build
-SOURCES		:=	source source/sead
+SOURCES		:=	source source/al/byaml source/sead
 INCLUDES	:=	include
 
 #---------------------------------------------------------------------------------

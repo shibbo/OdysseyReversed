@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include "delegate.h"
 #include "hostio.h"
 #include "list.h"
 #include "runtime.h"
@@ -59,7 +60,6 @@ namespace sead
         };
 
         Framework();
-        ~Framework();
 
         virtual bool checkDerivedRuntimeTypeInfo(sead::RuntimeTypeInfo::Interface const *) const;
         virtual sead::RuntimeTypeInfo::Interface* getRuntimeTypeInfo() const;
@@ -80,7 +80,7 @@ namespace sead
         u32 _8;
         u32 _C;
         void* _10;
-        u64 _18;
+        sead::DelegateEvent<void *>* _18;
         sead::ListNode mNode; // _20
         u32 _30;
         u32 _34;
@@ -93,7 +93,6 @@ namespace sead
     {
     public:
         GameFramework();
-        ~GameFramework();
 
         virtual bool checkDerivedRuntimeTypeInfo(sead::RuntimeTypeInfo::Interface const *) const;
         virtual sead::RuntimeTypeInfo::Interface* getRuntimeTypeInfo() const;

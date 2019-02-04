@@ -1,3 +1,8 @@
+/**
+ * @file random.cpp
+ * @brief Random API.
+ */
+
 #include "sead/random.h"
 
 #include "nn/os.h"
