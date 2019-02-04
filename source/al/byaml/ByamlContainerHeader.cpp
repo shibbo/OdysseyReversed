@@ -18,7 +18,7 @@ namespace al
 
         if (swap & 0x1)
         {
-            count = ((this->mType >> 8) & 0xFF00 | (this->mType >> 24)) & 0xFF00FFFF | (this->mType >> 8 << 16);
+            count = (((this->mType >> 8) & 0xFF00) | ((this->mType >> 24) & 0xFF00FFFF) | (this->mType >> 8 << 16));
         }
         else
         {
