@@ -13,6 +13,7 @@
 namespace sead
 {
     class Decompressor;
+    class Resource;
     class ResourceFactory;
 
     class ResourceMgr : public sead::IDisposer

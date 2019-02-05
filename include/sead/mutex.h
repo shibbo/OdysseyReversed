@@ -5,7 +5,7 @@
 
 #pragma once
 
-#include "disposer.h"
+#include "heap.h"
 #include "nn/os.h"
 
 namespace sead
@@ -22,6 +22,6 @@ namespace sead
         bool tryLock();
         void unlock();
 
-        nn::os::MutexType* mMutexType; // _20
+        nn::os::MutexType mMutexType; // _20
     };
 };

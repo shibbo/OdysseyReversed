@@ -1,3 +1,8 @@
+/**
+ * @file resource.cpp
+ * @brief Resource management classes.
+ */
+
 #include "sead/resource.h"
 
 namespace sead
