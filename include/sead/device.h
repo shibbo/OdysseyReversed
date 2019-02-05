@@ -5,12 +5,14 @@
 
 #pragma once
 
+#include "heap.h"
 #include "runtime.h"
 #include "string.h"
 #include "types.h"
 
 namespace sead
 {
+    class ArchiveRes;
     class FileDevice;
     class HandleBase;
 
@@ -37,7 +39,7 @@ namespace sead
     {
     public:
 
-        enum FileOpenFlag;
+        enum FileOpenFlag { };
 
         struct LoadArg
         {
@@ -88,5 +90,11 @@ namespace sead
         virtual u64* doGetLastRawError_() const = 0;
         virtual void doTracePath_(sead::SafeStringBase<char> const&) const;
         virtual void doResolvePath_(sead::BufferedSafeStringBase<char> *, sead::SafeStringBase<char> const &) const;
+    };
+
+    class ArchiveFileDevice : public sead::IDisposer
+    {
+    public:
+        ArchiveFileDevice(sead::ArchiveRes *);
     };
 };
