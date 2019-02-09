@@ -62,6 +62,9 @@ namespace sead
         sead::CriticalSection* mCritSection; // _78
     };
 
+    template<typename T>
+    class TListNode { };
+
     /*
     something is bugged very badly here. no idea what
     template<typename T>
