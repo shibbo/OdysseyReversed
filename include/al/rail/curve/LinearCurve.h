@@ -17,6 +17,7 @@ namespace al
 
         void set(sead::Vector3<f32> const &, sead::Vector3<f32> const &);
         void calcPos(sead::Vector3<f32> *out, f32) const;
+        void calcVelocity(sead::Vector3<f32> *, f32);
         f32 calcLength(f32, f32) const;
         f32 calcCurveParam(f32) const;
         f32 calcNearestParam(sead::Vector3<f32> const &) const;
@@ -27,6 +28,7 @@ namespace al
 
         sead::Vector3<f32> mPosition; // _0
         sead::Vector3<f32> mVelocity; // _C
+        f32 mLength; // _18
         f32 _1C;
     };
 };

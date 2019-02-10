@@ -23,14 +23,15 @@ namespace al
         void calcStartPos(sead::Vector3<f32> *) const;
         void calcEndPos(sead::Vector3<f32> *) const;
         f32 calcLength(f32, f32, s32) const;
-        f32 calcNearestParam(sead::Vector3<f32> const &, f32);
+        f32 calcCurveParam(f32) const;
+        f32 calcNearestParam(sead::Vector3<f32> const &, f32) const;
         void calcNearestPos(sead::Vector3<f32> *, sead::Vector3<f32> const &, f32) const;
-        void calcNearestLength(f32 *outLength, sead::Vector3<f32> const &, f32, f32);
+        void calcNearestLength(f32 *outLength, sead::Vector3<f32> const &, f32, f32) const;
         f32 getPartLength() const;
 
         al::BezierCurve* mBezierCurve; // _0
         al::LinearCurve* mLinearCurve; // _8
         u32 _10;
-        u32 _14;
+        u32 reserved;
     };
 };
