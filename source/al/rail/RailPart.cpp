@@ -99,11 +99,11 @@ namespace al
     {
         if (this->mBezierCurve)
         {
-            this->mBezierCurve->calcLength(a1, a2, a3);
+            return this->mBezierCurve->calcLength(a1, a2, a3);
         }
         else
         {
-            this->mLinearCurve->calcLength(a2, a3);
+            return this->mLinearCurve->calcLength(a2, a3);
         }
     }
 
@@ -111,11 +111,11 @@ namespace al
     {
         if (this->mBezierCurve)
         {
-            this->mBezierCurve->calcCurveParam(a1);
+            return this->mBezierCurve->calcCurveParam(a1);
         }
         else
         {
-            this->mLinearCurve->calcCurveParam(a1);
+            return this->mLinearCurve->calcCurveParam(a1);
         }
     }
 
