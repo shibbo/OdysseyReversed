@@ -17,15 +17,15 @@ namespace al
         PlacementId(char const *, char const *, char const *);
 
         void init(al::PlacementInfo const &);
-        bool isEqual(al::PlacementInfo const &) const;
-        static bool isEqual(al::PlacementInfo const &, al::PlacementInfo const &);
+        bool isEqual(al::PlacementId const &) const;
+        static bool isEqual(al::PlacementId const &, al::PlacementId const &);
         bool isValid() const;
-        void makeString(sead::BufferedSafeStringBase<char> *);
+        s32 makeString(sead::BufferedSafeStringBase<char> *);
 
         // these are formatted into %s(%s[%s]) using the first three members
-        char* _0;
-        char* _8;
-        char* _10;
-        u64 mIsInit; // _18
+        char* mStageId; // _0
+        char* mUnitConfigName; // _8
+        char* mZoneId; // _10
+        char* mCommonId; // _18
     };
 };

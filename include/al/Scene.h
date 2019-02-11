@@ -10,6 +10,8 @@
 #include "keeper/StageResourceKeeper.h"
 #include "nerve/NerveExecutor.h"
 
+static char* sceneObjectName;
+
 namespace al
 {
     class AudioDirector;

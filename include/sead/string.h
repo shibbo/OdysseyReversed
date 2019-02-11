@@ -28,11 +28,11 @@ namespace sead
         virtual sead::BufferedSafeStringBase<T> operator=(sead::BufferedSafeStringBase<T> const &);
         virtual void assureTerminationImpl_();
 
-        u32 formatImpl_(T *, s32, T const *, s32);
-        u32 formatV(T const *, s32);
-        u32 format(T const *, ...);
-        u32 appendWithFormatV(T const *, s32);
-        u32 appendWithFormat(T const *, ...);
+        s32 formatImpl_(T *, s32, T const *, s32);
+        s32 formatV(T const *, s32);
+        s32 format(T const *, ...);
+        s32 appendWithFormatV(T const *, s32);
+        s32 appendWithFormat(T const *, ...);
     };
 
     template<typename T>
