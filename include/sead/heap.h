@@ -233,6 +233,7 @@ namespace sead
         //void dumpTreeYAML(sead::WriteStream &, int);
         void setAllocFromNotSeadThreadHeap(sead::Heap *);
         void removeFromFindContainHeapCache_(sead::Heap *);
+        sead::Heap* setCurrentHeap_(sead::Heap *);
 
         sead::Heap* mHeap; // _8
         u64 _10;

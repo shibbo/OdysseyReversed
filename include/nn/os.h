@@ -20,6 +20,10 @@ namespace nn
         struct SystemEventType;
         struct UserExceptionInfo;
 
+        // ARG
+        s32 GetHostArgc();
+        char** GetHostArgv();
+
         // MEMORY
         void InitializeVirtualAddressMemory();
         Result AllocateAddressRegion(u64 *, u64);
@@ -27,6 +31,7 @@ namespace nn
         Result AllocateMemoryPages(u64, u64);
         void AllocateMemoryBlock(u64 *, u64);
         void FreeMemoryBlock(u64, u64);
+        void SetMemoryHeapSize(u64);
 
         // MUTEX
         struct MutexType

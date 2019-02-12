@@ -1,5 +1,5 @@
 /**
- * @file hash.h
+ * @file hash.cpp
  * @brief Basic CRC implementation.
  */
 

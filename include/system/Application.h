@@ -5,7 +5,6 @@
 
 #pragma once
 
-#include "sead/disposer.h"
 #include "sead/heap.h"
 
 class RootTask;
@@ -34,4 +33,10 @@ public:
     u64 _38;
 
     static Application* sInstance;
+};
+
+class ApplicationFunction
+{
+public:
+    static void initialize(s32, char**);
 };
