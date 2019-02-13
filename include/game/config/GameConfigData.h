@@ -18,8 +18,8 @@ public:
 
     void init();
     bool isCameraReverseInputH() const;
-    void onCameraReverseInputH() const;
-    void offCameraReverseInputH() const;
+    void onCameraReverseInputH();
+    void offCameraReverseInputH();
     bool isCameraReverseInputV() const;
     void onCameraReverseInputV();
     void offCameraReverseInputV();

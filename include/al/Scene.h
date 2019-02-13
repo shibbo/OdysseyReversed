@@ -29,8 +29,15 @@ namespace al
     {
     public:
         virtual ~ISceneObj();
-        virtual u64* getSceneObjName() const;
+        virtual char* getSceneObjName() const;
+        virtual void initAfterPlacementSceneObj(al::ActorInitInfo const &);
         virtual void initSceneObj();
+    };
+
+    class IUseSceneObjHolder
+    {
+    public:
+        u64* _0;
     };
 
     class SceneObjHolder
