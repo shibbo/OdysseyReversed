@@ -21,8 +21,8 @@ namespace nn
             u64 BindTexture(nn::g3d::TextureRef (*)(char const *, void *), void *);
             void ForceBindTexture(nn::g3d::TextureRef const &, char const *);
             void ReleaseTexture();
-            void Setup(nn::gfx::TDevice<nn::gfx::ApiVariation<nn::gfx::ApiType<s32>, nn::gfx::ApiVersion<s32>>> *);
-            void Cleanup(nn::gfx::TDevice<nn::gfx::ApiVariation<nn::gfx::ApiType<s32>, nn::gfx::ApiVersion<s32>>> *);
+            void Setup(nn::gfx::TDevice<nn::gfx::ApiVariation<nn::gfx::ApiType<4>, nn::gfx::ApiVersion<4>>> *);
+            void Cleanup(nn::gfx::TDevice<nn::gfx::ApiVariation<nn::gfx::ApiType<8>, nn::gfx::ApiVersion<8>>> *);
             void Reset();
             void Reset(u32);
 

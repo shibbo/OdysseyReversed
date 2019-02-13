@@ -17,14 +17,14 @@ namespace nn
         };
 
         // usually passed as just a 4
-        template<typename T>
+        template<int T>
         class ApiType
         {
 
         };
 
         // usually passed as just a 8
-        template<typename T>
+        template<int T>
         class ApiVersion
         {
 

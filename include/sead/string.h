@@ -33,9 +33,11 @@ namespace sead
         s32 format(T const *, ...);
         s32 appendWithFormatV(T const *, s32);
         s32 appendWithFormat(T const *, ...);
+
+        char* mFormattedString; // _10
     };
 
-    template<typename T>
+    template<int T>
     class FixedSafeString : public sead::BufferedSafeStringBase<T>
     {
     public:
