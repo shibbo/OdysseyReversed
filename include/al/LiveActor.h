@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include "camera/IUseCamera.h"
 #include "collision/Collider.h"
 #include "keeper/ActorActionKeeper.h"
 #include "keeper/ActorItemKeeper.h"
@@ -18,6 +19,7 @@
 #include "keeper/ShadowKeeper.h"
 #include "keeper/StageSwitchKeeper.h"
 #include "keeper/SubActorKeeper.h"
+#include "nerve/IUseNerve.h"
 #include "sead/matrix.h"
 #include "ActorExecuteInfo.h"
 #include "ActorSceneInfo.h"
@@ -44,11 +46,13 @@ namespace al
         bool isUpdateEffectAudioCollisionSensor; // _B
     };
 	
-    class LiveActor
+    class LiveActor : public al::IUseNerve
     {
     public:
         LiveActor(char const *objName);
 
+        virtual al::NerveKeeper* getNerveKeeper() const;
+        virtual void init(al::ActorInitInfo const &);
         virtual void initAfterPlacement();
         virtual void appear();
         virtual void makeActorAlive();
@@ -66,10 +70,10 @@ namespace al
         u64* _18; // IUseName*
         u64* _20; // IUseSceneObjHolder*
         u64* _28; // IUseAreaObj*
-        u64* _30; // IUseCamera*
+        al::IUseCamera* mUseCamera; // _30
         u64* _38; // IUseCollision*
         u64* _40; // IUseRail*
-        u64* _48;
+        char* mName; // _48
         al::ActorPoseKeeperBase* mPoseKeeper; // _50
         al::ActorExecuteInfo* mExecInfo; // _58
         al::ActorActionKeeper* mActionKeeper; // _60

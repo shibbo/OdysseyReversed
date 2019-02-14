@@ -44,6 +44,22 @@ namespace sead
         virtual void assureTerminationImpl_();
     };
 
+    template <int T>
+    class WFixedSafeString : public sead::BufferedSafeStringBase<T>
+    {
+    public:
+        virtual ~WFixedSafeString();
+        virtual sead::WFixedSafeString operator=(sead::SafeStringBase<char16_t> const &);
+    };
+
+    template <int T>
+    class WFormatFixedSafeString : public sead::WFixedSafeString<T>
+    {
+    public:
+        virtual ~WFormatFixedSafeString();
+        virtual sead::WFormatFixedSafeString operator=(sead::SafeStringBase<char16_t> const &);
+    };
+
     template<typename T>
     class HeapSafeStringBase : public sead::BufferedSafeStringBase<T>
     {

@@ -28,7 +28,7 @@ namespace al
         void update();
         void addHitSensor(al::HitSensor *);
 
-        u64 _0;
+        char* mSensorName; // _0
         u64 _8;
         u64 _10;
         u32 _18;
@@ -41,7 +41,9 @@ namespace al
         u8 _39;
         u8 _3A;
         u8 _3B;
-        u8 _3C[0x50-0x3C];
+        u32 _3C;
+        al::LiveActor* mActor; // _40
+        u64 _48;
         sead::Vector3<f32>* mFollowPos; // _50
         sead::Matrix34<f32>* mFollowPosMtx; // _58
         u64 _60;

@@ -7,13 +7,13 @@
 
 namespace al
 {
+    class LiveActor;
     class NerveKeeper;
 
     class Nerve
     {
     public:
-        // this function isn't virtual for a few reasons, it's never directly called
-        // it is stored in tables that execute an actor's nerve
-        void executeOnEnd(al::NerveKeeper *keeper) const;
+        virtual void execute(al::LiveActor *) = 0;
+        virtual void executeOnEnd(al::NerveKeeper *keeper) const;
     };
 };
