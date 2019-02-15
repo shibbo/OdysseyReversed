@@ -19,4 +19,6 @@ public:
     static bool isGameClear(GameDataHolderAccessor);
     static bool isWorldPeach(GameDataHolderAccessor);
 
+    static void recoveryPlayerMax(al::LiveActor const *);
+
 };

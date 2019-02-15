@@ -6,6 +6,8 @@
 #pragma once
 
 #include "al/LiveActor.h"
+#include "al/camera/CameraTicket.h"
+#include "al/param/RateParam.h"
 #include "sead/quat.h"
 #include "sead/vector.h"
 #include "ShineInfo.h"
@@ -14,6 +16,15 @@ class Shine : public al::LiveActor
 {
 public:
     Shine(char const *name);
+
+    al::LiveActor* getCurrentModel();
+    void tryExpandShadowAndClipping();
+    void initAppearDemo(al::ActorInitInfo const &);
+
+    void showCurrentModel();
+    void hideAllModel();
+    void invalidateKillSensor();
+    void getDirect();
 
     u64 _108;
     u64* _110; // al::MtxConnector*
@@ -25,14 +36,15 @@ public:
     sead::Vector3<f32> _128; // some sort of reset position
     sead::Quat<f32> _134;
     u32 _144;
-    u64* _148; // al::CameraTicket*
+    al::CameraTicket* mCameraTicket; // _148
     sead::Vector3<f32> _150;
     sead::Vector3<f32> _15C;
     u16 _168;
     bool mIsPlayAppearCameraOnlyOnce; // _16A
     u8 _16B;
     sead::Vector3<f32> mShineMovePoint; // _16C
-    u8 _178[0x190-0x178];
+    u8 _178[0x188-0x178];
+    al::RateParamF32* mRateParam; // _188
     u64* _190; // ParabolicPathMovement*
     u64* _198; // ParabolicPath*
     u32 _1A0;
@@ -48,9 +60,12 @@ public:
     u64* _270; // al::CameraTicket*
     u64* _278; // QuestInfo*
     bool mIsUseAppearDemoAfterGet; // _280
+    u8 _281[0x288-0x281];
     u64* _288; // ActorDimensionKeeper *
     s32 mShineIndex; // _290
+    u32 _294;
     sead::Quat<f32> _298;
+    u32 _2A4;
     bool mIsShopShine; // _2A8
     u8 _2A9;
     bool mIsConnectSide; // _2AA
@@ -69,6 +84,10 @@ public:
     u16 _2FE;
     u64* _300; // al::CameraTicket*
     bool mIsUseGetDemoCamera; // _308
+    u8 _309;
+    u8 _30A;
+    u8 _30B;
+    u32 _30C;
     u64* _310; // WaterSurfaceShadow*
     u64* _318; // FukankunZoomCapMessage*
     f32 mShadowLength; // _320
@@ -84,7 +103,8 @@ public:
     u32 _35C;
     u64* _360; // whatever al::registDemoRequesterToAddDemoInfo returns
     u32 _368;
+    u8 _36C;
     bool mIsAppearDemoHeightHigh; // _36D
     u16 _36E;
-    u64* _370;
+    al::RateParamF32* _370;
 };
