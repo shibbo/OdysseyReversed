@@ -36,6 +36,10 @@ void PlayerHitPointData::recoverMax()
             this->mCurHealth = this->mIsKidsMode ? 6 : 3;
         }
     }
+    else
+    {
+        this->mCurHealth = 3;
+    }
 }
 
 s32 PlayerHitPointData::getCurrent() const
