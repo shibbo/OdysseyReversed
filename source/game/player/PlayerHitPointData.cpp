@@ -19,54 +19,23 @@ void PlayerHitPointData::setKidsModeFlag(bool flag)
 
 void PlayerHitPointData::init()
 {
-    s32 health;
-
     this->mIsHaveMaxUpItem = 0;
-
-    if (this->mIsKidsMode)
-    {
-        health = 6;
-    }
-    else
-    {
-        health = 3;
-    }
-    
-    this->mCurHealth = health;
+    this->mCurHealth = this->mIsKidsMode ? 6 : 3;
 }
 
 void PlayerHitPointData::recoverMax()
 {
-    s32 health = 3;
-    s32 healthWithMax;
-
     if (!this->mIsForceNormalMode)
     {
-        if (this->mIsKidsMode)
+        if (this->mIsHaveMaxUpItem) 
         {
-            health = 6;
+            this->mCurHealth = this->mIsKidsMode ? 9 : 6;
         }
         else
         {
-            health = 3;
-        }
-
-        if (this->mIsKidsMode)
-        {
-            healthWithMax = 9;
-        }
-        else
-        {
-            healthWithMax = 6;
-        }
-
-        if (this->mIsHaveMaxUpItem)
-        {
-            health = healthWithMax;
+            this->mCurHealth = this->mIsKidsMode ? 6 : 3;
         }
     }
-
-    this->mCurHealth = health;
 }
 
 s32 PlayerHitPointData::getCurrent() const
