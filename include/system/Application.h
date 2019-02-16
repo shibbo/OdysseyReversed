@@ -27,7 +27,7 @@ public:
     void run();
     RootTask* getRootTask() const;
 
-    u64* _20;
+    u64* mSystemKit; // al::SystemKit*
     u64* _28;
     u64 _30;
     u64 _38;

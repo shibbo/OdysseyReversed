@@ -115,6 +115,8 @@ namespace sead
         virtual void waitStartDisplayLoop_();
         virtual void initHostIO_();
 
+        static void initialize(sead::Framework::InitializeArg const &);
+
         u32 _50;
         u32 _54;
         u64 _58;
