@@ -19,54 +19,27 @@ void PlayerHitPointData::setKidsModeFlag(bool flag)
 
 void PlayerHitPointData::init()
 {
-    s32 health;
-
     this->mIsHaveMaxUpItem = 0;
-
-    if (this->mIsKidsMode)
-    {
-        health = 6;
-    }
-    else
-    {
-        health = 3;
-    }
-    
-    this->mCurHealth = health;
+    this->mCurHealth = this->mIsKidsMode ? 6 : 3;
 }
 
 void PlayerHitPointData::recoverMax()
 {
-    s32 health = 3;
-    s32 healthWithMax;
-
     if (!this->mIsForceNormalMode)
     {
-        if (this->mIsKidsMode)
+        if (this->mIsHaveMaxUpItem) 
         {
-            health = 6;
+            this->mCurHealth = this->mIsKidsMode ? 9 : 6;
         }
         else
         {
-            health = 3;
-        }
-
-        if (this->mIsKidsMode)
-        {
-            healthWithMax = 9;
-        }
-        else
-        {
-            healthWithMax = 6;
-        }
-
-        if (this->mIsHaveMaxUpItem)
-        {
-            health = healthWithMax;
+            this->mCurHealth = this->mIsKidsMode ? 6 : 3;
         }
     }
-
-    this->mCurHealth = health;
+    else
+    {
+        this->mCurHealth = 3;
+    }
 }
 
 s32 PlayerHitPointData::getCurrent() const
@@ -76,8 +49,6 @@ s32 PlayerHitPointData::getCurrent() const
 
 s32 PlayerHitPointData::getMaxCurrent() const
 {
-    s32 health;
-
     if (this->mIsForceNormalMode)
     {
         return 3;
@@ -85,123 +56,68 @@ s32 PlayerHitPointData::getMaxCurrent() const
 
     if (this->mIsHaveMaxUpItem)
     {
-        if (this->mIsKidsMode)
-        {
-            health = 9;
-        }
-        else
-        {
-            health = 6;
-        }
+        return this->mIsKidsMode ? 9 : 6;
     }
     else if (this->mIsKidsMode)
     {
-        health = 6;
+        return 6;
     }
     else
     {
-        health = 3;
+        return 3;
     }
-
-    return health;
 }
 
 s32 PlayerHitPointData::getMaxWithItem() const
 {
-    s32 health;
-
     if (this->mIsKidsMode && !this->mIsForceNormalMode)
     {
-        health = 9;
+        return 9;
     }
     else
     {
-        health = 6;
+        return 6;
     }
-    
-    return health;
 }
 
 s32 PlayerHitPointData::getMaxWithoutItem() const
 {
-    s32 health;
-
     if (this->mIsKidsMode && !this->mIsForceNormalMode)
     {
-        health = 6;
+        return 6;
     }
     else
     {
-        health = 3;
+        return 3;
     }
-    
-    return health;
 }
 
 bool PlayerHitPointData::isMaxCurrent() const
 {
-    s32 curHealth, curMaxHealth, health, maxHealthWithKids;
+    s32 curMaxHealth;
 
     if (this->mIsForceNormalMode)
     {
-        curHealth = this->mCurHealth;
         curMaxHealth = 3;
     }
     else
     {
-        curHealth = this->mCurHealth;
-
-        if (this->mIsKidsMode & 0xFF)
-        {
-            health = 6;
-        }
-        else
-        {
-            health = 3;
-        }
-
-        if (this->mIsKidsMode & 0xFF)
-        {
-            maxHealthWithKids = 9;
-        }
-        else
-        {
-            maxHealthWithKids = 6;
-        }
+        s32 health = this->mIsKidsMode & 0xFF ? 6 : 3;
+        s32 maxHealthWithKids = this->mIsKidsMode & 0xFF ? 9 : 6;
         
-        if (this->mIsHaveMaxUpItem)
-        {
-            curMaxHealth = maxHealthWithKids;
-        }
-        else
-        {
-            curMaxHealth = health;
-        }
+        curMaxHealth = this->mIsHaveMaxUpItem ? maxHealthWithKids : health;
     }
 
-    return curMaxHealth == curHealth;
+    return curMaxHealth == this->mCurHealth;
 }
 
 bool PlayerHitPointData::isMaxWithItem() const
 {
-    s32 maxHealth;
-
-    if (this->mIsKidsMode && !this->mIsForceNormalMode)
-    {
-        maxHealth = 9;
-    }
-    else
-    {
-        maxHealth = 6;
-    }
-
-    return maxHealth == this->mCurHealth;
+    return (this->mIsKidsMode && !this->mIsForceNormalMode ? 9 : 6) == this->mCurHealth;
 }
 
 void PlayerHitPointData::getMaxUpItem()
 {
-    s32 newHealth;
-
     this->mIsHaveMaxUpItem = 1;
 
     if (this->mIsForceNormalMode)
@@ -210,16 +126,7 @@ void PlayerHitPointData::getMaxUpItem()
     }
     else
     {
-        if (this->mIsKidsMode)
-        {
-            newHealth = 9;
-        }
-        else
-        {
-            newHealth = 6;
-        }
-        
-        this->mCurHealth = newHealth;
+        this->mCurHealth = this->mIsKidsMode ? 9 : 6;
     }
 }
 
@@ -328,9 +235,7 @@ void PlayerHitPointData::recoverForDebug()
 
 void PlayerHitPointData::damage()
 {
-    s32 newPossibleHealth, healthWithKids;
-
-    newPossibleHealth = this->mCurHealth - 1;
+    s32 newPossibleHealth = this->mCurHealth - 1;
 
     if (newPossibleHealth <= 0)
     {
@@ -341,17 +246,8 @@ void PlayerHitPointData::damage()
 
     // now we see if we have to remove our max up heart
     if (!this->mIsForceNormalMode)
-    {
-        if (this->mIsKidsMode)
-        {
-            healthWithKids = 6;
-        }
-        else
-        {
-            healthWithKids = 3;
-        }
-        
-        if (newPossibleHealth <= healthWithKids)
+    {        
+        if (newPossibleHealth <= this->mIsKidsMode ? 6 : 3)
         {
             this->mIsHaveMaxUpItem = 0;
         }
@@ -376,37 +272,16 @@ void PlayerHitPointData::forceNormalMode()
 
 void PlayerHitPointData::endForceNormalMode()
 {
-    s32 healthWithKids, healthWithKidsAndNoForce, newHealth;
     this->mIsForceNormalMode = 0;
 
-    if (this->mIsKidsMode)
-    {
-        healthWithKids = 9;
-    }
-    else
-    {
-        healthWithKids = 6;
-    }
-
-    if (this->mIsKidsMode)
-    {
-        healthWithKidsAndNoForce = 3;
-    }
-    else
-    {
-        healthWithKidsAndNoForce = 6;
-    }
-    
     if (this->mIsHaveMaxUpItem)
     {
-        newHealth = healthWithKids;
+        this->mCurHealth = this->mIsKidsMode ? 9 : 6;
     }
     else
     {
-        newHealth = healthWithKidsAndNoForce;
-    }
-    
-    this->mCurHealth = newHealth;
+        this->mCurHealth = this->mIsKidsMode ? 3 : 6;
+    }  
 }
 
 bool PlayerHitPointData::isForceNormalMode() const
