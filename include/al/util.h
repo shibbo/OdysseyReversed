@@ -17,12 +17,14 @@
 #include "sead/heap.h"
 #include "sead/quat.h"
 #include "sead/string.h"
+#include "sead/vector.h"
 #include "types.h"
 
 namespace al
 {
     // ACTOR
     void calcQuat(sead::Quat<f32> *, al::LiveActor const *);
+
     //void calcUpDir(sead::Vector3<f32> *out, al::LiveActor const *);
     sead::Vector3<f32>* getGravity(al::LiveActor const *);
     sead::Vector3<f32>* getTrans(al::LiveActor const *);
@@ -57,9 +59,23 @@ namespace al
     bool isActiveCameraInterpole(al::IUseCamera const *, s32);
     void startCamera(al::IUseCamera const * ,al::CameraTicket *, s32);
 
+    // DISPLAY
+    s32 getDisplayWidth();
+    s32 getDisplayHeight();
+    s32 getSubDisplayWidth();
+    s32 getSubDisplayHeight();
+    s32 getVirtualDisplayWidth();
+    s32 getVirtualDisplayHeight();
+
     // HEAP
-    void addNamedHeap(sead::Heap *, char const *);
+    void addNamedHeap(sead::Heap *, char const *name);
+    sead::Heap* findNamedHeap(char const *name);
     sead::Heap* getStationedHeap();
+
+    // LANGUAGE
+    char* getLanguageString();
+    void forceInitLanguage(char const *name);
+    void initRegionAndLanguage();
 
     // NERVE
     s32 calcNerveRate(al::IUseNerve const *, s32);
@@ -72,6 +88,11 @@ namespace al
     // OBJECT
     bool isObjectName(al::ActorInitInfo const &, char const *);
     bool isObjectNameSubStr(al::ActorInitInfo const &, char const *);
+
+    // SAVE
+    void initSaveDirSync(char const *, u32, u32);
+    bool isSuccessSaveDataSequence();
+    void readSaveDataSync(char const *, u32, u32);
 
     // STRING
     char* getBaseName(char const *);

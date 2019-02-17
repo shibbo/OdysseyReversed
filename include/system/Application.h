@@ -5,6 +5,8 @@
 
 #pragma once
 
+#include "al/system/SystemKit.h"
+#include "sead/framework.h"
 #include "sead/heap.h"
 
 class RootTask;
@@ -27,10 +29,10 @@ public:
     void run();
     RootTask* getRootTask() const;
 
-    u64* mSystemKit; // al::SystemKit*
-    u64* _28;
-    u64 _30;
-    u64 _38;
+    al::SystemKit* mSystemKit; // _20
+    sead::Framework* _28; // al::GameFrameworkNx* (fix me)
+    u64* _30;
+    u64* _38; // al::AccountHolder
 
     static Application* sInstance;
 };
