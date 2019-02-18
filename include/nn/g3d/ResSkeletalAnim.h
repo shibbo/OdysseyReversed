@@ -1,3 +1,8 @@
+/**
+ * @file ResSkeletalAnim.h
+ * @brief Resource file for skeletal animations.
+ */
+
 #pragma once
 
 namespace nn

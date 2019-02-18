@@ -1,3 +1,8 @@
+/**
+ * @file ResSceneAnim.h
+ * @brief Resource file for scene animations.
+ */
+
 #pragma once
 
 namespace nn

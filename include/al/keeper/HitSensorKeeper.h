@@ -6,13 +6,13 @@
 #pragma once
 
 #include "types.h"
+#include "al/sensor/HitSensor.h"
 #include "sead/matrix.h"
 #include "sead/vector.h"
 
 namespace al
 {
     class LiveActor;
-    class HitSensor;
 
     class HitSensorKeeper
     {
@@ -29,7 +29,7 @@ namespace al
         void invalidate();
         void validateBySystem();
         void invalidateBySystem();
-        u64* getSystem(char const *) const; // al::HitSensor*
+        al::HitSensor* getSesnor(char const *) const;
 
         u32 mNumSensors; // _4
         al::HitSensor* mSensors; // _8

@@ -1,3 +1,8 @@
+/**
+ * @file ResFile.h
+ * @brief Resource file for models.
+ */
+
 #include "nn/g3d/ResFile.h"
 
 namespace nn

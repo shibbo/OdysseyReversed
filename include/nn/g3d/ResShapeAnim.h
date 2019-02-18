@@ -1,3 +1,8 @@
+/**
+ * @file ResShapeAnim.h
+ * @brief Resource file for shape animations.
+ */
+
 #pragma once
 
 namespace nn

@@ -1,3 +1,8 @@
+/**
+ * @file ResMaterialAnim.h
+ * @brief Resource file for material animations.
+ */
+
 #pragma once
 
 namespace nn

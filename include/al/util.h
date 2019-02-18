@@ -24,11 +24,11 @@ namespace al
 {
     // ACTOR
     void calcQuat(sead::Quat<f32> *, al::LiveActor const *);
-
     //void calcUpDir(sead::Vector3<f32> *out, al::LiveActor const *);
     sead::Vector3<f32>* getGravity(al::LiveActor const *);
     sead::Vector3<f32>* getTrans(al::LiveActor const *);
     void hideModelIfShow(al::LiveActor *);
+    void hideShadow(al::LiveActor *);
     void invalidateClipping(al::LiveActor *);
     void invalidateHitSensor(al::LiveActor *, char const *);
     void invalidateShadow(al::LiveActor *);
@@ -58,6 +58,9 @@ namespace al
     bool isActiveCamera(al::CameraTicket const *);
     bool isActiveCameraInterpole(al::IUseCamera const *, s32);
     void startCamera(al::IUseCamera const * ,al::CameraTicket *, s32);
+
+    // COLLISION
+    void invalidateCollisionPartsBySystem(al::LiveActor *);
 
     // DISPLAY
     s32 getDisplayWidth();

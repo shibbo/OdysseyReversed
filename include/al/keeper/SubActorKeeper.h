@@ -30,3 +30,10 @@ namespace al
         u32 _14;
     };
 };
+
+class alSubActorFunction
+{
+public:
+    static void trySyncAlive(al::SubActorKeeper *);
+    static void trySyncDead(al::SubActorKeeper *);
+};
