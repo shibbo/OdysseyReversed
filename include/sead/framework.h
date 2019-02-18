@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include "color.h"
 #include "delegate.h"
 #include "hostio.h"
 #include "list.h"
@@ -13,6 +14,7 @@
 #include "task.h"
 #include "tick.h"
 #include "types.h"
+#include "vector.h"
 
 class NVNcounterData;
 
@@ -130,16 +132,39 @@ namespace sead
         void* mGraphicsContextCtrl; // _98
     };
 
-    class GameFrameworkNX : public sead::GameFramework
+    class GameFrameworkNx : public sead::GameFramework
     {
     public:
-        GameFrameworkNX();
+        struct CreateArg
+        {
+            s32 presentInterval; // _0
+            sead::Color4f _4;
+            sead::Color4f _C;
+            u32 _14;
+            u32 _18;
+            u8 _1C;
+            u8 _1D;
+            u8 _1E;
+            u8 _1F;
+            u32 _20;
+            u32 _24;
+            u32 _28;
+            u32 _2C;
+            u32 _30;
+            u32 _34;
+            u32 _38;
+            u32 _3C;
+            u32 _40;
+            u32 _44;
+        };
+
+        GameFrameworkNx();
 
         virtual bool checkDerivedRuntimeTypeInfo(sead::RuntimeTypeInfo::Interface const *) const;
         virtual sead::RuntimeTypeInfo::Interface* getRuntimeTypeInfo() const;
-        virtual ~GameFrameworkNX();
+        virtual ~GameFrameworkNx();
 
-        virtual u64* getMethodFrameBuffer(s32);
+        virtual u64* getMethodFrameBuffer(s32) const;
         virtual u64* getMethodLogicalFrameBuffer(s32);
         virtual void initRun_(sead::Heap *);
         virtual void runImpl_();
@@ -157,6 +182,9 @@ namespace sead
         virtual void clearFrameBuffers_(s32);
         virtual void waitForGpuDone_();
         virtual void setGpuTimeStamp_();
+        
+        void requestChangeUseGPU(bool);
+        void initializeGraphicsSystem(sead::Heap *, sead::Vector2<f32> const &);
 
         u8 _A0[0x128-0xA0];
         sead::DisplayBufferNvn* mDisplayBuffer; // _128

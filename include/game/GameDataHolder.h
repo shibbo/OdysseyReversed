@@ -80,6 +80,8 @@ public:
     s32 getShineAnimFrame(s32) const;
     s32 getCoinCollectNumMax(s32) const;
 
+    void readFromSaveDataBufferCommonFileOnlyLanguage();
+
     u64* _8;
     al::MessageSystem* mMessageSystem; // _10
     GameDataFile* mDataFileArr; // _18

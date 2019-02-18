@@ -114,4 +114,8 @@ namespace al
     void tryGetPlacementInfoByIndex(al::PlacementInfo *, al::PlacementInfo const &, s32);
     void tryGetPlacementInfoByKey(al::PlacementInfo *, al::PlacementInfo const &, char const *);
     void tryGetPlacementInfoAndKeyNameByIndex(al::PlacementInfo *, char const**, al::PlacementInfo const &, s32);
+
+    // RESOURCE
+    void addResourceCategory(sead::SafeStringBase<char> const &, s32, sead::Heap *);
+    void createCategoryResourceAll(sead::SafeStringBase<char> const &);
 };

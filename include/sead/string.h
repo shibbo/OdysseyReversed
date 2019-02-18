@@ -17,7 +17,7 @@ namespace sead
         virtual sead::SafeStringBase<T> operator=(sead::SafeStringBase<T> const &);
         virtual void assureTerminationImpl_();
 
-        u64* mCharPtr; // _8
+        char* mCharPtr; // _8
     };
 
     template<typename T>

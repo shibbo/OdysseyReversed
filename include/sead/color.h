@@ -65,5 +65,7 @@ namespace sead
         f32 g; // _4
         f32 b; // _8
         f32 a; // _C
+
+        static sead::Color4f cBlack;
     };
 };

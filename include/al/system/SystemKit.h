@@ -1,3 +1,8 @@
+/**
+ * @file MemorySystem.h
+ * @brief Class for managing memory.
+ */
+
 #pragma once
 
 #include "MemorySystem.h"

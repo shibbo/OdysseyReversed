@@ -1,3 +1,8 @@
+/**
+ * @file MemorySystem.h
+ * @brief Main memory management class in the game.
+ */
+
 #pragma once
 
 #include "sead/heap.h"

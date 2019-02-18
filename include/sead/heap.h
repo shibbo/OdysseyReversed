@@ -162,6 +162,7 @@ namespace sead
         virtual u64 destroyAndGetAllocatableSize(s32);
         virtual void setFindFreeBlockMode(sead::ExpHeap::FindFreeBlockMode);
 
+        static sead::ExpHeap* create(u64, sead::SafeStringBase<char> const &, sead::Heap *, s32, sead::Heap::HeapDirection, bool);
         static sead::ExpHeap* tryCreate(void *, u64, sead::SafeStringBase<char> const &, bool);
         u64 freeAndGetAllocatableSize(void *, s32);
         u64 adjustBack_();
@@ -212,6 +213,8 @@ namespace sead
         virtual bool isAdjustable() const = 0;
         virtual void dump();
         // virtual void dumpYAML(sead::WriteStream &, int);
+
+        static sead::FrameHeap* create(u64, sead::SafeStringBase<char> const &, sead::Heap *, s32, sead::Heap::HeapDirection, bool);
     };
 
     class HeapMgr : public sead::hostio::Node
