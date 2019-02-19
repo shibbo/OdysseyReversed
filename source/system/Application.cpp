@@ -11,7 +11,6 @@
 #include "sead/framework.h"
 
 sead::Heap* someHeap = (sead::Heap*)0x7102522A28;
-char* sceneObjectName = (char*)0x71018AA876;
 
 Application::Application() : IDisposer()
 {
@@ -27,6 +26,8 @@ void Application::init(s32 argc, char** argv)
 
     // don't ask me why it does this because I don't know
     sead::Heap* curHeap = (sead::Heap*)1;
+    sead::Heap* stationedHeap;
+    sead::Heap* audioStationedHeap;
 
     if (sead::HeapMgr::sRootHeaps)
     {
@@ -49,7 +50,7 @@ void Application::init(s32 argc, char** argv)
         sead::HeapMgr::sInstancePtr->setCurrentHeap_(curHeap);
     }
 
-    sead::Heap* stationedHeap = this->mSystemKit->mMemorySystem->mStationedHeap;
+    stationedHeap = this->mSystemKit->mMemorySystem->mStationedHeap;
     sead::Heap* curStationedHeap = (sead::Heap*)1;
 
     if (stationedHeap)
@@ -58,15 +59,15 @@ void Application::init(s32 argc, char** argv)
     }
 
     sead::SafeStringBase<char> audioHeapStr;
-    audioHeapStr.mCharPtr = "AudioHeap";
+    audioHeapStr.mCharPtr = (char*)"AudioHeap";
     
     sead::ExpHeap* audioHeap = sead::ExpHeap::create(0x12C00000, audioHeapStr, 0, 8, sead::Heap::HeapDirection::TAIL, 0);
     al::addNamedHeap(audioHeap, 0);
 
     sead::SafeStringBase<char> audioStationedRsrcHeap;
-    audioStationedRsrcHeap.mCharPtr = "AudioStationedResourceHeap";
+    audioStationedRsrcHeap.mCharPtr = (char*)"AudioStationedResourceHeap";
 
-    sead::ExpHeap* audioStationedHeap = sead::ExpHeap::create(0x10E00000, audioStationedRsrcHeap, audioHeap, 8, sead::Heap::HeapDirection::TAIL, 0);
+    audioStationedHeap = sead::ExpHeap::create(0x10E00000, audioStationedRsrcHeap, audioHeap, 8, sead::Heap::HeapDirection::TAIL, 0);
     al::addNamedHeap(audioStationedHeap, 0);
 
     sead::GameFrameworkNx::CreateArg createArg;
@@ -141,40 +142,40 @@ void Application::init(s32 argc, char** argv)
     this->mSystemKit->createResourceSystem(0, *(s32*)0x7101F158A0, 0x400000, 1);
 
     sead::SafeStringBase<char> stationedHeapStr;
-    stationedHeapStr.mCharPtr = "StationedResourceHeap";
+    stationedHeapStr.mCharPtr = (char*)"StationedResourceHeap";
 
-    sead::ExpHeap* stationedHeap = sead::ExpHeap::create(0x2EE00000, stationedHeapStr, this->mSystemKit->mMemorySystem->mStationedHeap, 8, sead::Heap::HeapDirection::TAIL, 0);
+    stationedHeap = sead::ExpHeap::create(0x2EE00000, stationedHeapStr, this->mSystemKit->mMemorySystem->mStationedHeap, 8, sead::Heap::HeapDirection::TAIL, 0);
     al::addNamedHeap(stationedHeap, 0);
 
     sead::SafeStringBase<char> residentSysStr;
-    residentSysStr.mCharPtr = "常駐[システム]";
+    residentSysStr.mCharPtr = (char*)"常駐[システム]";
     al::addResourceCategory(residentSysStr, 0x10, stationedHeap);
 
     sead::SafeStringBase<char> localResourceHeapStr;
-    localResourceHeapStr.mCharPtr = "LocalizeResourceHeap";
+    localResourceHeapStr.mCharPtr = (char*)"LocalizeResourceHeap";
 
     sead::FrameHeap* localizeResourceHeap = sead::FrameHeap::create(0x1400000, localResourceHeapStr, this->mSystemKit->mMemorySystem->mStationedHeap, 8, sead::Heap::HeapDirection::TAIL, 0);
     al::addNamedHeap(localizeResourceHeap, "LocalizeResourceHeap");
 
     sead::SafeStringBase<char> localResourceHeapStr_0;
-    localResourceHeapStr_0.mCharPtr = "常駐[ローカライズ]";
+    localResourceHeapStr_0.mCharPtr = (char*)"常駐[ローカライズ]";
     sead::Heap* localizeHeap = al::findNamedHeap("LocalizeResourceHeap");
     al::addResourceCategory(localResourceHeapStr_0, 0x50, localizeHeap);
 
     sead::SafeStringBase<char> permanentResourceStr;
-    permanentResourceStr.mCharPtr = "常駐";
+    permanentResourceStr.mCharPtr = (char*)"常駐";
     al::addResourceCategory(permanentResourceStr, 0x200, stationedHeap);
 
     sead::SafeStringBase<char> residentShader;
-    residentShader.mCharPtr = "常駐[シェーダー]";
+    residentShader.mCharPtr = (char*)"常駐[シェーダー]";
     stationedHeap = al::findNamedHeap("StationedResourceHeap");
     al::addResourceCategory(residentShader, 0x40, stationedHeap);
     al::ShaderHolder::createInstance(stationedHeap);
     al::createCategoryResourceAll(residentShader);
 
-    sead::Heap* audioStationedHeap = al::findNamedHeap("AudioStationedResourceHeap");
+    audioStationedHeap = al::findNamedHeap("AudioStationedResourceHeap");
     sead::SafeStringBase<char> audioResidentStr;
-    audioResidentStr.mCharPtr = "常駐[オーディオ]";
+    audioResidentStr.mCharPtr = (char*)"常駐[オーディオ]";
     al::addResourceCategory(audioResidentStr, 0x3A, audioStationedHeap);
 
     if (curHeap != (sead::Heap*)1)
@@ -188,8 +189,8 @@ void Application::run()
     sead::TaskClassID taskId;
     taskId.mTaskType = 2;
 
-    sead::TaskBase::CreateArg taskBaseArg = sead::TaskBase::CreateArg::CreateArg(taskId);
-    sead::Framework::RunArg runArg = sead::Framework::RunArg::RunArg();
+    sead::TaskBase::CreateArg taskBaseArg = sead::TaskBase::CreateArg(taskId);
+    sead::Framework::RunArg runArg;
 
     this->_28->run(this->mSystemKit->mMemorySystem->mStationedHeap, taskBaseArg, runArg);
 }

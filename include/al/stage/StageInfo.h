@@ -5,9 +5,9 @@
 
 #pragma once
 
-#include "byaml/ByamlIter.h"
-#include "PlacementInfo.h"
-#include "resource.h"
+#include "al/byaml/ByamlIter.h"
+#include "al/PlacementInfo.h"
+#include "al/resource.h"
 #include "types.h"
 
 namespace al

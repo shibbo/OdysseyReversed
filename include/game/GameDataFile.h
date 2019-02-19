@@ -5,8 +5,9 @@
 
 #pragma once
 
-#include "GameDataFile.h"
 #include "types.h"
+
+class GameDataHolder;
 
 class GameDataFile
 {

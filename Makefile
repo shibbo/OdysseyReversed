@@ -24,7 +24,14 @@ VERSION	:=	$(LIBNX_MAJOR).$(LIBNX_MINOR).$(LIBNX_PATCH)
 #---------------------------------------------------------------------------------
 TARGET		:=	decomp
 BUILD		:=	build
-SOURCES		:=	source source/al/byaml source/al/rail source/sead
+SOURCES		:=	source source/al/byaml  \
+					   source/al/rail \
+					   source/game/actor \
+					   source/game/config \
+					   source/game/player \
+					   source/nn/g3d \
+					   source/sead  \
+					   source/system
 INCLUDES	:=	include
 
 #---------------------------------------------------------------------------------

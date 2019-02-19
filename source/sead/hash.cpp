@@ -448,18 +448,18 @@ namespace sead
             HashCRC32::sInitialized = 1;
         }
 
-        curByte = *(u8*)source;
+        curByte = *source;
 
         if (!*source)
         {
             return 0;
         }
-        nextByte = (u8)source + 1;
+        nextByte = *source + 1;
         curHash = -1;
         do
         {
             curHash = HashCRC32::sTable[(curByte ^ curHash) & 0xFF] ^ (curHash >> 8);
-            v13 = *(u8*)nextByte++;
+            v13 = nextByte++;
             curByte = v13;
         }
         while (v13);

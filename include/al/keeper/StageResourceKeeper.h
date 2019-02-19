@@ -5,7 +5,7 @@
 
 #pragma once
 
-#include "stage/StageResourceList.h"
+#include "al/stage/StageResourceList.h"
 #include "types.h"
 
 namespace al

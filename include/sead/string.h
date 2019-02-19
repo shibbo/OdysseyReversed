@@ -37,31 +37,31 @@ namespace sead
         char* mFormattedString; // _10
     };
 
-    template<int T>
-    class FixedSafeString : public sead::BufferedSafeStringBase<T>
+    template<char16_t T>
+    class FixedSafeString : public sead::BufferedSafeStringBase<char16_t>
     {
     public:
         virtual void assureTerminationImpl_();
     };
 
-    template <int T>
-    class WFixedSafeString : public sead::BufferedSafeStringBase<T>
+    template <char16_t T>
+    class WFixedSafeString : public sead::BufferedSafeStringBase<char16_t>
     {
     public:
         virtual ~WFixedSafeString();
-        virtual sead::WFixedSafeString operator=(sead::SafeStringBase<char16_t> const &);
+        virtual sead::WFixedSafeString<T> operator=(sead::SafeStringBase<char16_t> const &);
     };
 
-    template <int T>
+    template <char16_t T>
     class WFormatFixedSafeString : public sead::WFixedSafeString<T>
     {
     public:
         virtual ~WFormatFixedSafeString();
-        virtual sead::WFormatFixedSafeString operator=(sead::SafeStringBase<char16_t> const &);
+        virtual sead::WFormatFixedSafeString<T> operator=(sead::SafeStringBase<char16_t> const &);
     };
 
     template<typename T>
-    class HeapSafeStringBase : public sead::BufferedSafeStringBase<T>
+    class HeapSafeStringBase : public sead::BufferedSafeStringBase<char16_t>
     {
     public:
         HeapSafeStringBase(sead::Heap *,sead::SafeStringBase<char> const &, s32);
