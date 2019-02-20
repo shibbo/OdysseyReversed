@@ -23,7 +23,7 @@ void nninitStartup()
     nn::oe::EnableGamePlayRecording(&recordingBlock, 0x6000000);
 }
 
-void nnMain()
+int main(int argc, char **argv)
 {
     s32 argC = nn::os::GetHostArgc();
     char** argV = nn::os::GetHostArgv();
@@ -47,5 +47,7 @@ void nnMain()
 
         Application::sInstance->init(argC, argV);
         Application::sInstance->run();
+
+        return 0;
     }
 }

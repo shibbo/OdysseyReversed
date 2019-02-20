@@ -8,13 +8,6 @@ endif
 
 include $(DEVKITPRO)/devkitA64/base_rules
 
-export LIBNX_MAJOR	:= 2
-export LIBNX_MINOR	:= 0
-export LIBNX_PATCH	:= 0
-
-
-VERSION	:=	$(LIBNX_MAJOR).$(LIBNX_MINOR).$(LIBNX_PATCH)
-
 #---------------------------------------------------------------------------------
 # TARGET is the name of the output
 # BUILD is the directory where object files & intermediate files will be placed
@@ -150,4 +143,3 @@ $(OFILES_SRC)	: $(HFILES)
 #---------------------------------------------------------------------------------------
 endif
 #---------------------------------------------------------------------------------------
-

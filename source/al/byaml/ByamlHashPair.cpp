@@ -5,8 +5,6 @@
 
 #include "al/byaml/ByamlHashPair.h"
 
-#include "endianess.h"
-
 namespace al
 {
     u32 ByamlHashPair::getKey(bool swap) const
@@ -36,7 +34,7 @@ namespace al
         u32 value;
 
         u32 val = this->mVal;
-        u32 revVal = swap32(val);
+        u32 revVal = (val << 24) | ((val << 8) & 0xFF0000) | ((val >> 24) & 0xFF) | ((val >> 8) & 0xFF00);
 
         if (swap & 0x1)
         {

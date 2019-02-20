@@ -5,7 +5,6 @@
 
 #include "al/byaml/ByamlStringTableIter.h"
 
-#include "endianess.h"
 #include "string.h"
 
 namespace al
@@ -52,7 +51,7 @@ namespace al
         u32 addr;
     
         u32 rawAddr = *(u32*)&this->mStringTableSrc[4 * idx + 4];
-        u32 swappedAddr = swap32(rawAddr);
+        u32 swappedAddr = (rawAddr << 24) | ((rawAddr << 8) & 0xFF0000) | ((rawAddr >> 24) & 0xFF) | ((rawAddr >> 8) & 0xFF00);
 
         if (this->mSwapEndianess)
         {
@@ -83,7 +82,7 @@ namespace al
         }
 
         u32 rawAddr = *(u32*)&this->mStringTableSrc[4 * idx + 4];
-        u32 swappedAddr = swap32(rawAddr);
+        u32 swappedAddr = (rawAddr << 24) | ((rawAddr << 8) & 0xFF0000) | ((rawAddr >> 24) & 0xFF) | ((rawAddr >> 8) & 0xFF00);
 
         if (this->mSwapEndianess)
         {
@@ -100,8 +99,10 @@ namespace al
     u8* ByamlStringTableIter::getString(s32 idx) const
     {
         u32 addr;
+
+        u32 curSrc = *(u32*)&this->mStringTableSrc[4 * idx + 4];
         
-        u32 rawAddr = swap32(*(u32*)&this->mStringTableSrc[4 * idx + 4]);
+        u32 rawAddr = (curSrc << 24) | ((curSrc << 8) & 0xFF0000) | ((curSrc >> 24) & 0xFF) | ((curSrc >> 8) & 0xFF00);
 
         if (this->mSwapEndianess)
         {
@@ -123,7 +124,7 @@ namespace al
 
         u32 v4 = *((u32*)src + 0x4);
         u32 v3 = *((u32*)src + 0x8);
-        u32 v5 = swap32(v3);
+        u32 v5 = (v3 << 24) | ((v3 << 8) & 0xFF0000) | ((v3 >> 24) & 0xFF) | ((v3 >> 8) & 0xFF00);
 
         if (this->mSwapEndianess)
         {
@@ -134,7 +135,7 @@ namespace al
             v6 = v3;
         }
 
-        v7 = swap32(v4);
+        v7 = (v4 << 24) | ((v4 << 8) & 0xFF0000) | ((v4 >> 24) & 0xFF) | ((v4 >> 8) & 0xFF00);
 
         if (!this->mSwapEndianess)
         {
@@ -188,7 +189,8 @@ namespace al
                     }
 
                     idx = v8 >> 1;
-                    v10 = strcmp_0(v4, (char*)&tableSrc[swap32(*(u32*)(v6 + 4 * (v8 >> 1)))]);
+                    u32 temp = *(u32*)(v6 + 4 * (v8 >> 1));
+                    v10 = strcmp_0(v4, (char*)&tableSrc[(temp << 24) | ((temp << 8) & 0xFF0000) | ((temp >> 24) & 0xFF) | ((temp >> 8) & 0xFF00)]);
 
                     if (!v10)
                     {
@@ -216,7 +218,8 @@ namespace al
                     }
 
                     idx = v11 >> 1;
-                    v12 = strcmp_0(v4, (char*)&tableSrc[swap32(*(u32*)(v6 + 4 * (v8 >> 1)))]);
+                    u32 temp = *(u32*)(v6 + 4 * (v8 >> 1));
+                    v12 = strcmp_0(v4, (char*)&tableSrc[(temp << 24) | ((temp << 8) & 0xFF0000) | ((temp >> 24) & 0xFF) | ((temp >> 8) & 0xFF00)]);
 
                     if (!v12)
                     {

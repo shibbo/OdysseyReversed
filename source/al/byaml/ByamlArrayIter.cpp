@@ -5,8 +5,6 @@
 
 #include "al/byaml/ByamlArrayIter.h"
 
-#include "endianess.h"
-
 namespace al
 {
     ByamlArrayIter::ByamlArrayIter()
@@ -102,7 +100,7 @@ namespace al
         ret = 1;
         rawValue = *(u32*)&this->mArraySrc[4 * idx + ((v7 + 7) & 0xFFFFFFFC)];
         out->mType = type;
-        swapValue = swap32(rawValue);
+        swapValue = ((rawValue << 24) | ((rawValue << 8) & 0xFF0000) | ((rawValue >> 24) & 0xFF) | ((rawValue >> 8) & 0xFF00));
         
         if (this->mSwapEndianess)
         {

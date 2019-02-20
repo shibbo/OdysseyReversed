@@ -5,8 +5,6 @@
 
 #include "al/byaml/ByamlHeader.h"
 
-#include "endianess.h"
-
 namespace al
 {
     u16 ByamlHeader::getTag() const
@@ -14,7 +12,7 @@ namespace al
         u16 rawTag, reversedTag, tag;
 
         rawTag = this->mTag;
-        reversedTag = swap16(rawTag);
+        reversedTag = (rawTag << 8) | (rawTag >> 8);
 
         // "YB" in ASCII
         if (rawTag == 0x5942)
@@ -39,7 +37,7 @@ namespace al
         u16 version;
 
         u16 rawVersion = *(u16*)&this->mTag >> 16;
-        u16 reversedVersion = swap16(rawVersion);
+        u16 reversedVersion = (rawVersion << 8) | (rawVersion >> 8);
 
         // it seems to do some weird stuff to get to a simple variable
         // it also does checks to see if the tag is right, so I guess that's why
@@ -60,7 +58,7 @@ namespace al
         u32 hashTableOffset;
 
         u32 hashTableOffsetRaw = this->mHashTableOffset;
-        u32 revHashTableOffset = swap32(hashTableOffsetRaw);
+        u32 revHashTableOffset = (hashTableOffsetRaw << 24) | ((hashTableOffsetRaw << 8) & 0xFF0000) | ((hashTableOffsetRaw >> 24) & 0xFF) | ((hashTableOffsetRaw >> 8) & 0xFF00);
 
         if (this->mTag == 0x5942)
         {
@@ -79,8 +77,7 @@ namespace al
         u32 stringTableOffset;
 
         u32 stringTableOffsetRaw = this->mStringTableOffset;
-        u32 revStringTableOffset = swap32(stringTableOffsetRaw);
-
+        u32 revStringTableOffset = (stringTableOffsetRaw << 24) | ((stringTableOffsetRaw << 8) & 0xFF0000) | ((stringTableOffsetRaw >> 24) & 0xFF) | ((stringTableOffsetRaw >> 8) & 0xFF00);
         if (this->mTag == 0x5942)
         {
             stringTableOffset = revStringTableOffset;
@@ -98,7 +95,7 @@ namespace al
         u32 dataOffset;
 
         u32 dataOffsetRaw = this->mDataOffset;
-        u32 revDataOffset = swap32(dataOffsetRaw);
+        u32 revDataOffset = (dataOffsetRaw << 24) | ((dataOffsetRaw << 8) & 0xFF0000) | ((dataOffsetRaw >> 24) & 0xFF) | ((dataOffsetRaw >> 8) & 0xFF00);
 
         if (this->mTag == 0x5942)
         {

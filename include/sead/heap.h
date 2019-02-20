@@ -245,7 +245,7 @@ namespace sead
         static sead::CriticalSection* sHeapTreeLockCS;
         static sead::HeapMgr* sInstance;
         static sead::HeapMgr* sInstancePtr;
-        static u64* sRootHeaps;
+        static sead::Heap* sRootHeaps;
         static sead::Arena* sArena;
         static sead::Arena* sDefaultArena;
         static s64 sSleepSpanAtRemoveCacheFailure;

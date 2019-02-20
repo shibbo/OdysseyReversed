@@ -4,7 +4,6 @@
  */
 
 #include "al/byaml/ByamlData.h"
-#include "endianess.h"
 
 namespace al
 {
@@ -18,7 +17,7 @@ namespace al
     {
         this->mType = hashPair->mType;
         s32 hashPairVal = hashPair->mVal;
-        s32 valReversed = swap32(hashPairVal);
+        s32 valReversed = (hashPairVal << 24) | ((hashPairVal << 8) & 0xFF0000) | ((hashPairVal >> 24) & 0xFF) | ((hashPairVal >> 8) & 0xFF00);
 
         if (swap)
         {
@@ -30,7 +29,7 @@ namespace al
 
     void ByamlData::set(u8 type, u32 val, bool swap)
     {
-        s32 swapVal = swap32(val);
+        s32 swapVal = (val << 24) | ((val << 8) & 0xFF0000) | ((val >> 24) & 0xFF) | ((val >> 8) & 0xFF00);
         
         if (!swap)
         {

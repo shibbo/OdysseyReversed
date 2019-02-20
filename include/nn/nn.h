@@ -9,7 +9,7 @@
 extern "C" {
 #endif
 
-void nnMain();
+int main(int argc, char **argv);
 void nninitStartup();
 
 void _init();

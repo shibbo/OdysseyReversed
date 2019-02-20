@@ -21,7 +21,9 @@ namespace nn
         struct UserExceptionInfo;
 
         // ARG
+        void SetHostArgc(s32);
         s32 GetHostArgc();
+        void SetHostArgv(char **);
         char** GetHostArgv();
 
         // MEMORY
@@ -80,5 +82,11 @@ namespace nn
         nn::os::Tick GetSystemTick();
         u64 GetThreadAvailableCoreMask();
         void SetMemoryHeapSize(u64 size);
+
+        namespace detail
+        {
+            static s32 g_CommandLineParameter;
+            static char** g_CommandLineParameterArgv;
+        };
     };
 };
