@@ -13,6 +13,6 @@ namespace al
     class CollisionParts
     {
     public:
-        CollisionParts(void *, void const *);
+        CollisionParts(void *kclSrc, void const *);
     };
 }
