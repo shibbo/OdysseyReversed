@@ -1,3 +1,8 @@
+/**
+ * @file CollisionCodeList.h
+ * @brief Stores information on collision codes.
+ */
+
 #pragma once
 
 #include "types.h"

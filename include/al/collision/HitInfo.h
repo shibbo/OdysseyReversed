@@ -1,3 +1,8 @@
+/**
+ * @file HitInfo.h
+ * @brief Stores information about how an object is collided.
+ */
+
 #pragma once
 
 #include "sead/vector.h"
