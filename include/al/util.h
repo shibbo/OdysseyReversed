@@ -11,6 +11,7 @@
 #include "al/camera/IUseCamera.h"
 #include "al/PlacementId.h"
 #include "al/PlacementInfo.h"
+#include "al/resource.h"
 #include "al/switch/IUseStageSwitch.h"
 #include "nerve/IUseNerve.h"
 #include "nerve/Nerve.h"
@@ -70,6 +71,9 @@ namespace al
     s32 getVirtualDisplayWidth();
     s32 getVirtualDisplayHeight();
 
+    // FILE
+    void clearFileLoaderEntry();
+
     // HEAP
     void addNamedHeap(sead::Heap *, char const *name);
     sead::Heap* findNamedHeap(char const *name);
@@ -92,12 +96,17 @@ namespace al
     bool isObjectName(al::ActorInitInfo const &, char const *);
     bool isObjectNameSubStr(al::ActorInitInfo const &, char const *);
 
+    // RESOURCE
+    u8* findResourceYaml(al::Resource const *, char const *, char const *);
+    al::Resource* findOrCreateResource(sead::SafeStringBase<char> const &, char const *);
+
     // SAVE
     void initSaveDirSync(char const *, u32, u32);
     bool isSuccessSaveDataSequence();
     void readSaveDataSync(char const *, u32, u32);
 
     // STRING
+    void copyString(char *, char const *, u32);
     char* getBaseName(char const *);
     bool isEqualString(char const *, char const *);
     bool isEqualString(sead::SafeStringBase<char> const &, sead::SafeStringBase<char> const &);

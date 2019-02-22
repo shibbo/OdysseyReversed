@@ -5,6 +5,9 @@
 
 #pragma once
 
+#include "CollisionParts.h"
+#include "KCPrismData.h"
+#include "KCPrismHeader.h"
 #include "types.h"
 #include "sead/vector.h"
 
@@ -22,7 +25,10 @@ namespace al
         sead::Vector3<f32> getPos(s32 idx) const;
         void calcCenterPos(sead::Vector3<f32> *destPos) const;
 
-        u8 _0[0x48];
+        al::CollisionParts* mCollisionParts; // _0
+        al::KCPrismData* mPrismData; // _8
+        al::KCPrismHeader* mPrismHeader; // _10
+        u8 _18[0x30];
         sead::Vector3<f32> _48;
         sead::Vector3<f32> _54;
         sead::Vector3<f32> _60;
