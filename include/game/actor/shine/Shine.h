@@ -25,6 +25,8 @@ public:
     void hideAllModel();
     void invalidateKillSensor();
     void getDirect();
+    void setGrandShine();
+    void setShopShine();
 
     u64 _108;
     u64* _110; // al::MtxConnector*
