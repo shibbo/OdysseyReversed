@@ -76,7 +76,7 @@ void Shine::hideAllModel()
 
 void Shine::invalidateKillSensor()
 {
-    if (!this->_294 && (this->_1A0 - 1) >= 2)
+    if (!this->_294 && (this->mShineMode - 1) >= 2)
     {
         al::invalidateHitSensor(this, "Kill");
     }
@@ -92,7 +92,7 @@ void Shine::getDirect()
         sead::Vector3<f32>* playerPos = rs::getPlayerPos(this);
         rs::requestStartDemoShineGet(this);
 
-        if (this->_1A0 == 2)
+        if (this->mShineMode == 2)
         {
             GameDataFunction::recoveryPlayerMax(this);
         }
@@ -101,4 +101,14 @@ void Shine::getDirect()
 
         // todo -- finish me
     }
+}
+
+void Shine::setGrandShine()
+{
+    this->mShineMode = 2;
+}
+
+void Shine::setShopShine()
+{
+    this->mIsShopShine = true;
 }
