@@ -25,6 +25,8 @@ public:
     void hideAllModel();
     void invalidateKillSensor();
     void getDirect();
+    void setGrandShine();
+    void setShopShine();
 
     u64 _108;
     u64* _110; // al::MtxConnector*
@@ -47,7 +49,7 @@ public:
     al::RateParamF32* mRateParam; // _188
     u64* _190; // ParabolicPathMovement*
     u64* _198; // ParabolicPath*
-    u32 _1A0;
+    u32 mShineMode; // _1A0
     u32 _1A4; // possible padding
     u64* _1A8; // KeyMoveMovement*
     u64 _1B0;
