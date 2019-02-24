@@ -9,6 +9,23 @@
 #include "sead/matrix.h"
 #include "sead/vector.h"
 
+enum SensorType : s32
+{
+    SENSOR_TYPE_EYE             = 0,
+    SENSOR_TYPE_1               = 1,
+    SENSOR_TYPE_ATTACK          = 2,
+    SENSOR_TYPE_3               = 3,
+    SENSOR_TYPE_4               = 4,
+    SENSOR_TYPE_5               = 5,
+    SENSOR_TYPE_NPC             = 6,
+    SENSOR_TYPE_RIDE            = 7,
+    SENSOR_TYPE_8               = 8,
+    SENSOR_TYPE_ENEMY_BODY      = 9,
+    SENSOR_TYPE_ENEMY_ATTACK    = 10,
+    SENSOR_TYPE_11              = 11,
+    SENSOR_TYPE_MAPOBJ          = 12
+};
+
 namespace al
 {
     class LiveActor;
@@ -29,9 +46,9 @@ namespace al
         void addHitSensor(al::HitSensor *);
 
         char* mSensorName; // _0
-        u64 _8;
-        u64 _10;
-        u32 _18;
+        SensorType mSensorType; // _8
+        sead::Vector3<f32> mPosition; // _C
+        s32 mRadius; // _18
         u16 _1C;
         u16 _1E;
         u64 _20;
