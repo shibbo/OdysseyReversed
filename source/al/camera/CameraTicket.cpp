@@ -1,3 +1,8 @@
+/**
+ * @file CameraTicket.cpp
+ * @brief Access classes for camera tickets.
+ */
+
 #include "al/camera/CameraTicket.h"
 #include "al/util.h"
 

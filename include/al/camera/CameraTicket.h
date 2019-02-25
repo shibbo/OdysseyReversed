@@ -1,3 +1,8 @@
+/**
+ * @file CameraTicket.h
+ * @brief Access classes for camera tickets.
+ */
+
 #pragma once
 
 #include "al/PlacementId.h"

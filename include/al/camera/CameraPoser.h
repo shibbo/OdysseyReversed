@@ -1,3 +1,8 @@
+/**
+ * @file CameraPoser.h
+ * @brief Base poser class for cameras.
+ */
+
 #pragma once
 
 #include "al/byaml/ByamlIter.h"
