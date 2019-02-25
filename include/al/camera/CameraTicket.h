@@ -32,6 +32,6 @@ namespace al
         al::CameraPoser* mPoser; // _0
         al::CameraTicketId* mTicketId; // _8
         s32 mPriority; // _10
-        u8 _14;
+        bool mIsActive; // _14
     };
 };
