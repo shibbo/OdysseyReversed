@@ -1,3 +1,8 @@
+/**
+ * @file util.h
+ * @brief Helper functions for OS functionality.
+ */
+
 #pragma once
 
 #include "types.h"
@@ -39,6 +44,9 @@ namespace nn
             u32 mRelocationTableOffs; // _18
             u32 mSize; // _1C
         };
+
+        template<s32 size, typename T>
+        struct BitFlagSet { };
     };
 
     void ReferSymbol(void const *);

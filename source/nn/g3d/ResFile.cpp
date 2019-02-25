@@ -1,5 +1,5 @@
 /**
- * @file ResFile.h
+ * @file ResFile.cpp
  * @brief Resource file for models.
  */
 

@@ -1,3 +1,8 @@
+/**
+ * @file ResSceneAnim.cpp
+ * @brief Resource file for scene animations.
+ */
+
 #include "nn/g3d/ResSceneAnim.h"
 
 namespace nn
