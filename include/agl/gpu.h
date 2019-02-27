@@ -30,7 +30,7 @@ namespace agl
         bool tryAllocBuffer_(u64, sead::Heap *, s32, agl::MemoryAttribute);
         void setBuffer_(u64, void *, void *, agl::MemoryAttribute);
         void setVirtual_(u64, sead::Heap *, agl::MemoryAttribute, agl::GPUMemVoidAddr, s32);
-        void initializeGfxMemoryPool(nn::gfx::TMemoryPool<nn::gfx::ApiVariation<nn::gfx::ApiType<s8>, nn::gfx::ApiVersion<s8>>> *) const;
+        void initializeGfxMemoryPool(nn::gfx::TMemoryPool<nn::gfx::ApiVariation<nn::gfx::ApiType<4>, nn::gfx::ApiVersion<8>>> *) const;
         void addList(agl::GPUMemBlockBase*);
         void setMemoryPool(void *, u64, agl::detail::MemoryPool *);
         void setMemoryPoolHeap(void *, u64, agl::detail::MemoryPoolHeap *);
