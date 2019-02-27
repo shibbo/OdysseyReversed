@@ -1,3 +1,8 @@
+/**
+ * @file GyroCameraCtrl.h
+ * @brief Information about gyro controlled cameras.
+ */
+
 #pragma once
 
 #include "sead/vector.h"

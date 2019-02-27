@@ -1,3 +1,8 @@
+/**
+ * @file CameraStartInfo.h
+ * @brief Contains initialization info for a camera.
+ */
+
 #pragma once
 
 #include "types.h"
