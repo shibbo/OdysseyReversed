@@ -6,13 +6,20 @@
 #pragma once
 
 #include "al/byaml/ByamlIter.h"
+#include "al/keeper/AudioKeeper.h"
+#include "al/keeper/NerveKeeper.h"
 #include "al/PlacementInfo.h"
+#include "CameraAngleCtrlInfo.h"
+#include "CameraAngleSwingInfo.h"
+#include "CameraObjectRequestInfo.h"
+#include "CameraParamMoveLimit.h"
+#include "CameraStartInfo.h"
+#include "GyroCameraCtrl.h"
+#include "sead/camera.h"
 #include "types.h"
 
 namespace al
 {
-    class CameraObjectRequestInfo;
-    class CameraStartInfo;
     class CameraTurnInfo;
 
     // interpole classes are custom named since they are all inlined
@@ -78,15 +85,18 @@ namespace al
         bool isValidKeepPreSelfPoseNextCamera() const;
 
         u16 _0;
-        u8 _2;
+        bool mIsColliderValidated; // _2
         u8 _3;
         bool mIsValidKeepPreSelfPoseNextCameraByParam; // _4
         u8 _5;
         bool mIsInvalidKeepPreSelfPoseNext; // _6
         bool mIsInvalidKeepDistanceNextCamera; // _7
-        u16 _8;
+        bool mIsKeepDistanceNextCameraValidated; // _8
+        bool mIsCtrlSubjectiveValidated; // _9
         bool mIsInvalidChangeSubjective; // _A
-        u8 _B[0xF-0xB];
+        u8 reserved[0xD-0xB];
+        bool mIsPreCameraEndAfterInterpoleValidated; // _D
+        u16 reserved1;
     };
 
     class CameraPoser
@@ -102,7 +112,7 @@ namespace al
         virtual void update();
         virtual void end();
         virtual void loadParam(al::ByamlIter const &);
-        virtual void makeLookAtCamera(u64 *) const;
+        virtual void makeLookAtCamera(sead::LookAtCamera *) const;
         virtual u32 recieveRequestFromObject(al::CameraObjectRequestInfo const &);
         virtual bool isZooming() const;
         virtual bool isEnableRotateByPad() const;
@@ -146,21 +156,33 @@ namespace al
         u8 _98[0xB0-0x98];
         al::CameraPoserFlag* mPoserFlag; // _B0
         u64* _B8; // al::CameraVerticalAbsorber*
-        u64* _C0; // al::CameraAngleCtrlInfo*
-        u64* _C8; // al::CameraAngleSwingInfo*
+        al::CameraAngleCtrlInfo* mAngleCtrlInfo; // _C0
+        al::CameraAngleSwingInfo* mSwingInfo; // _C8
         u64* _D0; // al::CameraArrowCollider*
         u64* _D8; // unknown
         al::LocalInterpole* _E0;
         al::LookAtInterpole* _E8;
-        u64* _F0; // al::CameraParamMoveLimit*
+        al::CameraParamMoveLimit* mParamMoveLimit; // _F0
         u64* _F8; // al::CameraTargetAreaLimitter*
-        u64* _100; // al::GyroCameraCtrl*
+        al::GyroCameraCtrl* mGyroControl; // _100
         u64* _108; // al::SnapShotCameraCtrl*
-        u64* _110; // al::AudioKeeper*
-        u64* _118; // al::NerveKeeper*
+        al::AudioKeeper* mAudioKeeper; // _110
+        al::NerveKeeper* mNerveKeeper; // _118
         u64* _120; // al::RailKeeper*
         al::EaseOutInterpole* _128;
         al::EndInterpole* _130;
         al::OrthoProjectionParam* _138;
     };
+};
+
+class alCameraPoserFunction
+{
+public:
+    static void startResetSnapShotCameraCtrl(al::CameraPoser *, s32);
+    static void setSnapShotMaxZoomOutFovyDegree(al::CameraPoser *, f32);
+    static f32 getSnapShotRollDegree(al::CameraPoser const *);
+
+    static bool isInvalidCollider(al::CameraPoser const *);
+    static void validateCollider(al::CameraPoser *);
+    static void invalidateCollider(al::CameraPoser *);
 };

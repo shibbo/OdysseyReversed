@@ -11,6 +11,8 @@
 
 namespace sead
 {
+    class OrthoProjection;
+
     class Camera
     {
     public:
@@ -39,5 +41,42 @@ namespace sead
         f32 mLookY; // _2C
         f32 mLookZ; // _30
         f32 _34;
+    };
+
+    class LookAtCamera : public sead::Camera
+    {
+    public:
+        LookAtCamera(sead::Vector3<f32> const &, sead::Vector3<f32> const &, sead::Vector3<f32> const &);
+
+        virtual ~LookAtCamera();
+
+        virtual bool checkDerivedRuntimeTypeInfo(sead::RuntimeTypeInfo::Interface const *);
+        virtual sead::RuntimeTypeInfo::Interface* getRuntimeTypeInfo() const;
+
+        virtual void doUpdateMatrix(sead::Matrix34<f32> *);
+    };
+
+    class DirectCamera : public sead::Camera
+    {
+    public:
+        virtual ~DirectCamera();
+
+        virtual void doUpdateMatrix(sead::Matrix34<f32> *);
+    };
+
+    class OrthoCamera : public sead::LookAtCamera
+    {
+    public:
+        OrthoCamera();
+        OrthoCamera(sead::Vector2<f32> const &, f32);
+        OrthoCamera(sead::OrthoProjection const &);
+
+        virtual ~OrthoCamera();
+
+        virtual bool checkDerivedRuntimeTypeInfo(sead::RuntimeTypeInfo::Interface const *);
+        virtual sead::RuntimeTypeInfo::Interface* getRuntimeTypeInfo() const;
+
+        void setByOrthoProjection(sead::OrthoProjection const &);
+        void setRotation(f32 rotation);
     };
 };
