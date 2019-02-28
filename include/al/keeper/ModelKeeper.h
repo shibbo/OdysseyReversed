@@ -5,10 +5,12 @@
 
 #pragma once
 
-#include "types.h"
+#include "al/anim/AnimPlayerMat.h"
+#include "al/model/ModelCtrl.h"
 #include "al/resource.h"
 #include "sead/matrix.h"
 #include "sead/vector.h"
+#include "types.h"
 
 namespace al
 {
@@ -34,16 +36,16 @@ namespace al
         sead::Matrix34<f32>* getBaseMtx() const;
         sead::Matrix34<f32>* getWorldMtxPtrByIndex(s32) const;
 
-        u64* _8; // maybe sead::SafeStringBase<char>*
-        u64* _10; // al::ModelCtrl*
+        char* mResourceName; // _8
+        al::ModelCtrl* mModelControl; // _10
         al::ActorResource* mResource; // _18
         u64* _20; // al::AnimPlayerSkl*
-        u64* _28; // al::AnimPlayerSimple*
-        u64* _30; // al::AnimPlayerSimple*
-        u64* _38; // al::AnimPlayerSimple*
-        u64* _40; // al::AnimPlayerSimple*
-        u64* _48; // al::AnimPlayerSimple*
-        u64* _50; // al::AnimPlayerSimple*
+        al::AnimPlayerMat* _28;
+        al::AnimPlayerMat* _30;
+        al::AnimPlayerMat* _38;
+        al::AnimPlayerMat* _40;
+        u64* _48; // al::AnimPlayerVis*
+        u64* _50; // al::AnimPlayerVis*
         u64* _58;
         u8 _60;
         u8 _61;
