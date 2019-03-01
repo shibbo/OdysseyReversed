@@ -11,8 +11,14 @@ namespace nn
 {
     namespace diag
     {
-        struct ModuleInfo;
         struct LogMetaData;
+
+        struct ModuleInfo
+        {
+            char* mPath;
+            u64 mBaseAddr;
+            u64 mSize;
+        };
 
         namespace detail
         {
