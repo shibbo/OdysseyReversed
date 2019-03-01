@@ -23,8 +23,8 @@ namespace nn
 
         // MODULE / SYMBOL
         u32* GetSymbolName(char *name, u64 nameSize, u64 addr);
-        u32 GetRequiredBufferSizeForGetAllModuleInfo();
-        void GetAllModuleInfo(nn::diag::ModuleInfo **out, void *src, u64 numModules);
+        u64 GetRequiredBufferSizeForGetAllModuleInfo();
+        s32 GetAllModuleInfo(nn::diag::ModuleInfo **out, void *buffer, u64 bufferSize);
         u64 GetSymbolSize(u64 addr);
     };
 };
