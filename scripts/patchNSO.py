@@ -1,14 +1,13 @@
 # patchNSO.py
 # Patches the MOD0 section of an NSO to properly set the user-runtime object offset
 
-import subprocess
-import os
-import ntpath
+import ntpath, os, subprocess, sys
 
-project = ntpath.basename(os.getcwd())
-subprocess.run("../tools/nsnsotool " + project + ".nso")
+if len(sys.argv) < 2:
+    print("Syntax: patchNSO.py <nso>")
+    sys.exit()
 
-with open(project + ".nso", 'r+b') as nso_file:
+with open(sys.argv[1], "rb") as nso_file:
     nso = nso_file.read()
     mod0_offset = nso.find(b'MOD0')
     nso_file.seek(mod0_offset + 8)
@@ -17,4 +16,4 @@ with open(project + ".nso", 'r+b') as nso_file:
     nso_file.write(bss_start)
     nso_file.close()
 
-print('patched')
+print("NSO Patched.")

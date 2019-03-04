@@ -62,7 +62,5 @@ with open("syms.ld", "w") as linker:
 			continue
 		
 		linker.write(f"{symbolName} = {address} - {sys.argv[2]};\n")
-
-	linker.write("INSERT AFTER .text;")
 	
-print("done")
+print("Linker script generated.")
