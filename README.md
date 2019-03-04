@@ -20,6 +20,9 @@ As the comments imply, this repo only supports *Super Mario Odyssey 1.2*.
 
 # Credits
 0CBH0 - nsnsotool
+
 Khangaroo - Custom code templating
+
 libnx - Makefile creation
+
 Retr0id - Linker creation

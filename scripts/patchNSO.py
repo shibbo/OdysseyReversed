@@ -7,7 +7,9 @@ if len(sys.argv) < 2:
     print("Syntax: patchNSO.py <nso>")
     sys.exit()
 
-with open(sys.argv[1], "rb") as nso_file:
+subprocess.run("../tools/nsnsotool " + sys.argv[1])
+
+with open(sys.argv[1], 'r+b') as nso_file:
     nso = nso_file.read()
     mod0_offset = nso.find(b'MOD0')
     nso_file.seek(mod0_offset + 8)
@@ -16,4 +18,4 @@ with open(sys.argv[1], "rb") as nso_file:
     nso_file.write(bss_start)
     nso_file.close()
 
-print("NSO Patched.")
+print('patched')
