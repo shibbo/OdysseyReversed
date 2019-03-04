@@ -18,7 +18,7 @@ namespace al
     public:
         ByamlWriter(sead::Heap *, bool);
 
-        ~ByamlWriter();
+        virtual ~ByamlWriter();
 
         void addBool(bool);
         u64* getArrayCurrentContainer();

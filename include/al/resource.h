@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include "nn/g3d/ResFile.h"
 #include "sead/resource.h"
 #include "sead/string.h"
 
@@ -21,6 +22,15 @@ namespace al
         u32 getEntryNum(sead::SafeStringBase<char> const &) const;
         void getEntryName(sead::BufferedSafeStringBase<char> *, sead::SafeStringBase<char> const &, u32) const;
         u32 getFileSize(sead::SafeStringBase<char> const &) const;
+        u8* getByml(sead::SafeStringBase<char> const &) const;
+        u8* tryGetByml(sead::SafeStringBase<char> const &) const;
+        void* getKcl(sead::SafeStringBase<char> const &) const;
+        void* tryGetKcl(sead::SafeStringBase<char> const &) const;
+        void* getPa(sead::SafeStringBase<char> const &) const;
+        void* tryGetPa(sead::SafeStringBase<char> const &) const;
+        char* getArchiveName() const;
+        bool tryCreateResGraphicsFile(sead::SafeStringBase<char> const &, nn::g3d::ResFile *);
+        void cleanupResGraphicsFile();
         
         u64* _0;
         u64* _8; // sead::ArchiveFileDevice*
@@ -32,7 +42,7 @@ namespace al
         u8 _28[0xA8-0x28];
         sead::Heap* mHeap; // _A8
         u64 _B0;
-        u64 _B8;
+        nn::g3d::ReFile* _B8;
     };
 
     class ActorResource
@@ -42,7 +52,9 @@ namespace al
         virtual ~ActorResource();
 
         void initResourceData(char const *, bool);
-        
-        u8 _0[0xC8];
+
+        u8 _0[0xB8];
+        u64* _B8; // al::InitResourceDataAnim*
+        u64* _C0; // al::InitResourceDataAction*
     };
 };

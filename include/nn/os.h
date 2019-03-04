@@ -18,7 +18,25 @@ namespace nn
         struct MessageQueueType;
         struct SystemEvent;
         struct SystemEventType;
-        struct UserExceptionInfo;
+        
+        struct UserExceptionInfo
+        {
+            s32 ExceptionType; // _0
+            u64 _4;
+            u64 _8;
+            u64 GPR[0x1E]; // _10
+            u64 LR; // _100
+            u64 StackPointer; // _108
+            u64 PC; // _110
+            u64 _118;
+            u64 FPR[0x20]; // _120
+            u8 _220[0x320-0x220];
+            u32 PState; // _320
+            u32 AFSR0; // _324
+            u32 AFSR1; // _328
+            u32 ESR; // _32C
+            u64 Far; // _330
+        };
 
         // ARG
         void SetHostArgc(s32);

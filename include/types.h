@@ -20,3 +20,7 @@ typedef double              f64;
 
 // stores a result on a lot of OS-related functions
 typedef u32 Result;
+
+#ifndef BIT
+#define BIT(n) (1U<<(n))
+#endif

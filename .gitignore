@@ -1,3 +1,9 @@
+*.elf
+*.nso
+*.pfs0
+*.nacp
+*.nro
+*.map
 *.o
 build/
 debug/
