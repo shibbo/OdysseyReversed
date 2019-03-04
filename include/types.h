@@ -5,16 +5,16 @@
 
 #pragma once
 
-typedef signed char         s8;
-typedef signed short        s16;
-typedef signed int          s32;
-typedef signed long         s64;
-typedef signed long long    s128;
-typedef unsigned char       u8;
-typedef unsigned short      u16;
-typedef int                 u32;
-typedef long                u64;
-typedef long long           u128;
+typedef int8_t              s8;
+typedef int16_t             s16;
+typedef int32_t             s32;
+typedef int64_t             s64;
+typedef __int128_t          s128;
+typedef uint8_t             u8;
+typedef uint16_t            u16;
+typedef uint32_t            u32;
+typedef uint64_t            u64;
+typedef __uint128_t         u128;
 typedef float               f32;
 typedef double              f64;
 
@@ -23,4 +23,8 @@ typedef u32 Result;
 
 #ifndef BIT
 #define BIT(n) (1U<<(n))
+#endif
+
+#ifndef NORETURN
+#define NORETURN   __attribute__((noreturn))
 #endif

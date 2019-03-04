@@ -10,7 +10,9 @@ symbolPrefixes = [
 					"_ZN",  # regular variables
 					"_ZT",  # typeinfo / vtables
 					"_ZZ",
-					"pfnc_"
+					"pfnc_",
+					"mem",
+					"str"
 ]
 
 if len(sys.argv) < 3:
@@ -50,7 +52,7 @@ with open("syms.ld", "w") as linker:
 		isValid = False
 	
 		# we check to see if this symbol has a prefix that we need to keep
-		for i in range(7):
+		for i in range(9):
 			if symbolName.startswith(symbolPrefixes[i]):
 				isValid = True
 				break
@@ -60,6 +62,8 @@ with open("syms.ld", "w") as linker:
 		
 		if not isValid:
 			continue
+
+		#print(symbolName)
 		
 		linker.write(f"{symbolName} = {address} - {sys.argv[2]};\n")
 	
