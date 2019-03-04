@@ -1,3 +1,8 @@
+/**
+ * @file socket.h
+ * @brief Functions for opening sockets for wireless communication.
+ */
+
 #pragma once
 
 #include <sys/socket.h>
@@ -13,6 +18,6 @@ namespace nn
         u64 Send(s32 socket, void const *buffer, u64 bufferLength, s32 flags);
         s32 Socket(s32 domain, s32 type, s32 proto);
         u16 InetHtons(u16);
-        extern u32 Connect(s32 socket, const sockaddr *addr, u32 addrLen);
+        u32 Connect(s32 socket, const sockaddr *addr, u32 addrLen);
     };
 };

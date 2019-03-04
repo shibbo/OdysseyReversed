@@ -3,6 +3,11 @@
  * @brief Defines common types.
  */
 
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdalign.h>
+
 #pragma once
 
 typedef int8_t              s8;
@@ -20,11 +25,3 @@ typedef double              f64;
 
 // stores a result on a lot of OS-related functions
 typedef u32 Result;
-
-#ifndef BIT
-#define BIT(n) (1U<<(n))
-#endif
-
-#ifndef NORETURN
-#define NORETURN   __attribute__((noreturn))
-#endif

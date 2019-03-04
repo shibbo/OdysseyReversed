@@ -42,7 +42,7 @@ namespace al
         u8 _28[0xA8-0x28];
         sead::Heap* mHeap; // _A8
         u64 _B0;
-        nn::g3d::ReFile* _B8;
+        nn::g3d::ResFile* _B8;
     };
 
     class ActorResource
