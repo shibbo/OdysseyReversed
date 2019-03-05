@@ -4,7 +4,7 @@ A project that documents the structures and classes in Super Mario Odyssey. This
 # Using OdysseyReversed
 As of 3/3/2019, you can now compile code using these headers and make your own custom code! This requires libnx binaries to be placed in *lib*, and for *devkitA64* to be installed and in your $PATH. Once that is done, simply run *make* and it should output an NSO. Rename this to subsdk1, apply the below patch to branch to your code, and enjoy!
 
-Before you can use the IPS patch to run your code, you have to figure out where to patch. This can vary based on code size, so you want to check the symbol map of your compiled code to figure out the offset. If our function name we used as the entrypoint is "hook_init()", we woudl find it in the generated .map file in _build_.
+Before you can use the IPS patch to run your code, you have to figure out where to patch. This can vary based on code size, so you want to check the symbol map of your compiled code to figure out the offset. If our function name we used as the entrypoint is "hook_init()", we would find it in the generated .map file in _build_.
 
 ```
  .text._Z9hook_initv
@@ -37,7 +37,15 @@ The value will then be branched to at 0x774B10 in the executable, which is the e
 00774B10 YOURVALUE
 ```
 
+This process can be repeated if there are multiple places to inject custom code. After the new NSO has been generated, run *scripts/patchNSO.py <nsoPath>* to correct an incorrect MOD0 offset libnx generates. Take that new NSO and test it out!
+
 As the comments imply, this repo only supports *Super Mario Odyssey 1.2.0*.
+
+# Porting
+
+In order to port this kit to inject custom code in other games, there's a few things that will need to be found. The MAP file with symbols exported from IDA Pro has to be present, because it is impossible to call the functions by their names if they are not properly defined in the linker script. Once the .MAP is generated, the size of the main executable needs to be calculated. [NSOTool](https://github.com/shibbo/NSOTool/tree/master/NSOTool) can be used for this. If the game uses subsdks, this must also be added to the size. Once the size has been calculated, use the value as an argument (in hexadecimal) to *scripts/genLinkerScript <mapFile> <val>*; where *mapFile* is a path to the IDA exported map, and *val* is the value we just got. It will export a file named *syms.ld*, which the Makefile uses to link our names to an address.
+
+And of course, to even use the functions in another game, the headers for functions in the game have to be defined. The formula for determining the value to branch to will have to be changed as well.
 
 # Credits
 0CBH0 - nsnsotool
