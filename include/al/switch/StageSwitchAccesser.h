@@ -6,7 +6,7 @@
 #pragma once
 
 #include "types.h"
-#include "PlacementId.h"
+#include "al/PlacementId.h"
 #include "StageSwitchDirector.h"
 
 enum StageSwitchFlags

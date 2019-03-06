@@ -1,3 +1,4 @@
+#include "actor/table.h"
 #include "svc.h"
 #include "types.h"
 
@@ -14,6 +15,8 @@ int main(int argc, char **argv)
     {
         return 0;
     }
+
+    getEntries();
 
     your_code_func();
 }

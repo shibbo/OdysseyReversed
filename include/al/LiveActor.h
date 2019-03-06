@@ -125,7 +125,7 @@ namespace al
     };
 
     template<typename T>
-    T* createActorFunction(char const *actorName);
+    al::LiveActor* createActorFunction(char const *actorName);
 
     template<typename T>
     T* createAreaObjFunction(char const *areaName);

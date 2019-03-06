@@ -6,6 +6,8 @@ namespace nn
 {
     namespace gfx
     {
+        struct MemoryPoolInfo;
+
         namespace detail
         {
             class MemoryPoolData

@@ -9,6 +9,7 @@
 *.nro
 *.map
 *.o
+*.txt
 *.til
 build/
 debug/
