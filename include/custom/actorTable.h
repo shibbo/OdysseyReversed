@@ -525,7 +525,7 @@ struct ActorEntry
     void* creationFuncPtr;
 };
 
-ActorEntry entries[NUM_ACTORS] = {
+const ActorEntry entries[NUM_ACTORS] = {
 		{ (char*)"AchievementNpc", (void*)al::createActorFunction<AchievementNpc> },
 		{ (char*)"AirBubble", (void*)al::createActorFunction<AirBubble> },
 		{ (char*)"AirBubbleGenerator", (void*)al::createActorFunction<AirBubbleGenerator> },
@@ -1032,7 +1032,7 @@ ActorEntry entries[NUM_ACTORS] = {
 		{ (char*)"YukimaruRacerTiago", (void*)al::createActorFunction<YukimaruRacerTiago> }
 };
 
-static ActorEntry* getEntries()
+static const ActorEntry* getEntries()
 {
     return entries;
 }

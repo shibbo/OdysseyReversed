@@ -28,6 +28,12 @@ namespace al
         u32 mPadding; // _1C
     };
 
+    class ActorFactory : public al::Factory<al::LiveActor * (*)(char const *)>
+    {
+    public:
+        ActorFactory(char const *);
+    };
+
     class AreaObjFactory : public al::Factory<al::AreaObj * (*)(char const *)>
     {
     public:
@@ -50,19 +56,13 @@ namespace al
     };
 }
 
-class ActorFactory : public al::Factory<al::LiveActor * (*)(char const *)>
-{
-public:
-    ActorFactory(char const *);
-};
-
-class ProjectActorFactory : public ActorFactory
+class ProjectActorFactory : public al::ActorFactory
 {
 public:
     ProjectActorFactory();
 };
 
-class ProjectAppearSwitchFactory : public ActorFactory
+class ProjectAppearSwitchFactory : public al::ActorFactory
 {
 public:
     ProjectAppearSwitchFactory();
