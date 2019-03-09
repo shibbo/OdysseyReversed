@@ -11,6 +11,11 @@ namespace nn
 {
     namespace util
     {
+        struct Unorm8x4
+        {
+            u8 elements[0x4];
+        };
+
         class RelocationTable
         {
         public:

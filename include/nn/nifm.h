@@ -1,3 +1,8 @@
+/**
+ * @file nifm.h
+ * @brief Network inferface module.
+ */
+
 #pragma once
 
 #include "types.h"
