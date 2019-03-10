@@ -47,6 +47,9 @@ In order to port this kit to inject custom code in other games, there's a few th
 
 And of course, to even use the functions in another game, the headers for functions in the game have to be defined. The formula for determining the value to branch to will have to be changed as well.
 
+# Notable Patch Points
+00774B10 -- Will be ran on game boot.
+
 # Credits
 0CBH0 - nsnsotool
 

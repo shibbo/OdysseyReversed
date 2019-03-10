@@ -9,6 +9,7 @@
 #include "delegate.h"
 #include "hostio.h"
 #include "list.h"
+#include "nn/os.h"
 #include "runtime.h"
 #include "string.h"
 #include "task.h"
@@ -186,9 +187,20 @@ namespace sead
         void requestChangeUseGPU(bool);
         void initializeGraphicsSystem(sead::Heap *, sead::Vector2<f32> const &);
 
-        u8 _A0[0x128-0xA0];
+        u8 _A0[0xF0-0xA0];
+        nn::os::Tick mSysTick; // _F0
+        u64 _F8;
+        u64 _100;
+        u32 _108;
+        u32 _10C;
+        u32 _110;
+        u32 _114;
+        u32 _118;
+        u32 _11C;
+        u64 _120;
         sead::DisplayBufferNvn* mDisplayBuffer; // _128
         u8 _130[0x160-0x130];
         NVNcounterData* mCounterData; // _160
+        u8 _168[0x210-0x168];
     };
 };

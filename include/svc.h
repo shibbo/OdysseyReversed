@@ -28,9 +28,15 @@ Result svcSetMemoryAttribute(void* address, u64 size, u32 state_0, u32 state_1);
 
 Result svcQueryMemory(MemoryInfo* memInfo, u32* pageInfo, u64 address); // 0x06
 
+u32 svcGetCurrentProcessorNumber(); // 0x10
+
 u64 svcGetSystemTick(); // 0x1E
 
 Result svcOutputDebugString(const char* str, u64 size); // 0x27
+
+Result svcMapPhysicalMemory(void *address, u64 size); // 0x2C
+
+Result svcSetUnsafeLimit(u64 size); // 0x4A
 
 Result svcGetProcessList(u32* numPids, u64* pids, u32 maxProcessIDs); // 0x65
 

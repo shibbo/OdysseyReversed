@@ -16,6 +16,18 @@ namespace nn
             u8 elements[0x4];
         };
 
+        enum CharacterEncodingResult 
+        {
+            Success,
+            BadLength,
+            InvalidFormat
+        };
+
+        CharacterEncodingResult PickOutCharacterFromUtf8String(char*, char const **str);
+        CharacterEncodingResult ConvertCharacterUtf8ToUtf32(u32* dest, char const *src);
+        CharacterEncodingResult ConvertStringUtf16NativeToUtf8(char *, s32, u16 const*, s32);
+        CharacterEncodingResult ConvertStringUtf8ToUtf16Native(u16 *, s32, char const *, s32);
+
         class RelocationTable
         {
         public:
