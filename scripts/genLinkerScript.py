@@ -64,7 +64,7 @@ with open("syms.ld", "w") as linker:
 			continue
 
 		# sdk functions have a _0 at the end because they are duplicated due to the originals being imported
-		# so IDA adds a _0 at the end...we need to stript this
+		# so IDA adds a _0 at the end...we need to strip this
 		if "_ZN2nn" in symbolName:
 			symbolName = symbolName.strip("_0")
 		
