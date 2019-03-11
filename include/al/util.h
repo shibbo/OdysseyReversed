@@ -6,13 +6,13 @@
 #pragma once
 
 #include "al/ActorInitInfo.h"
-#include "al/audio/IUseAudioKeeper.h"
+#include "al/iuse/IUseAudioKeeper.h"
 #include "al/camera/CameraTicket.h"
-#include "al/camera/IUseCamera.h"
+#include "al/iuse/IUseCamera.h"
 #include "al/PlacementId.h"
 #include "al/PlacementInfo.h"
 #include "al/resource.h"
-#include "al/switch/IUseStageSwitch.h"
+#include "al/iuse/IUseStageSwitch.h"
 #include "nerve/IUseNerve.h"
 #include "nerve/Nerve.h"
 #include "sead/heap.h"

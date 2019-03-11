@@ -1,7 +1,12 @@
+/**
+ * @file RateParam.h
+ * @brief Parameters for camera rates.
+ */
+
 #pragma once
 
 #include "al/camera/CameraTicket.h"
-#include "al/camera/IUseCamera.h"
+#include "al/iuse/IUseCamera.h"
 #include "sead/vector.h"
 #include "types.h"
 

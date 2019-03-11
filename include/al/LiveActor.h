@@ -5,7 +5,6 @@
 
 #pragma once
 
-#include "camera/IUseCamera.h"
 #include "collision/Collider.h"
 #include "keeper/ActorActionKeeper.h"
 #include "keeper/ActorItemKeeper.h"
@@ -19,7 +18,8 @@
 #include "keeper/ShadowKeeper.h"
 #include "keeper/StageSwitchKeeper.h"
 #include "keeper/SubActorKeeper.h"
-#include "nerve/IUseNerve.h"
+#include "iuse/IUseCamera.h"
+#include "iuse/IUseNerve.h"
 #include "sead/matrix.h"
 #include "ActorExecuteInfo.h"
 #include "ActorSceneInfo.h"
@@ -80,21 +80,21 @@ namespace al
         al::ActorItemKeeper* mItemKeeper; // _68
         al::ActorScoreKeeper* mScoreKeeper; // _70
         al::Collider* mCollider; // _78
-        u64* _80; // unknown
+        u64* _80; // al::CollisionParts*
         al::ModelKeeper* mModelKeeper; // _88
         al::NerveKeeper* mNerveKeeper; // _90
         al::HitSensorKeeper* mHitSensorKeeper; // _98
         u64* _A0; // ScreenPointKeeper*
         al::EffectKeeper* mEffectKeeper; // _A8
         al::AudioKeeper* mAudioKeeper; // _B0
-        u64* _B8; // unknown
+        u64* _B8; // al::HitReactionKeeper*
         al::StageSwitchKeeper* mStageSwitchKeeper; // _C0
         u64* _C8; // RailRider*
         al::ShadowKeeper* mShadowKeeper; // _D0
         u64* _D8; // ActorPrePassLightKeeper*
         u64* _E0; // ActorOcclusionKeeper*
         al::SubActorKeeper* mSubActorKeeper; // _E8
-        u64* _F0; // unknown
+        u64* _F0; // al::ActorParamHolder*
         al::ActorSceneInfo* mActorSceneInfo; // _F8
         al::LiveActorFlag* mActorFlags; // _100
     };

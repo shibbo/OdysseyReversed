@@ -8,6 +8,7 @@
 #include "ActorInitInfo.h"
 #include "keeper/AudioKeeper.h"
 #include "keeper/StageResourceKeeper.h"
+#include "iuse/IUseSceneObjHolder.h"
 #include "nerve/NerveExecutor.h"
 
 static char* sceneObjectName;
@@ -19,7 +20,6 @@ namespace al
     class GameDataHolderBase;
     class GameSystemInfo;
     class GraphicsInitArg;
-    class IUseSceneObjHolder;
     class LiveActorKit;
     class ScreenCaptureExecutor;
     class ScreenCoverCtrl;
@@ -32,12 +32,6 @@ namespace al
         virtual char* getSceneObjName() const;
         virtual void initAfterPlacementSceneObj(al::ActorInitInfo const &);
         virtual void initSceneObj();
-    };
-
-    class IUseSceneObjHolder
-    {
-    public:
-        u64* _0;
     };
 
     class SceneObjHolder
