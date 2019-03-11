@@ -7,7 +7,7 @@
 
 #include "types.h"
 #include "ActorSceneInfo.h"
-#include "byaml/ByamlIter.h"
+#include "PlacementInfo.h"
 
 namespace al
 {
@@ -17,7 +17,7 @@ namespace al
         ActorInitInfo();
 
         u64 _0;
-        al::ByamlIter* mActorContainer; // _8
+        al::PlacementInfo* mActorContainer; // _8
         u64 _10;
         al::ActorSceneInfo mSceneInfo; // _18
     };

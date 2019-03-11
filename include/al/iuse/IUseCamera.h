@@ -7,9 +7,11 @@
 
 namespace al
 {
+    class CameraDirector;
+
     class IUseCamera
     {
     public:
-        // some pure virtual function here
+        virtual al::CameraDirector* getCameraDirector() const = 0;
     };
 };

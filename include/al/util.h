@@ -13,7 +13,7 @@
 #include "al/PlacementInfo.h"
 #include "al/resource.h"
 #include "al/iuse/IUseStageSwitch.h"
-#include "nerve/IUseNerve.h"
+#include "al/iuse/IUseNerve.h"
 #include "nerve/Nerve.h"
 #include "sead/heap.h"
 #include "sead/quat.h"
@@ -47,6 +47,7 @@ namespace al
     void stopDitherAnimAutoCtrl(al::LiveActor *);
     bool tryGetArg(bool *, al::ActorInitInfo const &, char const *);
     void validateClipping(al::LiveActor *);
+    bool tryGetActorInitFileIter(al::ByamlIter *outIter, al::Resource const *actorFile, char const *fileName, char const *);
 
     // AUDIO
     void tryPauseBgmIfLowPriority(al::IUseAudioKeeper const *, char const *, s32);

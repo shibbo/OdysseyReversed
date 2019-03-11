@@ -2,9 +2,11 @@
 
 namespace al
 {
+    class AudioKeeper;
+
     class IUseAudioKeeper
     {
     public:
-        // has one pure virtual function; probably getAudioKeeper
+        virtual al::AudioKeeper* getAudioKeeper() const = 0;
     };
 };

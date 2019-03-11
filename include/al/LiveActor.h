@@ -18,8 +18,13 @@
 #include "keeper/ShadowKeeper.h"
 #include "keeper/StageSwitchKeeper.h"
 #include "keeper/SubActorKeeper.h"
+#include "iuse/IUseAreaObj.h"
+#include "iuse/IUseAudioKeeper.h"
 #include "iuse/IUseCamera.h"
+#include "iuse/IUseEffectKeeper.h"
+#include "iuse/IUseName.h"
 #include "iuse/IUseNerve.h"
+#include "iuse/IUseSceneObjHolder.h"
 #include "sead/matrix.h"
 #include "ActorExecuteInfo.h"
 #include "ActorSceneInfo.h"
@@ -64,15 +69,26 @@ namespace al
         virtual void startClipped();
         virtual void endClipped();
         virtual sead::Matrix34<f32>* getBaseMtx() const;
+        virtual al::EffectKeeper* getEffectKeeper() const;
+        virtual al::AudioKeeper* getAudioKeeper() const;
+        virtual al::StageSwitchKeeper* getStageSwitchKeeper() const;
+        virtual u64* getRailRider() const;
+        virtual u64* getSceneObjHolder() const;
+        virtual u64* getCollisionDirector() const;
+        virtual u64* getAreaObjDirector() const;
+        virtual u64* getCameraDirector() const;
+        virtual void initStageSwitchKeeper();
+        virtual void control();
+        virtual void updateCollider();
 
-        u64* _8;  // IUseEffectKeeper*
-        u64* _10; // IUseAudioKeeper*
-        u64* _18; // IUseName*
-        u64* _20; // IUseSceneObjHolder*
-        u64* _28; // IUseAreaObj*
+        al::IUseEffectKeeper* mUseEffectKeeper; // _8
+        al::IUseAudioKeeper* mUseAudioKeeper; // _10
+        al::IUseName* mUseName; // _18
+        al::IUseSceneObjHolder* mUseSceneObjHolder; // _20
+        al::IUseAreaObj* mUseAreaObj; // _28
         al::IUseCamera* mUseCamera; // _30
-        u64* _38; // IUseCollision*
-        u64* _40; // IUseRail*
+        u64* _38; // al::IUseCollision*
+        u64* _40; // al::IUseRail*
         char* mName; // _48
         al::ActorPoseKeeperBase* mPoseKeeper; // _50
         al::ActorExecuteInfo* mExecInfo; // _58
@@ -84,17 +100,17 @@ namespace al
         al::ModelKeeper* mModelKeeper; // _88
         al::NerveKeeper* mNerveKeeper; // _90
         al::HitSensorKeeper* mHitSensorKeeper; // _98
-        u64* _A0; // ScreenPointKeeper*
+        u64* _A0; // al::ScreenPointKeeper*
         al::EffectKeeper* mEffectKeeper; // _A8
         al::AudioKeeper* mAudioKeeper; // _B0
         u64* _B8; // al::HitReactionKeeper*
         al::StageSwitchKeeper* mStageSwitchKeeper; // _C0
-        u64* _C8; // RailRider*
+        u64* _C8; // al::RailRider*
         al::ShadowKeeper* mShadowKeeper; // _D0
-        u64* _D8; // ActorPrePassLightKeeper*
-        u64* _E0; // ActorOcclusionKeeper*
+        u64* _D8; // al::ActorPrePassLightKeeper*
+        u64* _E0; // al::ActorOcclusionKeeper*
         al::SubActorKeeper* mSubActorKeeper; // _E8
-        u64* _F0; // al::ActorParamHolder*
+        al::ActorParamHolder* mParamHolder; // _F0
         al::ActorSceneInfo* mActorSceneInfo; // _F8
         al::LiveActorFlag* mActorFlags; // _100
     };
