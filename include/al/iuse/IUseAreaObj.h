@@ -1,3 +1,8 @@
+/**
+ * @file IUseAreaObj.h
+ * @brief Basic implementation of an area object.
+ */
+
 #pragma once
 
 namespace al

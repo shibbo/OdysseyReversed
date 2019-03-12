@@ -1,3 +1,8 @@
+/**
+ * @file IUseAudioKeeper.h
+ * @brief Basic implementation of an audio keeper.
+ */
+
 #pragma once
 
 namespace al

@@ -1,3 +1,8 @@
+/**
+ * @file IUseEffectKeeper.h
+ * @brief Basic implementation of an effect keeper.
+ */
+
 #pragma once
 
 namespace al

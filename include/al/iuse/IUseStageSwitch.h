@@ -1,3 +1,8 @@
+/**
+ * @file IUseStageSwitch.h
+ * @brief Basic implementation of a stage switch.
+ */
+
 #pragma once
 
 namespace al

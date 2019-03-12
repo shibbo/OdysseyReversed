@@ -17,3 +17,20 @@ namespace al
         u64 _8;
     };
 };
+
+class alNerveFunction
+{
+public:
+    class NerveActionCollector
+    {
+    public:
+        NerveActionCollector();
+
+        void addNerve(al::NerveAction *);
+
+        s32 mNumActions; // _0
+        u32 _4;
+        al::NerveAction* mActions; // _8
+        al::NerveAction* _10;
+    };
+};

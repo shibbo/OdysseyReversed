@@ -47,7 +47,6 @@ namespace al
     void stopDitherAnimAutoCtrl(al::LiveActor *);
     bool tryGetArg(bool *, al::ActorInitInfo const &, char const *);
     void validateClipping(al::LiveActor *);
-    bool tryGetActorInitFileIter(al::ByamlIter *outIter, al::Resource const *actorFile, char const *fileName, char const *);
 
     // AUDIO
     void tryPauseBgmIfLowPriority(al::IUseAudioKeeper const *, char const *, s32);
@@ -63,6 +62,10 @@ namespace al
 
     // COLLISION
     void invalidateCollisionPartsBySystem(al::LiveActor *);
+
+    // COMPRESSION
+    s32 tryCompressByZlib(u8 *, u32 *, u8 const *, u32);
+    s32 tryDecompressByZlib(u8 *, u32 *, u8 const*, u32);
 
     // DISPLAY
     s32 getDisplayWidth();
@@ -85,6 +88,24 @@ namespace al
     void forceInitLanguage(char const *name);
     void initRegionAndLanguage();
 
+    // MATH
+    f32 sign(f32);
+    s32 sign(s32);
+    f32 cubeRoot(f32);
+    f32 easeIn(f32);
+    f32 easeOut(f32);
+    f32 easeInOut(f32);
+    f32 squareIn(f32);
+    f32 squareOut(f32);
+    f32 powerIn(f32, f32);
+    f32 powerOut(f32, f32);
+    f32 logarithmIn(f32, f32);
+    f32 logarithmOut(f32, f32);
+    f32 exponentIn(f32, f32);
+    f32 exponentOut(f32, f32);
+    f32 hermiteRate(f32, f32, f32);
+    f32 calcFourthOrderRate(f32, f32);
+
     // NERVE
     s32 calcNerveRate(al::IUseNerve const *, s32);
     s32 getNerveStep(al::IUseNerve const *);
@@ -100,6 +121,7 @@ namespace al
     // RESOURCE
     u8* findResourceYaml(al::Resource const *, char const *, char const *);
     al::Resource* findOrCreateResource(sead::SafeStringBase<char> const &, char const *);
+    bool tryGetActorInitFileIter(al::ByamlIter *outIter, al::Resource const *actorFile, char const *fileName, char const *);
 
     // SAVE
     void initSaveDirSync(char const *, u32, u32);
@@ -127,6 +149,11 @@ namespace al
     void tryGetPlacementInfoByIndex(al::PlacementInfo *, al::PlacementInfo const &, s32);
     void tryGetPlacementInfoByKey(al::PlacementInfo *, al::PlacementInfo const &, char const *);
     void tryGetPlacementInfoAndKeyNameByIndex(al::PlacementInfo *, char const**, al::PlacementInfo const &, s32);
+
+    // PLAYER
+    sead::Vector3<f32>* getPlayerPos(al::LiveActor const *, s32 playerNum);
+    bool isPlayerDead(al::LiveActor const *, s32 playerNum);
+    bool isPlayerAreaTarget(al::LiveActor const *, s32 playerNum);
 
     // RESOURCE
     void addResourceCategory(sead::SafeStringBase<char> const &, s32, sead::Heap *);

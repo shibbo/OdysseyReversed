@@ -1,3 +1,8 @@
+/**
+ * @file IUseName.h
+ * @brief Basic implementation for an actor that stores a name.
+ */
+
 #pragma once
 
 namespace al
