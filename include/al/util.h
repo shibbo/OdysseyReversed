@@ -75,6 +75,22 @@ namespace al
     s32 getVirtualDisplayWidth();
     s32 getVirtualDisplayHeight();
 
+    // EFFECT
+    void emitEffectCurrentPos(al::IUseEffectKeeper *, char const *);
+    void emitEffect(al::IUseEffectKeeper *, char const *, sead::Vector3<f32> const *);
+    void tryEmitEffect(al::IUseEffectKeeper *, char const *, sead::Vector3<f32> const *);
+    void deleteEffect(al::IUseEffectKeeper *, char const *);
+    void tryDeleteEffect(al::IUseEffectKeeper *, char const *);
+    void deleteEffectAll(al::IUseEffectKeeper *);
+    void tryKillEmitterAndParticleAll(al::IUseEffectKeeper *);
+    void onCalcAndDrawEffect(al::IUseEffectKeeper *);
+    void offCalcAndDrawEffect(al::IUseEffectKeeper *);
+    void forceSetStopCalcAndDraw(al::IUseEffectKeeper *, bool);
+    bool isEffectEmitting(al::IUseEffectKeeper const *, char const *);
+    void setEffectEmitRatio(al::IUseEffectKeeper *, char const *, f32);
+    void setEffectAllScale(al::IUseEffectKeeper *, char const *, sead::Vector3<f32> const &);
+    void setEffectEmitterVolumeScale(al::IUseEffectKeeper *, char const *, sead::Vector3<f32> const &);
+
     // FILE
     void clearFileLoaderEntry();
 

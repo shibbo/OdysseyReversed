@@ -12,6 +12,8 @@ namespace nn
 {
     namespace gfx
     {
+        class GpuAddress;
+
         namespace detail
         {
             template<typename T>
@@ -21,7 +23,15 @@ namespace nn
                 BufferImpl();
                 ~BufferImpl();
 
-                void Initialize(nn::gfx::detail::DeviceImpl<nn::gfx::ApiVariation<nn::gfx::ApiType<4>, nn::gfx::ApiVersion<8>>> *, nn::gfx::BufferInfo const &);
+                void Initialize(nn::gfx::detail::DeviceImpl<nn::gfx::ApiVariation<nn::gfx::ApiType<4>,nn::gfx::ApiVersion<8>>> *,nn::gfx::BufferInfo const&,nn::gfx::detail::MemoryPoolImpl<nn::gfx::ApiVariation<nn::gfx::ApiType<4>,nn::gfx::ApiVersion<8>>> *, s64, u64);
+                void Finalize(nn::gfx::detail::DeviceImpl<nn::gfx::ApiVariation<nn::gfx::ApiType<4>,nn::gfx::ApiVersion<8>>> *);
+                void* Map() const;
+                void Unmap() const;
+                void FlushMappedRange(s64, u64) const;
+                void InvalidateMappedRange(s64, u64) const;
+                void GetGpuAddress(nn::gfx::GpuAddress *) const;
+
+                T* mBuff; // _0
             };
 
             template<typename T>
