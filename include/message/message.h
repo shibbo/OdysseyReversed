@@ -25,6 +25,10 @@ struct MessageBinary
     u32 _34;
 };
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 MessageBinary* LMS_InitMessage(void *);
 // set to:
 // sead::MessageSetBase::allocForLibms_(ulong)
@@ -65,3 +69,7 @@ struct ProjectBinary
 
 ProjectBinary* LMS_InitProject(void *);
 void CloseProject(ProjectBinary *);
+
+#ifdef __cplusplus
+}
+#endif

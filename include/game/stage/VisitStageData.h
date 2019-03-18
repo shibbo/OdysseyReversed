@@ -1,3 +1,8 @@
+/**
+ * @file VisitStageData.h
+ * @brief Information on visited stages.
+ */
+
 #pragma once
 
 #include "al/byaml/BYamlIter.h"

@@ -1,3 +1,8 @@
+/**
+ * @file MovieDecoderPlayer.h
+ * @brief Movie decoder for MP4s.
+ */
+
 #pragma once
 
 #include "sead/heap.h"

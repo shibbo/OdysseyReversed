@@ -1,3 +1,8 @@
+/**
+ * @file ISceneObj.h
+ * @brief Implementation for scene objects.
+ */
+
 #pragma once
 
 #include "al/ActorInitInfo.h"

@@ -1,3 +1,8 @@
+/**
+ * @file MoviePlayer.h
+ * @brief MP4 player wrapper.
+ */
+
 #pragma once
 
 #include "al/iuse/ISceneObj.h"
