@@ -1,3 +1,8 @@
+/**
+ * @file ParameterObj.h
+ * @brief Parameter instance object.
+ */
+
 #pragma once
 
 #include "types.h"

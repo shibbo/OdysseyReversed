@@ -1,3 +1,8 @@
+/**
+ * @file ParameterIo.h
+ * @brief I/O parameters.
+ */
+
 #pragma once
 
 #include "types.h"
