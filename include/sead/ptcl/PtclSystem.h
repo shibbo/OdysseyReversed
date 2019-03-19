@@ -6,13 +6,14 @@
 #pragma once
 
 #include "Config.h"
+#include "nn/vfx/System.h"
 #include "types.h"
 
 namespace sead
 {
     namespace ptcl
     {
-        class PtclSystem
+        class PtclSystem : public nn::vfx::System
         {
         public:
             PtclSystem(sead::ptcl::Config const &);

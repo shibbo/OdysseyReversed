@@ -6,6 +6,8 @@
 #pragma once
 
 #include "al/anim/AnimPlayerMat.h"
+#include "al/anim/AnimPlayerSkl.h"
+#include "al/anim/AnimPlayerVis.h"
 #include "al/model/ModelCtrl.h"
 #include "al/resource.h"
 #include "sead/matrix.h"
@@ -39,13 +41,13 @@ namespace al
         char* mResourceName; // _8
         al::ModelCtrl* mModelControl; // _10
         al::ActorResource* mResource; // _18
-        u64* _20; // al::AnimPlayerSkl*
+        al::AnimPlayerSkl* mSkeletalAnimPlayer; // _20
         al::AnimPlayerMat* _28;
         al::AnimPlayerMat* _30;
         al::AnimPlayerMat* _38;
         al::AnimPlayerMat* _40;
-        u64* _48; // al::AnimPlayerVis*
-        u64* _50; // al::AnimPlayerVis*
+        al::AnimPlayerVis* mBoneVisAnimPlayer; // _48
+        al::AnimPlayerVis* mMatVisAnimPlayer; // _50
         u64* _58;
         u8 _60;
         u8 _61;

@@ -5,12 +5,11 @@
 
 #pragma once
 
+#include "AnimInfoTable.h"
 #include "types.h"
 
 namespace al
 {
-    class AnimInfoTable;
-
     class AnimPlayerBase
     {
     public:
