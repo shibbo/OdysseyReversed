@@ -7,6 +7,8 @@
 
 #include "al/sensor/HitSensor.h"
 #include "PlayerActorBase.h"
+#include "PlayerConst.h"
+#include "PlayerOxygen.h'"
 
 class PlayerActorHakoniwa : public PlayerActorBase
 {
@@ -53,7 +55,7 @@ public:
 
     u64* _120;
     u64 _128;
-    u64* _130; // PlayerConst*
+    PlayerConst* mPlayerConst; // _130
     u64* _138; // PlayerInput*
     u64* _140; // PlayerTrigger*
     u64* _148; // HackCap*
@@ -65,8 +67,9 @@ public:
     u64* _178; // PlayerStateHipDrop*
     u64* _180; // PlayerAreaChecker*
     u64* _188; // unknown
-    u64* _190; // PlayerOxygen*
+    PlayerOxygen* mPlayerOxygen; // _190
     u64* _198; // unknown
+    u64* _1A0; // unknown
     u64* _1A8; // PlayerCapActionHistory*
     u64* _1B0; // PlayerCapManHeroEyesControl*
     u64* _1B8; // PlayerContinuousJump*
