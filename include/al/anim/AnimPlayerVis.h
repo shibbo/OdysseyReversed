@@ -1,5 +1,10 @@
 #pragma once
 
+/**
+ * @file AnimPlayerVis.h
+ * @brief Visibility animation player.
+ */
+
 #include "AnimPlayerSimple.h"
 
 namespace al

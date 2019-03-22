@@ -1,5 +1,10 @@
 #pragma once
 
+/**
+ * @file AnimPlayerSkl.h
+ * @brief Skeleton animation player.
+ */
+
 #include "AnimPlayerBase.h"
 
 namespace al
