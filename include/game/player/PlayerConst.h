@@ -15,7 +15,7 @@ namespace al
         PlayerConst();
         PlayerConst(al::ByamlIter const &);
 
-        f32 getGravity() const;
+		f32 getGravity() const;
 		f32 getFrictionAttack() const;
 		f32 getPushPower() const;
 		f32 getWaitPoseDegreeMax() const;
