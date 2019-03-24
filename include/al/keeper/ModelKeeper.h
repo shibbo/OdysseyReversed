@@ -42,10 +42,10 @@ namespace al
         al::ModelCtrl* mModelControl; // _10
         al::ActorResource* mResource; // _18
         al::AnimPlayerSkl* mSkeletalAnimPlayer; // _20
-        al::AnimPlayerMat* _28;
-        al::AnimPlayerMat* _30;
-        al::AnimPlayerMat* _38;
-        al::AnimPlayerMat* _40;
+        al::AnimPlayerMat* mTexturePatternPlayer; // _28
+        al::AnimPlayerMat* mTextureSrtPlayer; // _30
+        al::AnimPlayerMat* mColorAnimPlayer; // _38
+        al::AnimPlayerMat* mShaderParamPlayer; // _40
         al::AnimPlayerVis* mBoneVisAnimPlayer; // _48
         al::AnimPlayerVis* mMatVisAnimPlayer; // _50
         u64* _58;

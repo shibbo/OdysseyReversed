@@ -1,11 +1,11 @@
-#pragma once
-
-#include "types.h"
-
 /**
  * @file PlayerOxygen.h
  * @brief Class that holds oxygen data for the player.
  */
+
+#pragma once
+
+#include "types.h"
 
 class PlayerOxygen
 {

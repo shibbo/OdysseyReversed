@@ -107,8 +107,7 @@ namespace sead
         u8 _98[0xD8-0x98]; // critical section
         u16 _D8;
         u16 _DA;
-        u16 _DC; 
-        u16 _DE;
+        u32 mBlockSize; // _DC
     };
 
     class ExpHeap : public sead::Heap
@@ -180,9 +179,9 @@ namespace sead
         
         u64 _E0;
         u64 _E8;
-        u32 _F0;
+        s32 mFreeListSize; // _F0
         u64 _F4;
-        s32 mNodeCount; // _108
+        s32 mUseListSize; // _108
         u32 _10C;
     };
     
@@ -194,27 +193,66 @@ namespace sead
         virtual ~FrameHeap();
         virtual s32 checkDerivedRuntimeTypeInfo(u32 *);
         virtual u32* getRuntimeTypeInfo();
-        virtual void destroy() = 0;
-        virtual void adjust() = 0;
-        virtual void* tryAlloc(u64, s32) = 0;
-        virtual void free(void *) = 0;
-        virtual void resizeFront(void *, u64) = 0;
-        virtual void resizeBack(void *, u64) = 0;
-        virtual void freeAll() = 0;
-        virtual u64 getStartAddress() const = 0;
-        virtual u64 getEndAddress() const = 0;
-        virtual u64 getSize() const = 0;
-        virtual u64 getFreeSize() const = 0;
-        virtual u64 getMaxAllocatableSize(s32) const = 0;
-        virtual bool isInclude(void const *) const = 0;
-        virtual bool isEmpty() const = 0;
-        virtual bool isFreeable() const = 0;
-        virtual bool isResizeable() const = 0;
-        virtual bool isAdjustable() const = 0;
+        virtual void destroy();
+        virtual void adjust();
+        virtual void* tryAlloc(u64, s32);
+        virtual void free(void *);
+        virtual void resizeFront(void *, u64);
+        virtual void resizeBack(void *, u64);
+        virtual void freeAll();
+        virtual u64 getStartAddress() const;
+        virtual u64 getEndAddress() const;
+        virtual u64 getSize() const;
+        virtual u64 getFreeSize() const;
+        virtual u64 getMaxAllocatableSize(s32) const;
+        virtual bool isInclude(void const *) const;
+        virtual bool isEmpty() const;
+        virtual bool isFreeable() const;
+        virtual bool isResizeable() const;
+        virtual bool isAdjustable() const;
         virtual void dump();
         // virtual void dumpYAML(sead::WriteStream &, int);
 
         static sead::FrameHeap* create(u64, sead::SafeStringBase<char> const &, sead::Heap *, s32, sead::Heap::HeapDirection, bool);
+
+        u64 mHeadPtr; // _E0
+        u64 mTailPtr; // _E8
+    };
+
+    class UnitHeap : public sead::Heap
+    {
+    public:
+        UnitHeap(sead::SafeStringBase<char> const &, sead::Heap *, void *, u64, u32, bool);
+
+        virtual ~UnitHeap();
+        virtual s32 checkDerivedRuntimeTypeInfo(u32 *);
+        virtual u32* getRuntimeTypeInfo();
+        virtual void destroy();
+        virtual void adjust();
+        virtual void* tryAlloc(u64, s32);
+        virtual void free(void *);
+        virtual void resizeFront(void *, u64);
+        virtual void resizeBack(void *, u64);
+        virtual void freeAll();
+        virtual u64 getStartAddress() const;
+        virtual u64 getEndAddress() const;
+        virtual u64 getSize() const;
+        virtual u64 getFreeSize() const;
+        virtual u64 getMaxAllocatableSize(s32) const;
+        virtual bool isInclude(void const *) const;
+        virtual bool isEmpty() const;
+        virtual bool isFreeable() const;
+        virtual bool isResizeable() const;
+        virtual bool isAdjustable() const;
+        virtual void dump();
+        // virtual void dumpYAML(sead::WriteStream &, int);
+        virtual void genInformation_(sead::hostio::Context *);
+
+        u64 mAreaStart; // _E0
+        u64 mAreaSize; // _E8
+        u64 mFreeSize; // _F0
+        u64 _F8;
+        u64 _100;
     };
 
     class HeapMgr : public sead::hostio::Node

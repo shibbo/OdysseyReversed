@@ -1,9 +1,9 @@
-#pragma once
-
 /**
  * @file PlayerConst.h
  * @brief Class that holds constants for the player actor.
  */
+
+#pragma once
 
 #include "../../al/byaml/ByamlIter.h"
 

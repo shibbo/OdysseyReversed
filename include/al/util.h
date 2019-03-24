@@ -122,6 +122,14 @@ namespace al
     f32 hermiteRate(f32, f32, f32);
     f32 calcFourthOrderRate(f32, f32);
 
+    // MODEL
+    void showModel(al::LiveActor *);
+    void showModelIfHide(al::LiveActor *);
+    bool isHideModel(al::LiveActor const *);
+    void hideModel(al::LiveActor *);
+    void hideModelIfShow(al::LiveActor *);
+    bool isExistModel(al::LiveActor *);
+
     // NERVE
     s32 calcNerveRate(al::IUseNerve const *, s32);
     s32 getNerveStep(al::IUseNerve const *);
@@ -143,6 +151,13 @@ namespace al
     void initSaveDirSync(char const *, u32, u32);
     bool isSuccessSaveDataSequence();
     void readSaveDataSync(char const *, u32, u32);
+
+    // SOUND
+    void startSe(al::IUseAudioKeeper const *, sead::SafeStringBase<char> const &);
+    bool verifySeKeeperNull(al::IUseAudioKeeper const *, sead::SafeStringBase<char> const &);
+    bool tryStartSe(al::IUseAudioKeeper const *, sead::SafeStringBase<char> const &);
+    void holdSe(al::IUseAudioKeeper const *, sead::SafeStringBase<char> const &);
+    bool tryHoldSe(al::IUseAudioKeeper const *, sead::SafeStringBase<char> const &);
 
     // STRING
     void copyString(char *, char const *, u32);

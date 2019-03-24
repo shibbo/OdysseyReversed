@@ -32,6 +32,9 @@
 
 namespace al
 {
+    class ScreenPointer;
+    class ScreenPointTarget;
+
 	class LiveActorFlag
     {
     public:
@@ -68,6 +71,10 @@ namespace al
         virtual void draw();
         virtual void startClipped();
         virtual void endClipped();
+        virtual void attackSensor(al::HitSensor *,al::HitSensor *);
+        virtual bool receiveMsg(al::SensorMsg const *, al::HitSensor *, al::HitSensor *);
+        virtual bool receiveMsgScreenPoint(al::SensorMsg const*,al::ScreenPointer *,al::ScreenPointTarget *);
+        virtual char* getName() const;
         virtual sead::Matrix34<f32>* getBaseMtx() const;
         virtual al::EffectKeeper* getEffectKeeper() const;
         virtual al::AudioKeeper* getAudioKeeper() const;

@@ -1,9 +1,9 @@
-#pragma once
-
 /**
  * @file PlayerContinuousJump.h
  * @brief Class that stores the jump of the player.
  */
+
+#pragma once
 
 #include "PlayerConst.h"
 #include "../../sead/vector.h"
