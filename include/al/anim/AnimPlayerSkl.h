@@ -20,7 +20,6 @@ namespace al
         virtual bool calcNeedUpdateAnimNext();
 
         static al::AnimPlayerSkl* tryCreate(al::AnimPlayerInitInfo const *, s32);
-        void updateLast();
         void startSklAnim(char const *, char const *, char const *, char const *, char const *, char const *, char const *);
         void clearSklAnimBlend();
         void setSklAnim(char const *, s32);
@@ -45,7 +44,6 @@ namespace al
         char* getPlayingSklAnimName(s32) const;
         void update();
         void reset();
-        bool calcNeedUpdateAnimNext();
         void prepareAnimInterpDirect(s32);
         void initPartialAnim(s32, s32, s32);
         s32 getPartialAnimSlotNum() const;
@@ -68,7 +66,7 @@ namespace al
         u64 _68;
         u64 _70;
         u32 _78;
-        u32 _7C:
+        u32 _7C;
         u64 _80;
         u8 _88;
         u8 _89;

@@ -15,7 +15,7 @@ public:
     TreasureBox(char const *);
 
     virtual void init(al::ActorInitInfo const &);
-    virtual bool receiveMsg(al::SensorMsg const *, al::HitSensor *, al::HitSensor *);
+    virtual bool receivgeMsg(al::SensorMsg const *, al::HitSensor *, al::HitSensor *);
     virtual bool receiveMsgScreenPoint(al::SensorMsg const*,al::ScreenPointer *,al::ScreenPointTarget *);
     virtual void control();
 

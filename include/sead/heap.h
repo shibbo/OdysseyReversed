@@ -115,7 +115,9 @@ namespace sead
     public:
         enum FindFreeBlockMode
         {
-
+            BlockMode_Auto = 0,
+            BlockMode_FromFreeList = 1,
+            BlockMode_IterateMemBlock = 2
         };
 
         enum FindMode
@@ -188,6 +190,12 @@ namespace sead
     class FrameHeap : public sead::Heap
     {
     public:
+        struct State
+        {
+            void* src; // _0
+            u64* tailPtr; // _8
+        };
+
         FrameHeap(sead::SafeStringBase<char> const &, sead::Heap *, void *src, u64 srcSize, sead::Heap::HeapDirection, bool);
 
         virtual ~FrameHeap();
@@ -214,6 +222,7 @@ namespace sead
         // virtual void dumpYAML(sead::WriteStream &, int);
 
         static sead::FrameHeap* create(u64, sead::SafeStringBase<char> const &, sead::Heap *, s32, sead::Heap::HeapDirection, bool);
+        void restoreState(sead::FrameHeap::State const &);
 
         u64 mHeadPtr; // _E0
         u64 mTailPtr; // _E8
