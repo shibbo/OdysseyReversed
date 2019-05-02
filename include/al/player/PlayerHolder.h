@@ -1,3 +1,8 @@
+/**
+ * @file PlayerHolder.h
+ * @brief Container for all player instances.
+ */
+
 #pragma once
 
 #include "al/LiveActor.h"
