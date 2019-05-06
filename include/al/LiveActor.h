@@ -15,6 +15,7 @@
 #include "keeper/HitSensorKeeper.h"
 #include "keeper/ModelKeeper.h"
 #include "keeper/NerveKeeper.h"
+#include "keeper/ScreenPointKeeper.h"
 #include "keeper/ShadowKeeper.h"
 #include "keeper/StageSwitchKeeper.h"
 #include "keeper/SubActorKeeper.h"
@@ -107,7 +108,7 @@ namespace al
         al::ModelKeeper* mModelKeeper; // _88
         al::NerveKeeper* mNerveKeeper; // _90
         al::HitSensorKeeper* mHitSensorKeeper; // _98
-        u64* _A0; // al::ScreenPointKeeper*
+        al::ScreenPointKeeper* mScreenPointKeeper; // _A0
         al::EffectKeeper* mEffectKeeper; // _A8
         al::AudioKeeper* mAudioKeeper; // _B0
         u64* _B8; // al::HitReactionKeeper*
