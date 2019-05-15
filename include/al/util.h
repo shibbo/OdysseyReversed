@@ -6,7 +6,9 @@
 #pragma once
 
 #include "al/ActorInitInfo.h"
+#include "al/audio/BgmPlayingRequest.h"
 #include "al/iuse/IUseAudioKeeper.h"
+#include "al/iuse/IUseEffectKeeper.h"
 #include "al/camera/CameraTicket.h"
 #include "al/iuse/IUseCamera.h"
 #include "al/PlacementId.h"
@@ -50,6 +52,14 @@ namespace al
 
     // AUDIO
     void tryPauseBgmIfLowPriority(al::IUseAudioKeeper const *, char const *, s32);
+
+    // BGM
+    void stopBgm(al::IUseAudioKeeper const *, char const *, s32);
+    void forceEndBgmSituation(al::IUseAudioKeeper const *, char const *, bool);
+    void startBgm(al::IUseAudioKeeper const *, al::BgmPlayingRequest const &, bool, bool);
+    void endBgmSituation(al::IUseAudioKeeper const *, char const *, bool);
+    void disableBgmSituationChange(al::IUseAudioKeeper const *);
+    void forceStartBgmSituation(al::IUseAudioKeeper const *, char const *, bool, bool);
 
     // CAMERA
     sead::Vector3<f32>* getCameraPos(al::IUseCamera const *, s32);
