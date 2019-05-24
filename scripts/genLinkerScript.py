@@ -51,7 +51,7 @@ with open("syms.ld", "w") as linker:
 		isValid = False
 	
 		# we check to see if this symbol has a prefix that we need to keep
-		for prefix in symbolPrefixes
+		for prefix in symbolPrefixes:
 			if symbolName.startswith(prefix):
 				isValid = True
 				break
