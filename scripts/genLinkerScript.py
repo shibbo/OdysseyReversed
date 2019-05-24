@@ -6,13 +6,12 @@ symbolExceptions = [ "_init", "_fini", "__nnDetailNintendoSdkRuntimeObjectFileRe
 symbolPrefixes = [ 
 					"Curl", # some curl stuff
 					"curl", # moar curl
-					"_ZG",  # guards
-					"_ZN",  # regular variables
-					"_ZT",  # typeinfo / vtables
-					"_ZZ",
+					"_Z",   # literally everything
 					"pfnc_",
 					"mem",
-					"str"
+					"str",
+					"alloc",
+					"free"
 ]
 
 if len(sys.argv) < 3:
@@ -52,8 +51,8 @@ with open("syms.ld", "w") as linker:
 		isValid = False
 	
 		# we check to see if this symbol has a prefix that we need to keep
-		for i in range(9):
-			if symbolName.startswith(symbolPrefixes[i]):
+		for prefix in symbolPrefixes
+			if symbolName.startswith(prefix):
 				isValid = True
 				break
 		
