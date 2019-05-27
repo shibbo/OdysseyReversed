@@ -8,6 +8,24 @@
 #include "types.h"
 #include "al/byaml/ByamlIter.h"
 
+struct KCollisionServer_Data
+{
+    u32 magic;
+    u32 octreeOffset;
+    u32 modelListOffset;
+    s32 modelCount;
+    f32 minCoordX;
+    f32 minCoordY;
+    f32 minCoordZ;
+    f32 maxCoordX;
+    f32 maxCoordY;
+    f32 maxCoordZ;
+    s32 coordinateShift;
+    s32 yShift;
+    s32 zShift;
+    s32 _34;
+};
+
 namespace al
 {
     class KCollisionServer
@@ -18,10 +36,20 @@ namespace al
         void initKCollisionServer(void *, void const *byamlSrc);
         void setData(void *kclSrc);
 
-        u64 _0;
-        u64 _8;
-        void* mKCLSource; // _10
+        u32 _0;
+        u32 _4;
+        u32 _8;
+        u32 _C;
+        void* mData; // _10
         al::ByamlIter* mColIterator; // _18
-        u8 _20[0x50-0x20];
+        u64 mModelListAddr; // _20
+        u64 mOctreeAddr; // _28
+        u32 _30;
+        u32 _34;
+        u32 _38;
+        u32 _3C;
+        u32 _40;
+        u32 _44;
+        u64 _48;
     };
 };
