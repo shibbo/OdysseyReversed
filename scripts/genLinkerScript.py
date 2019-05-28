@@ -62,10 +62,9 @@ with open("syms.ld", "w") as linker:
 		if not isValid:
 			continue
 
-		# sdk functions have a _0 at the end because they are duplicated due to the originals being imported
-		# so IDA adds a _0 at the end...we need to strip this
-		if "_ZN2nn" in symbolName:
-			symbolName = symbolName.strip("_0")
+		# we need to strip _0 at the end since IDA generates this for some reason
+		if symbolName.endswith("_0"):
+				symbolName = symbolName[:-2]
 		
 		linker.write(f"{symbolName} = {address} - {sys.argv[2]};\n")
 	

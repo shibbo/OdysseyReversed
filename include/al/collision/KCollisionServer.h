@@ -7,6 +7,7 @@
 
 #include "types.h"
 #include "al/byaml/ByamlIter.h"
+#include "sead/vector.h"
 
 struct KCollisionServer_Data
 {
@@ -35,6 +36,8 @@ namespace al
 
         void initKCollisionServer(void *, void const *byamlSrc);
         void setData(void *kclSrc);
+
+        void getMinMax(sead::Vector3<f32> *, sead::Vector3<f32> *) const;
 
         u32 _0;
         u32 _4;
