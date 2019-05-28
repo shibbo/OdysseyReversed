@@ -7,6 +7,7 @@
 
 #include "types.h"
 #include "al/byaml/ByamlIter.h"
+#include "al/collision/KCPrismHeader.h"
 #include "sead/vector.h"
 
 struct KCollisionServer_Data
@@ -38,6 +39,8 @@ namespace al
         void setData(void *kclSrc);
 
         void getMinMax(sead::Vector3<f32> *, sead::Vector3<f32> *) const;
+        void objectSpaceToAreaOffsetSpaceV3f(sead::Vector3<f32> *, sead::Vector3<f32> const &, al::KCPrismHeader const *) const;
+        bool isInsideMinMaxInAreaOffsetSpace(sead::Vector3<u32> const &, al::KCPrismHeader const *) const;
 
         u32 _0;
         u32 _4;
