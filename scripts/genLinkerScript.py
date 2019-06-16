@@ -2,7 +2,16 @@
 # Generates a linker script based on a given symbol map and base address offset
 import sys
 
-symbolExceptions = [ "_init", "_fini", "__nnDetailNintendoSdkRuntimeObjectFileRefer", "__nnDetailNintendoSdkRuntimeObjectFile", "__nnDetailNintendoSdkNsoFileRefer" ]
+symbolExceptions = [ 
+					"_init", 
+					"_fini", 
+					"__nnDetailNintendoSdkRuntimeObjectFileRefer", 
+					"__nnDetailNintendoSdkRuntimeObjectFile", 
+					"__nnDetailNintendoSdkNsoFileRefer",
+					"hysteresis_decision",
+					"celt_lcg_rand",
+					"compute_band_energies",
+				]
 symbolPrefixes = [ 
 					"Curl", # some curl stuff
 					"curl", # moar curl
@@ -11,8 +20,51 @@ symbolPrefixes = [
 					"mem",
 					"str",
 					"alloc",
-					"free"
-]
+					"free",
+					"nndetailCrypto",
+					"nnutil",
+					"Libz",
+					"nnmem",
+					"nnos",
+					"nnsocket",
+					"celt",
+					"encode",
+					"ec",
+					"opus",
+					"silk",
+					"nnssl",
+					"FS",
+					"FSS",
+					"fs",
+					"fnt",
+					"fsg",
+					"nnfont",
+					"nvcec",
+					"nvdc",
+					"hdcp",
+					"Nv",
+					"app",
+					"glslc",
+					"multimedia",
+					"cuda",
+					"nvgr",
+					"nngpio",
+					"nvn",
+					"nn",
+					"pthread",
+					"sem",
+					"__nnmusl",
+					"jpeg",
+					"video",
+					"TVMR",
+					"aacDecoder",
+					"FDK",
+					"pcmDmx",
+					"sbrDecoder",
+					"voAAC",
+					"Bitstream",
+					"PV"
+	]
 
 if len(sys.argv) < 3:
 	print("Syntax: genLinkerScript.py <map> <sizeFromMain>\n")
@@ -66,6 +118,6 @@ with open("syms.ld", "w") as linker:
 		if symbolName.endswith("_0"):
 				symbolName = symbolName[:-2]
 		
-		linker.write(f"{symbolName} = {address} - {sys.argv[2]};\n")
+		linker.write(f"{symbolName} = {address} - 0x006BB000;\n")
 	
 print("Linker script generated.")

@@ -1,0 +1,22 @@
+ifeq ($(strip $(DEVKITPRO)),)
+$(error "Please set DEVKITPRO in your environment. export DEVKITPRO=<path to>devkitPro)
+endif
+
+include $(DEVKITPRO)/devkitA64/base_rules
+
+PORTLIBS	:=	$(PORTLIBS_PATH)/switch
+PATH	:=	$(PORTLIBS)/bin:$(PATH)
+
+LIBNX	?=	$(DEVKITPRO)/libnx
+
+#---------------------------------------------------------------------------------
+%.nso: %.elf
+	@elf2nso $< $@
+	@echo Built $(notdir $@)!
+
+#---------------------------------------------------------------------------------
+%.elf:
+	@echo Linking $(notdir $@)...
+	@$(LD) $(LDFLAGS) $(OFILES) $(LIBPATHS) $(LIBS) -o $@
+	@$(NM) -CSn $@ > $(notdir $*.lst)
+	@echo Done!

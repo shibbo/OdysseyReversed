@@ -33,8 +33,10 @@
 
 namespace al
 {
+	class ActorParamHolder;
     class ScreenPointer;
     class ScreenPointTarget;
+	class SensorMsg;
 
 	class LiveActorFlag
     {
