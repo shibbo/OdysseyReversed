@@ -58,3 +58,5 @@ Khangaroo - Custom code templating
 libnx - Makefile creation
 
 Retr0id - Linker creation
+
+RicBent - NSO python script creation
