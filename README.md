@@ -2,53 +2,40 @@
 A project that documents the structures and classes in Super Mario Odyssey. This repo contains header files that contain information on the game, such as classes, namespaces, static functions, static variables, and more.
 
 # Using OdysseyReversed
-As of 3/3/2019, you can now compile code using these headers and make your own custom code! This requires libnx binaries to be placed in *lib*, and for *devkitA64* to be installed and in your $PATH. Once that is done, simply run *make* and it should output an NSO. Rename this to subsdk1, apply the below patch to branch to your code, and enjoy!
 
-Before you can use the IPS patch to run your code, you have to figure out where to patch. This can vary based on code size, so you want to check the symbol map of your compiled code to figure out the offset. If our function name we used as the entrypoint is "hook_init()", we would find it in the generated .map file in _build_.
+In order to use OdysseyReversed, the following have to be installed:
 
-```
- .text._Z9hook_initv
-                0x00000000000002dc       0x1c main.o
-                0x00000000000002dc                hook_init()
-```
+* devkitA64
+* Python 3.7
 
-The value we need is 0x2DC.
+Both need to be on your PATH environment. All source code goes into the 'source' folder, and headers go into 'include'. Source files can be raw assembly, C++ source files, or C source files.
 
-And to figure out the offset to jump to, use this formula for Odyssey 1.2.0, where *offset* is the value from above:
-```
-0x2D14000 + offset - 0x774B10
-```
-
-Using the output from the formula above, we simple convert a branch instruction to it to ARM:
-```
-B #0x259F7CC = F37D9614
-```
-
-The value will then be branched to at 0x774B10 in the executable, which is the earliest possible entrypoint for our code.
+How the toolkit determines where to patch your functions are defined in hooks inside of the 'hooks' directory. Each hook looks like this:
 
 ```
-@little-endian
-@nsobid-F5DCCDDB37E97724EBDBCCCDBEB965FF
-@flag offset_shift 0x100
-# Super Mario Odyssey 1.2.0
-
-// branch to custom code
-@enabled
-00774B10 YOURVALUE
+basic_hook:
+    type:    b
+    addr:    0x009499F8
+    sym:     basic_function
 ```
 
-This process can be repeated if there are multiple places to inject custom code. After the new NSO has been generated, run *scripts/patchNSO.py <nsoPath>* to correct an incorrect MOD0 offset libnx generates. Take that new NSO and test it out!
+'basic_hook' is the name of the patch, used for referencing. 'type' is the patch type. 'addr' is the address in the main binary to patch, and 'sym' is the name of the function to branch to. There will be more support for other instructions in the future.
 
-As the comments imply, this repo only supports *Super Mario Odyssey 1.2.0*.
+Once the hooks file has been defined and all of the source code is in the right place, it is time to compile our code.
 
-# Porting
+To build the source code, build.py will have to be ran.
 
-In order to port this kit to inject custom code in other games, there's a few things that will need to be found. The MAP file with symbols exported from IDA Pro has to be present, because it is impossible to call the functions by their names if they are not properly defined in the linker script. Once the .MAP is generated, the size of the main executable needs to be calculated. [NSOTool](https://github.com/shibbo/NSOTool/tree/master/NSOTool) can be used for this. If the game uses subsdks, this must also be added to the size. Once the size has been calculated, use the value as an argument (in hexadecimal) to *scripts/genLinkerScript <mapFile> <val>*; where *mapFile* is a path to the IDA exported map, and *val* is the value we just got. It will export a file named *syms.ld*, which the Makefile uses to link our names to an address.
+```
+python build.py <options>
+```
 
-And of course, to even use the functions in another game, the headers for functions in the game have to be defined. The formula for determining the value to branch to will have to be changed as well.
+The current options are supported:
 
-# Notable Patch Points
-00774B10 -- Will be ran on game boot.
+ * make - Will build the source code.
+ * ips - Will create the IPS patch to patch our entrypoint.
+ * clean - Will remove all build files after completing the building / patching process.
+
+You can use all of those options when running the build script.
 
 # Credits
 0CBH0 - nsnsotool
@@ -59,4 +46,4 @@ libnx - Makefile creation
 
 Retr0id - Linker creation
 
-RicBent - NSO python script creation
+RicBent - Hook syntax and a lot of the new build system

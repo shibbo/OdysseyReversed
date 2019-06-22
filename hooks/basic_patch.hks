@@ -1,0 +1,4 @@
+basic_hook:
+    type:    b
+    addr:    0x009499F8
+    sym:     basic_function

@@ -11,9 +11,14 @@
 *.o
 *.txt
 *.til
+*.lst
+*.d
+*.sym
+*.ips
 .vscode/
 build/
 debug/
 release/
 lib/
 subsdk1/
+__pycache__/

@@ -1,3 +1,6 @@
+# nso.py
+# Library for processing NSO information
+
 import struct
 
 class NsoSegment(struct.Struct):
