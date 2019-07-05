@@ -11,6 +11,7 @@
 #include "game/GameDataFile.h"
 #include "game/config/GameConfigData.h"
 #include "sead/heap.h"
+#include "sead/string.h"
 
 class GameDataHolder : public al::ISceneObj
 {
@@ -85,15 +86,19 @@ public:
     u64* _8;
     al::MessageSystem* mMessageSystem; // _10
     GameDataFile* mDataFileArr; // _18
-    u8 _20[0x38-0x20];
+    GameDataFile* _20;
+    u64 _28;
+    u64 _30;
     u64* _38; // SaveDataAccessSequence*
-    u64 _40;
+    u32 _40;
+    u32 mRequireSaveFrame; // _44
     bool mIsInvalidSaveForMoonGet; // _48
-    u8 _49;
+    bool mChangeStageRelated; // _49
     u8 _4A;
     u8 _4B;
-    GameConfigData* mConfigData; // _50
-    u8 _58[0x90-0x58];
+    u32 _4C;
+    sead::BufferedSafeStringBase<char> mLanguage; // _50
+    u8 _58[0x90-0x60];
     sead::Heap* _90;
     u8 _98[0xB9-0x98];
     u64* _B8; // TempSaveData*
