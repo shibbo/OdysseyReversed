@@ -5,19 +5,38 @@
 
 #pragma once
 
-#include <sys/socket.h>
 #include "types.h"
+
+// both of these are a part of nn::socket but whatever
+struct in_addr
+{
+    u32 data;           // 0
+};
+
+struct sockaddr
+{
+    u8 addrLen;
+    u8 family;
+    u16 port;
+    in_addr address;
+    u8 _8[8];
+};
+
 
 namespace nn
 {
     namespace socket
     {
-        Result Initialize(void *pool, u64 poolSize, u64 allocPoolSize, s32 concurLimit);
-        Result Finalize();
-        s32 SetSockOpt(s32 socket, s32 socketLevel, s32 option, void const *, u64 len);
-        u64 Send(s32 socket, void const *buffer, u64 bufferLength, s32 flags);
-        s32 Socket(s32 domain, s32 type, s32 proto);
-        u16 InetHtons(u16);
-        u32 Connect(s32 socket, const sockaddr *addr, u32 addrLen);
+        Result Initialize(void* memoryPool, u64, u64, s32);
+
+        s32 Socket(s32, s32, s32);
+        s32 Connect(s32 socket,	const sockaddr* address, u32 addressLen);
+
+        s32 Send(s32 socket, const void* data, u64 dataLen, s32 unk);
+        s32 Recv(s32 socket, void* out, u64 outLen, s32 unk);
+
+        u16 InetHtons(u16 val);
+        s32 InetAton(const char* addressStr, in_addr* addressOut);
+
     };
 };

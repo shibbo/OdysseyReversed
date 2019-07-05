@@ -7,7 +7,7 @@
 
 #include "types.h"
 
-typedef u32 CURLCode; // basic code for getting results from functions
+typedef u32 CURLcode; // basic code for getting results from functions
 
 #ifdef __cplusplus
 extern "C" {

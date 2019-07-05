@@ -25,3 +25,8 @@ typedef double              f64;
 
 // stores a result on a lot of OS-related functions
 typedef u32 Result;
+
+// printing declarations
+typedef __builtin_va_list va_list;
+#define va_start(v,l) __builtin_va_start(v,l)
+#define va_end(v) __builtin_va_end(v)

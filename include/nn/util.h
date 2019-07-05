@@ -64,6 +64,9 @@ namespace nn
 
         template<s32 size, typename T>
         struct BitFlagSet { };
+
+        s32 SNPrintf(char* s, size_t n, const char* format, ...);
+        s32 VSNPrintf(char* s, size_t n, const char* format, va_list arg);
     };
 
     void ReferSymbol(void const *);

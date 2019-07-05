@@ -17,7 +17,7 @@ include $(TOPDIR)/switch_rules
 # INCLUDES is a list of directories containing header files
 #---------------------------------------------------------------------------------
 TARGET		:=	$(notdir $(CURDIR))
-BUILD		:=	subsdk1
+BUILD		:=	build
 SOURCES		:=	source
 DATA		:=	data
 INCLUDES	:=	include
