@@ -55,7 +55,7 @@ def main(argc, argv):
 	if 'make' in argv:
 		run_proc('make')
 
-		os.rename("OdysseyReversed.nso", "subsdk1")
+		subprocess.Popen('python scripts/elf2nso.py OdysseyReversed.elf subsdk1 -c -s', shell=True)
 		
 	if 'ips' in argv:
 		# we need to generate our .sym first
