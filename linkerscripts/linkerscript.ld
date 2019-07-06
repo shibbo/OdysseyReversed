@@ -1,220 +1,175 @@
+OUTPUT_FORMAT(elf64-littleaarch64)
 OUTPUT_ARCH(aarch64)
-ENTRY(_start)
 
 PHDRS
 {
-	code   PT_LOAD FLAGS(5) /* Read | Execute */;
-	rodata PT_LOAD FLAGS(4) /* Read */;
-	data   PT_LOAD FLAGS(6) /* Read | Write */;
-	dyn    PT_DYNAMIC;
+  text PT_LOAD FLAGS(5);
+  rodata PT_LOAD FLAGS(4);
+  data PT_LOAD FLAGS(6);
+  dynamic PT_DYNAMIC;
 }
 
 SECTIONS
 {
-	/* =========== CODE section =========== */
-	PROVIDE(__start__ = 0x0);
-	. = __start__;
-	__code_start = . ;
+  PROVIDE(__start__ = 0x0);
+  . = __start__;
+  __code_start__ = .;
 
-	.crt0 :
-	{
-		KEEP (*(.crt0))
-		. = ALIGN(8);
-	} :code
+  /* App code */
+  .text : {
+    HIDDEN(__text_start__ = .);
+    KEEP (*(.text.crt0))
+    *(.text .text.*)
+    HIDDEN(__text_end__ = .);
+  } :text
 
-	.init :
-	{
-		KEEP( *(.init) )
-		. = ALIGN(8);
-	} :code
+  /* Trampoline and stuffs */
+  .plt : { *(.plt .plt.*) } :text
+  __code_end__ = .;
 
-	.plt :
-	{
-		*(.plt)
-		*(.iplt)
-		. = ALIGN(8);
-	} :code
+  /* Read-only sections */
+  . = ALIGN(0x1000);
 
-	.text :
-	{
-		*(.text.unlikely .text.*_unlikely .text.unlikely.*)
-		*(.text.exit .text.exit.*)
-		*(.text.startup .text.startup.*)
-		*(.text.hot .text.hot.*)
-		*(.text .stub .text.* .gnu.linkonce.t.*)
-		. = ALIGN(8);
-	} :code
+  /* App name */
+  .module_name : { KEEP (*(.rodata.module_name)) } :rodata
 
-	.fini :
-	{
-		KEEP( *(.fini) )
-		. = ALIGN(8);
-	} :code
+  /* Make sure everything is aligned */
+  . = ALIGN(8);
 
-	/* =========== RODATA section =========== */
-	. = ALIGN(0x1000);
-	__rodata_start = . ;
+  /* App rodata */
+  .rodata : {
+    *(.rodata .rodata.*)
+  } :rodata
 
-	.nx-module-name : { KEEP (*(.nx-module-name)) } :rodata
+  /* All the symbols needed for relocation lookup */
+  .hash     : { *(.hash) } :rodata
+  .gnu.hash : { *(.gnu.hash) } :rodata
+  .dynsym   : { *(.dynsym .dynsym.*) } :rodata
+  .dynstr   : { *(.dynstr .dynstr.*) } :rodata
 
-	.rodata :
-	{
-		*(.rodata .rodata.* .gnu.linkonce.r.*)
-		. = ALIGN(8);
-	} :rodata
+  __rel_dyn_start__ = .;
+  .rel.dyn : { *(.rel.dyn) } :rodata
+  __rel_dyn_end__ = .;
 
-	.eh_frame_hdr     : { __eh_frame_hdr_start = .; *(.eh_frame_hdr) *(.eh_frame_entry .eh_frame_entry.*) __eh_frame_hdr_end = .; } :rodata
-	.eh_frame         : ONLY_IF_RO { KEEP (*(.eh_frame)) *(.eh_frame.*) } :rodata
-	.gcc_except_table : ONLY_IF_RO { *(.gcc_except_table .gcc_except_table.*) } :rodata
-	.gnu_extab        : ONLY_IF_RO { *(.gnu_extab*) } : rodata
+  __rela_dyn_start__ = .;
+  .rela.dyn : { *(.rela.dyn) } :rodata
+  __rela_dyn_end__ = .;
 
-	.dynamic           : { *(.dynamic) } :rodata :dyn
-	.dynsym            : { *(.dynsym) } :rodata
-	.dynstr            : { *(.dynstr) } :rodata
-	.rela.dyn          : { *(.rela.*) } :rodata
-	.interp            : { *(.interp) } :rodata
-	.hash              : { *(.hash) } :rodata
-	.gnu.hash          : { *(.gnu.hash) } :rodata
-	.gnu.version       : { *(.gnu.version) } :rodata
-	.gnu.version_d     : { *(.gnu.version_d) } :rodata
-	.gnu.version_r     : { *(.gnu.version_r) } :rodata
-	.note.gnu.build-id : { *(.note.gnu.build-id) } :rodata
+  __rel_plt_start__ = .;
+  .rel.plt        : { *(.rel.plt) } :rodata
+  __rel_plt_end__ = .;
 
-	/* =========== DATA section =========== */
-	. = ALIGN(0x1000);
-	__data_start = . ;
+  __rela_plt_start__ = .;
+  .rela.plt       : { *(.rela.plt) } :rodata
+  __rela_plt_end__ = .;
 
-	.eh_frame : ONLY_IF_RW { KEEP (*(.eh_frame)) *(.eh_frame.*) } :data
-	.gcc_except_table : ONLY_IF_RW { *(.gcc_except_table .gcc_except_table.*) } :data
-	.gnu_extab : ONLY_IF_RW { *(.gnu_extab*) } : data
-	.exception_ranges : ONLY_IF_RW { *(.exception_ranges .exception_ranges*) } :data
+  /* All exception handling sections */
+  .gcc_except_table : { *(.gcc_except_table .gcc_except_table.*) } :rodata
+  .eh_frame_hdr : {
+    HIDDEN(__eh_frame_hdr_start__ = .);
+    *(.eh_frame_hdr)
+    HIDDEN(__eh_frame_hdr_end__ = .);
+  } :rodata
+  .eh_frame : { KEEP (*(.eh_frame)) } :rodata
 
-	.tdata ALIGN(8) :
-	{
-		__tdata_lma = .;
-		*(.tdata .tdata.* .gnu.linkonce.td.*)
-		. = ALIGN(8);
-		__tdata_lma_end = .;
-	} :data
+  /* Misc .rodata stuffs (build-id, ect) */
+  .note.gnu.build-id : { *(.note.gnu.build-id) } :rodata
 
-	.tbss ALIGN(8) :
-	{
-		*(.tbss .tbss.* .gnu.linkonce.tb.*) *(.tcommon)
-		. = ALIGN(8);
-	} :data
+  /* Read-write sections */
+  . = ALIGN(0x1000);
 
-	.preinit_array ALIGN(8) :
-	{
-		PROVIDE (__preinit_array_start = .);
-		KEEP (*(.preinit_array))
-		PROVIDE (__preinit_array_end = .);
-	} :data
+  /* App data */
+  .data : {
+    *(.data .data.*)
+  } :data
 
-	.init_array ALIGN(8) :
-	{
-		PROVIDE (__init_array_start = .);
-		KEEP (*(SORT(.init_array.*)))
-		KEEP (*(.init_array))
-		PROVIDE (__init_array_end = .);
-	} :data
+  /* This section should be made read only after relocation but in practice we will not do that */
+  .data.rela.ro : {
+    *(.data.rela.ro.local*)
+    *(.data.rela.ro .data.rela.ro.*)
+  } :data
 
-	.fini_array ALIGN(8) :
-	{
-		PROVIDE (__fini_array_start = .);
-		KEEP (*(.fini_array))
-		KEEP (*(SORT(.fini_array.*)))
-		PROVIDE (__fini_array_end = .);
-	} :data
+  /* This section should be made read only after relocation but in practice we will not do that */
+  .data.rel.ro : {
+    *(.data.rel.ro.local*)
+    *(.data.rel.ro .data.rel.ro.*)
+  } :data
 
-	.ctors ALIGN(8) :
-	{
-		KEEP (*crtbegin.o(.ctors)) /* MUST be first -- GCC requires it */
-		KEEP (*(EXCLUDE_FILE (*crtend.o) .ctors))
-		KEEP (*(SORT(.ctors.*)))
-		KEEP (*(.ctors))
-	} :data
+  /* All GOT sections */
+  __got_start__ = .;
+  .got : { *(.got.plt) *(.igot.plt) *(.got) *(.igot) } :data
+  __got_end__ = .;
 
-	.dtors ALIGN(8) :
-	{
-		KEEP (*crtbegin.o(.dtors))
-		KEEP (*(EXCLUDE_FILE (*crtend.o) .dtors))
-		KEEP (*(SORT(.dtors.*)))
-		KEEP (*(.dtors))
-	} :data
+  /* The dynamic section as we need it to be stored in the binary */
+  .dynamic : {
+    HIDDEN(__dynamic_start__ = .);
+    *(.dynamic)
+  } :data :dynamic
 
-	__got_start__ = .;
+  /* Align for .init_array/.fini_array */
+  . = ALIGN(8);
 
-	.got            : { *(.got) *(.igot) } :data
-	.got.plt        : { *(.got.plt)  *(.igot.plt) } :data
+  .preinit_array ALIGN(8) :
+  {
+    PROVIDE (__preinit_array_start__ = .);
+    KEEP (*(.preinit_array))
+    PROVIDE (__preinit_array_end__ = .);
+  } :data
 
-	__got_end__ = .;
+  /* App init array */
+  .init_array : {
+    PROVIDE (__init_array_start__ = .);
+    KEEP (*(SORT_BY_INIT_PRIORITY(.init_array.*)))
+    KEEP (*(.init_array))
+    PROVIDE (__init_array_end__ = .);
+  } :data
 
-	.data ALIGN(8) :
-	{
-		*(.data .data.* .gnu.linkonce.d.*)
-		SORT(CONSTRUCTORS)
-	} :data
+  /* App fini array */
+  .fini_array : {
+    PROVIDE (__fini_array_start__ = .);
+    KEEP (*(SORT_BY_INIT_PRIORITY(.fini_array.*)))
+    KEEP (*(.fini_array))
+    PROVIDE (__fini_array_end__ = .);
+  } :data
 
-	__bss_start__ = .;
-	.bss ALIGN(8) :
-	{
-		*(.dynbss)
-		*(.bss .bss.* .gnu.linkonce.b.*)
-		*(COMMON)
-		. = ALIGN(8);
+  /* Thread Local sections */
 
-		/* Reserve space for the TLS segment of the main thread */
-		__tls_start = .;
-		. += + SIZEOF(.tdata) + SIZEOF(.tbss);
-		__tls_end = .;
-	} : data
-	__bss_end__ = .;
+  .tdata : {
+    __tdata_align_abs__ = ABSOLUTE(.);
+    __tdata_start__ = .;
+    *(.tdata .tdata.*)
+    __tdata_end__ = .;
+  } :data
 
-	__end__ = ABSOLUTE(.) ;
-	
-	. = ALIGN(0x1000);
-	__argdata__ = ABSOLUTE(.) ;
-	
-	. = ALIGN(0x1000);
-	__sdk_start = ABSOLUTE(.) ;
+  .tbss : {
+    __tbss_align_abs__ = ABSOLUTE(.);
+    __tbss_start__ = .;
+    *(.tbss .tbss.*)
+    *(.tcommon)
+    __tbss_end__ = .;
+  } :data
 
-	/* ==================
-	   ==== Metadata ====
-	   ================== */
+  /* BSS section */
+  . = ALIGN(0x1000);
 
-	/* Discard sections that difficult post-processing */
-	/DISCARD/ : { *(.group .comment .note) }
+  .bss : {
+    HIDDEN(__bss_start__ = .);
+    *(.bss .bss.*)
+    *(COMMON)
+    . = ALIGN(8);
+    HIDDEN(__bss_end__ = .);
+    . = ALIGN(0x1000);
+  } :data
 
-	/* Stabs debugging sections. */
-	.stab          0 : { *(.stab) }
-	.stabstr       0 : { *(.stabstr) }
-	.stab.excl     0 : { *(.stab.excl) }
-	.stab.exclstr  0 : { *(.stab.exclstr) }
-	.stab.index    0 : { *(.stab.index) }
-	.stab.indexstr 0 : { *(.stab.indexstr) }
+  __end__ = ABSOLUTE(.);
 
-	/* DWARF debug sections.
-	   Symbols in the DWARF debugging sections are relative to the beginning
-	   of the section so we begin them at 0. */
+  HIDDEN(__argdata__ = .);
 
-	/* DWARF 1 */
-	.debug          0 : { *(.debug) }
-	.line           0 : { *(.line) }
+  . = ALIGN(0x1000);
+  __sdk_start = ABSOLUTE(.) ;
 
-	/* GNU DWARF 1 extensions */
-	.debug_srcinfo  0 : { *(.debug_srcinfo) }
-	.debug_sfnames  0 : { *(.debug_sfnames) }
-
-	/* DWARF 1.1 and DWARF 2 */
-	.debug_aranges  0 : { *(.debug_aranges) }
-	.debug_pubnames 0 : { *(.debug_pubnames) }
-
-	/* DWARF 2 */
-	.debug_info     0 : { *(.debug_info) }
-	.debug_abbrev   0 : { *(.debug_abbrev) }
-	.debug_line     0 : { *(.debug_line) }
-	.debug_frame    0 : { *(.debug_frame) }
-	.debug_str      0 : { *(.debug_str) }
-	.debug_loc      0 : { *(.debug_loc) }
-	.debug_macinfo  0 : { *(.debug_macinfo) }
+  /DISCARD/ : {
+    /* No need of the interpreter */
+    *(.interp)
+  }
 }
