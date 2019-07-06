@@ -1,7 +1,0 @@
-%rename link                old_link
-
-*link:
-%(old_link) -T ../linkerscripts/linkerscript.ld -T ../linkerscripts/main.ld -T ../linkerscripts/subsdk0.ld -T ../linkerscripts/sdk.ld --build-id=sha1 
-
-*startfile:
-crti%O%s crtbegin%O%s

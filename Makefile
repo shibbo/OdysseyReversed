@@ -34,8 +34,8 @@ CFLAGS	+=	$(INCLUDE) -D__SWITCH__
 
 CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions -fpermissive
 
-ASFLAGS	:=	-g $(ARCH)
-LDFLAGS  =  -specs=../switch.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map)
+ASFLAGS		:=	-g $(ARCH)
+LDFLAGS		:=	-pie -T $(LINKERSCRIPT) -T $(MAIN_SYMBOLS) -T $(SUB_SYMBOLS) -T $(SDK_SYMBOLS)
 
 LIBS	:= -lnx
 
@@ -52,6 +52,12 @@ LIBDIRS	:= $(PORTLIBS) $(LIBNX)
 #---------------------------------------------------------------------------------
 ifneq ($(BUILD),$(notdir $(CURDIR)))
 #---------------------------------------------------------------------------------
+
+export LINKERSCRIPT	:=	$(CURDIR)/linkerscripts/linkerscript.ld
+export MAIN_SYMBOLS	:=	$(CURDIR)/linkerscripts/main.ld
+export SUB_SYMBOLS	:=	$(CURDIR)/linkerscripts/subsdk0.ld
+export SDK_SYMBOLS	:=	$(CURDIR)/linkerscripts/sdk.ld
+
 
 export OUTPUT	:=	$(CURDIR)/$(TARGET)
 export TOPDIR	:=	$(CURDIR)
