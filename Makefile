@@ -34,10 +34,9 @@ CFLAGS	+=	$(INCLUDE) -D__SWITCH__
 
 CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions -fpermissive
 
-ASFLAGS		:=	-g $(ARCH)
+ASFLAGS		:=	$(ARCH)
 LDFLAGS		:=	-pie -T $(LINKERSCRIPT) -T $(MAIN_SYMBOLS) -T $(SUB_SYMBOLS) -T $(SDK_SYMBOLS)
 
-LIBS	:= -lnx
 
 #---------------------------------------------------------------------------------
 # list of directories containing libraries, this must be the top level containing
